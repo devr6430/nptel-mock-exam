@@ -1,71 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="nord">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mock Test {{ test_id }} — NPTEL Joy of Computing</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="exam-page">
+<body class="bg-base-200">
 
-<!-- Fixed top bar -->
-<div class="exam-topbar">
-  <div class="topbar-left">
-    <a href="/" class="topbar-logo">NPTEL Mock</a>
-    <span class="topbar-test">Test {{ test_id }}</span>
+<!-- Top bar -->
+<div class="navbar bg-base-100 shadow-md border-b-2 border-primary fixed top-0 z-50 px-4 min-h-[52px]">
+  <div class="navbar-start gap-2">
+    <a href="/" class="font-extrabold text-sm text-primary tracking-wide">NPTEL Mock</a>
+    <span class="text-xs text-base-content/50">Test {{ test_id }}</span>
   </div>
-  <div class="topbar-center">
-    <div class="progress-text">Q <span id="q-current">1</span> / {{ total }}</div>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar-fill" id="progress-bar" style="width:0%"></div>
-    </div>
+  <div class="navbar-center flex flex-col items-center gap-1">
+    <span class="text-xs font-semibold">Q <span id="q-current">1</span> / {{ total }}</span>
+    <progress class="progress progress-primary w-32 sm:w-48 h-1.5" id="progress-bar" value="0" max="100"></progress>
   </div>
-  <div class="topbar-right">
-    <div class="timer" id="timer">3:00:00</div>
+  <div class="navbar-end">
+    <span class="font-mono font-bold text-base" id="timer">3:00:00</span>
   </div>
 </div>
 
 <!-- Main exam area -->
-<div class="exam-container">
+<div class="max-w-4xl mx-auto pt-[68px] px-4 pb-10 grid grid-cols-1 lg:grid-cols-[1fr_150px] gap-5 items-start">
 
-  <div class="question-card" id="question-card">
-    <!-- Loading state -->
-    <div class="q-meta" id="q-meta">
-      <span class="q-tag" id="q-section-tag">A</span>
-      <span class="q-week" id="q-week-tag">Week —</span>
-      <span class="q-topic" id="q-topic-tag">—</span>
-    </div>
+  <!-- Question Card -->
+  <div class="card bg-base-100 shadow-md border border-base-300" id="question-card">
+    <div class="card-body p-5 sm:p-6">
+      <!-- Meta tags -->
+      <div class="flex flex-wrap items-center gap-2 mb-3" id="q-meta">
+        <span class="badge badge-sm font-bold" id="q-section-tag">A</span>
+        <span class="text-xs text-base-content/60" id="q-week-tag">Week —</span>
+        <span class="text-xs text-base-content/50" id="q-topic-tag">—</span>
+      </div>
 
-    <div class="q-text" id="q-text">Loading question…</div>
+      <!-- Question text -->
+      <p class="text-base font-semibold leading-relaxed mb-5" id="q-text">Loading question…</p>
 
-    <div class="options-grid" id="options-grid">
-      <!-- Options injected by JS -->
-    </div>
+      <!-- Options -->
+      <div class="flex flex-col gap-2.5" id="options-grid"></div>
 
-    <div class="feedback-box" id="feedback-box" style="display:none">
-      <div class="feedback-text" id="feedback-text"></div>
-      <div class="explanation" id="explanation-text"></div>
-    </div>
+      <!-- Feedback -->
+      <div class="alert mt-4 hidden" id="feedback-box">
+        <div>
+          <p class="font-bold text-sm" id="feedback-text"></p>
+          <p class="text-xs opacity-80 mt-1" id="explanation-text"></p>
+        </div>
+      </div>
 
-    <div class="card-footer-row">
-      <div class="q-number-badge" id="q-number-badge"></div>
-      <button class="btn-next" id="btn-next" style="display:none" onclick="nextQuestion()">
-        Next →
-      </button>
-      <a href="/result" class="btn-finish" id="btn-finish" style="display:none">
-        View Results
-      </a>
+      <!-- Footer -->
+      <div class="flex items-center justify-between mt-4">
+        <span class="text-xs text-base-content/50" id="q-number-badge"></span>
+        <button class="btn btn-primary btn-sm hidden" id="btn-next" onclick="nextQuestion()">Next →</button>
+        <a href="/result" class="btn btn-accent btn-sm hidden" id="btn-finish">View Results</a>
+      </div>
     </div>
   </div>
 
-  <!-- Question navigator (compact grid) -->
-  <div class="nav-panel" id="nav-panel">
-    <div class="nav-title">Questions</div>
-    <div class="nav-grid" id="nav-grid">
-      {% for i in range(total) %}
-      <button class="nav-dot" id="nav-{{ i }}" onclick="jumpTo({{ i }})">{{ i+1 }}</button>
-      {% endfor %}
+  <!-- Question Navigator -->
+  <div class="card bg-base-100 shadow-sm border border-base-300 sticky top-[68px] hidden lg:block" id="nav-panel">
+    <div class="card-body p-3">
+      <p class="text-[10px] font-bold uppercase tracking-widest text-base-content/50 mb-2">Questions</p>
+      <div class="grid grid-cols-4 gap-1" id="nav-grid">
+        {% for i in range(total) %}
+        <button class="btn btn-ghost btn-xs font-semibold text-[11px] nav-dot" id="nav-{{ i }}" onclick="jumpTo({{ i }})">{{ i+1 }}</button>
+        {% endfor %}
+      </div>
     </div>
   </div>
 

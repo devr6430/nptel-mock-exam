@@ -62,8 +62,8 @@ function renderTimer(seconds) {
     String(h).padStart(1, "0") + ":" +
     String(m).padStart(2, "0") + ":" +
     String(s).padStart(2, "0");
-  timerEl.className = "timer" +
-    (seconds < 300 ? " danger" : seconds < 600 ? " warning" : "");
+  timerEl.className = "font-mono font-bold text-base" +
+    (seconds < 300 ? " timer-danger" : seconds < 600 ? " timer-warning" : "");
 }
 
 // ── Question Loading ──────────────────────────────────────────────────────────
@@ -71,13 +71,13 @@ async function loadQuestion(n) {
   currentIndex = n;
   qText.textContent = "Loading…";
   optionsGrid.innerHTML = "";
-  feedbackBox.style.display = "none";
-  btnNext.style.display = "none";
-  btnFinish.style.display = "none";
+  feedbackBox.classList.add("hidden");
+  btnNext.classList.add("hidden");
+  btnFinish.classList.add("hidden");
 
   // Update top bar
   qCurrent.textContent = n + 1;
-  progressBar.style.width = ((n / TOTAL) * 100) + "%";
+  progressBar.value = ((n / TOTAL) * 100);
   qNumberBadge.textContent = `Question ${n + 1} of ${TOTAL}`;
 
   // Update nav panel highlight
@@ -103,12 +103,12 @@ async function loadQuestion(n) {
 }
 
 const OPTION_LABELS = ["A", "B", "C", "D"];
-const SECTION_COLORS = { A: "q-tag-A", B: "q-tag-B", C: "q-tag-C" };
+const SECTION_COLORS = { A: "sec-A", B: "sec-B", C: "sec-C" };
 
 function renderQuestion(data) {
   // Meta tags
   qSectionTag.textContent = "Section " + data.section;
-  qSectionTag.className = "q-tag " + (SECTION_COLORS[data.section] || "");
+  qSectionTag.className = "badge badge-sm font-bold " + (SECTION_COLORS[data.section] || "");
   qWeekTag.textContent = "Week " + data.week;
   qTopicTag.textContent = data.topic;
 
@@ -178,12 +178,12 @@ async function submitAnswer(chosen, options) {
 }
 
 function showFeedback(result) {
-  feedbackBox.style.display = "block";
+  feedbackBox.classList.remove("hidden");
   if (result.isCorrect) {
-    feedbackBox.className = "feedback-box correct-fb";
+    feedbackBox.className = "alert alert-success mt-4";
     feedbackText.textContent = "✓ Correct!";
   } else {
-    feedbackBox.className = "feedback-box wrong-fb";
+    feedbackBox.className = "alert alert-error mt-4";
     feedbackText.textContent = "✗ Incorrect";
   }
   explanationText.textContent = result.explanation || "";
@@ -198,8 +198,8 @@ function updateNavDot(i, isCorrect) {
 
 function showNavigationButtons() {
   const isLast = currentIndex === TOTAL - 1;
-  btnNext.style.display = isLast ? "none" : "inline-flex";
-  btnFinish.style.display = isLast ? "inline-flex" : "none";
+  btnNext.classList.toggle("hidden", isLast);
+  btnFinish.classList.toggle("hidden", !isLast);
 }
 
 // ── Navigation ────────────────────────────────────────────────────────────────
@@ -216,7 +216,7 @@ function jumpTo(n) {
 // ── Keyboard shortcuts ────────────────────────────────────────────────────────
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight" || e.key === "Enter") {
-    if (btnNext.style.display !== "none") nextQuestion();
+    if (!btnNext.classList.contains("hidden")) nextQuestion();
   }
   const optMap = { "1": 0, "2": 1, "3": 2, "4": 3, "a": 0, "b": 1, "c": 2, "d": 3 };
   if (e.key in optMap && !(currentIndex in answered)) {

@@ -1,87 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="nord">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NPTEL Mock Exam — Joy of Computing Using Python</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="index-page">
+<body class="bg-base-200 min-h-screen">
 
-<header class="site-header">
-  <div class="container">
-    <div class="header-inner">
-      <div class="logo-block">
-        <span class="logo-badge">NPTEL</span>
-        <div>
-          <div class="header-title">Joy of Computing Using Python</div>
-          <div class="header-sub">noc26_cs84 &nbsp;|&nbsp; Mock Exam Series &nbsp;|&nbsp; Proctored Exam: Apr 19, 2026</div>
-        </div>
-      </div>
-    </div>
+<!-- Navbar -->
+<div class="navbar bg-base-100 shadow-md border-b-2 border-primary sticky top-0 z-50">
+  <div class="navbar-start">
+    <span class="badge badge-primary badge-lg font-bold tracking-wider">NPTEL</span>
   </div>
-</header>
+  <div class="navbar-center hidden sm:flex flex-col">
+    <span class="font-bold text-base">Joy of Computing Using Python</span>
+    <span class="text-xs text-base-content/60">noc26_cs84 | Mock Exam Series | Exam: Apr 19, 2026</span>
+  </div>
+  <div class="navbar-end">
+    <span class="text-xs text-base-content/50 hidden md:block">V3</span>
+  </div>
+</div>
 
-<main class="container py-4">
+<main class="max-w-6xl mx-auto px-4 py-6">
 
-  <div class="exam-info-strip mb-4">
-    <div class="info-pill"><span class="info-icon">📋</span> 50 Questions &nbsp;|&nbsp; 100 Marks</div>
-    <div class="info-pill"><span class="info-icon">⏱</span> 180 Minutes</div>
-    <div class="info-pill"><span class="info-icon">✅</span> Pass: 40/100</div>
-    <div class="info-pill"><span class="info-icon">🔀</span> Random shuffle from all 12 weeks</div>
+  <!-- Info strip -->
+  <div class="flex flex-wrap gap-2 mb-6">
+    <div class="badge badge-outline badge-lg gap-1">📋 50 Questions | 100 Marks</div>
+    <div class="badge badge-outline badge-lg gap-1">⏱ 180 Minutes</div>
+    <div class="badge badge-outline badge-lg gap-1">✅ Pass: 40/100</div>
+    <div class="badge badge-outline badge-lg gap-1">🔀 Shuffled from all 12 weeks</div>
   </div>
 
-  <h2 class="section-heading mb-3">Select a Mock Test</h2>
+  <h2 class="text-xl font-bold mb-4">Select a Mock Test</h2>
 
-  <div class="row g-3">
+  <!-- Test Cards Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
     {% for i in range(1, 11) %}
     {% set att = attempts.get(i) %}
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="test-card {{ 'card-attempted' if att else '' }}">
-        <div class="test-card-top">
-          <span class="test-num">Mock Test {{ i }}</span>
-          {% if att %}
-          <span class="test-badge attempt-badge {{ 'passed' if att.last_passed else 'failed' }}">
-            {{ att.last_score }}/100
-          </span>
-          {% else %}
-          <span class="test-badge">10A · 15B · 25C</span>
-          {% endif %}
+    <div class="card bg-base-100 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 border border-base-300 {{ 'border-primary' if att else '' }}">
+      <!-- Card header -->
+      <div class="bg-primary text-primary-content rounded-t-2xl px-4 py-3 flex justify-between items-start">
+        <span class="font-bold">Mock Test {{ i }}</span>
+        {% if att %}
+        <div class="badge {{ 'badge-success' if att.last_passed else 'badge-error' }} badge-sm font-bold">
+          {{ att.last_score }}/100
         </div>
-        <div class="test-card-body">
-          {% if att %}
-          <div class="attempt-info">
-            <div class="attempt-row">
-              <span class="att-label">Attempts:</span>
-              <span class="att-value">{{ att.count }}</span>
-            </div>
-            <div class="attempt-row">
-              <span class="att-label">Best Score:</span>
-              <span class="att-value att-best">{{ att.best_score }}/100</span>
-            </div>
-            <div class="attempt-row">
-              <span class="att-label">Last:</span>
-              <span class="att-value att-date">{{ att.last_date }}</span>
-            </div>
+        {% else %}
+        <div class="badge badge-ghost badge-sm text-primary-content/70">10A·15B·25C</div>
+        {% endif %}
+      </div>
+
+      <div class="card-body p-4 pt-3">
+        {% if att %}
+        <div class="space-y-1 text-sm">
+          <div class="flex justify-between">
+            <span class="text-base-content/60">Attempts</span>
+            <span class="font-semibold">{{ att.count }}</span>
           </div>
-          {% else %}
-          <div class="test-stats">
-            <span>50 Questions</span>
-            <span>100 Marks</span>
-            <span>3 hrs</span>
+          <div class="flex justify-between">
+            <span class="text-base-content/60">Best</span>
+            <span class="font-bold text-success">{{ att.best_score }}/100</span>
           </div>
-          <div class="test-weeks">Weeks 1–12 · All Topics</div>
-          {% endif %}
+          <div class="flex justify-between">
+            <span class="text-base-content/60">Last</span>
+            <span class="text-xs text-base-content/50">{{ att.last_date }}</span>
+          </div>
         </div>
-        <div class="test-card-footer">
-          <form method="POST" action="/start/{{ i }}" style="display:inline; flex:1">
-            <button type="submit" class="btn-start {{ 'btn-retake' if att else '' }}">
+        {% else %}
+        <div class="text-xs text-base-content/60 space-y-0.5">
+          <div>50 Questions · 100 Marks · 3 hrs</div>
+          <div>Weeks 1–12 · All Topics</div>
+        </div>
+        {% endif %}
+
+        <div class="card-actions mt-3 flex gap-2">
+          <form method="POST" action="/start/{{ i }}" class="flex-1">
+            <button type="submit" class="btn btn-primary btn-sm w-full {{ 'btn-secondary' if att else '' }}">
               {{ 'Retake' if att else 'Start Test' }}
             </button>
           </form>
           {% if att and att.count >= 2 %}
-          <a href="/history/{{ i }}" class="btn-history" title="View attempt history">📊</a>
+          <a href="/history/{{ i }}" class="btn btn-ghost btn-sm btn-square" title="History">📊</a>
           {% endif %}
         </div>
       </div>
@@ -89,19 +91,20 @@
     {% endfor %}
   </div>
 
-  <div class="instructions-box mt-5">
-    <h5>Exam Instructions</h5>
-    <ul>
-      <li>Each question has 4 options. Click your answer to see immediate feedback.</li>
-      <li>Green = correct, Red = incorrect (correct answer highlighted).</li>
-      <li>Timer counts down from 3 hours. Questions are randomly shuffled from all 12 weeks.</li>
-      <li>Your score appears at the end with a topic-wise breakdown.</li>
-      <li>To access on your phone: connect to the same WiFi and open <strong>http://&lt;laptop-IP&gt;:5000</strong></li>
-    </ul>
+  <!-- Instructions -->
+  <div class="card bg-base-100 shadow-sm mt-8 border border-base-300">
+    <div class="card-body">
+      <h3 class="card-title text-base">Exam Instructions</h3>
+      <ul class="list-disc list-inside text-sm text-base-content/70 space-y-1">
+        <li>Each question has 4 options. Click your answer to see immediate feedback.</li>
+        <li>Green = correct, Red = incorrect (correct answer always highlighted).</li>
+        <li>Timer counts down from 3 hours. Questions shuffled from all 12 weeks.</li>
+        <li>Full score breakdown + question-by-question review at the end.</li>
+        <li>Phone access: connect to same WiFi → open <kbd class="kbd kbd-sm">http://&lt;laptop-IP&gt;:5000</kbd></li>
+      </ul>
+    </div>
   </div>
 
 </main>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
