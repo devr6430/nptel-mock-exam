@@ -77,7 +77,7 @@ async function loadQuestion(n) {
 
   // Update top bar
   qCurrent.textContent = n + 1;
-  progressBar.value = ((n / TOTAL) * 100);
+  progressBar.style.width = ((n / TOTAL) * 100) + "%";
   qNumberBadge.textContent = `Question ${n + 1} of ${TOTAL}`;
 
   // Update nav panel highlight

@@ -1,235 +1,194 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="nord">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Results — Mock Test {{ test_id }}</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="bg-base-200 min-h-screen">
+<body>
 
-<!-- Navbar -->
-<div class="navbar bg-base-100 shadow-md border-b-2 border-primary sticky top-0 z-50">
-  <div class="navbar-start gap-2">
-    <span class="badge badge-primary font-bold">NPTEL</span>
-    <span class="font-bold text-sm">Mock Test {{ test_id }} — Results</span>
+<!-- Nav -->
+<nav class="gc" style="position:sticky;top:0;z-index:50;border-radius:0;border-top:0;border-left:0;border-right:0;border-bottom:2px solid rgba(0,255,133,0.3);padding:12px 16px;">
+  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span style="background:var(--neon);color:#0B0F1A;font-weight:900;font-size:10px;padding:4px 10px;border-radius:6px;letter-spacing:1px;">NPTEL</span>
+      <span style="font-weight:700;font-size:14px;">Mock Test {{ test_id }} — Results</span>
+    </div>
+    <a href="/" class="btn-ghost" style="padding:6px 14px;font-size:12px;">← All Tests</a>
   </div>
-  <div class="navbar-end">
-    <a href="/" class="btn btn-ghost btn-sm">← All Tests</a>
-  </div>
-</div>
+</nav>
 
-<main class="max-w-4xl mx-auto px-4 py-6 space-y-6">
+<main style="max-width:900px;margin:0 auto;padding:20px 16px;">
 
   <!-- Score Hero -->
-  <div class="card bg-base-100 shadow-md border border-base-300">
-    <div class="card-body">
-      <div class="flex flex-col md:flex-row items-center gap-6">
+  <div class="gc" style="padding:28px;margin-bottom:20px;">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:24px;justify-content:center;" class="stack-mobile">
 
-        <!-- Score circle -->
-        <div class="flex flex-col items-center">
-          <div class="radial-progress text-{{ 'success' if passed else 'error' }} border-4 border-base-300"
-               style="--value:{{ score }}; --size:9rem; --thickness:6px;" role="progressbar">
-            <span class="text-3xl font-extrabold">{{ score }}</span>
-          </div>
-          <div class="mt-2">
-            {% if passed %}
-            <div class="badge badge-success badge-lg font-bold gap-1">PASS ✓</div>
-            {% else %}
-            <div class="badge badge-error badge-lg font-bold gap-1">FAIL ✗</div>
-            {% endif %}
+      <!-- Score ring -->
+      <div style="text-align:center;">
+        <div class="score-ring {{ 'fail' if not passed else '' }}" style="--pct:{{ score }};margin:0 auto;">
+          <div class="score-ring-inner">
+            <span style="font-size:36px;font-weight:900;color:{{ 'var(--correct)' if passed else 'var(--wrong)' }};">{{ score }}</span>
+            <span style="font-size:13px;color:var(--text-muted);">/100</span>
           </div>
         </div>
-
-        <!-- Stats + comparison -->
-        <div class="flex-1 w-full">
-          <div class="stats stats-vertical sm:stats-horizontal shadow w-full bg-base-200">
-            <div class="stat place-items-center">
-              <div class="stat-value text-success">{{ correct }}</div>
-              <div class="stat-desc">Correct</div>
-            </div>
-            <div class="stat place-items-center">
-              <div class="stat-value text-error">{{ total - correct }}</div>
-              <div class="stat-desc">Wrong/Skip</div>
-            </div>
-            <div class="stat place-items-center">
-              <div class="stat-value">{{ answered }}</div>
-              <div class="stat-desc">Attempted</div>
-            </div>
-          </div>
-
-          <p class="text-sm text-base-content/70 mt-3">
-            <span class="font-bold">Attempt #{{ attempt_num }}</span> —
-            {% if passed %}
-            Congratulations! You scored {{ score }}/100 — above the passing mark of 40.
-            {% else %}
-            You scored {{ score }}/100. You need 40 to pass. Keep practising!
-            {% endif %}
-          </p>
-
-          <!-- Comparison with previous -->
-          {% if previous %}
-          <div class="bg-base-200 rounded-xl p-4 mt-3 border border-base-300">
-            <p class="text-xs font-bold uppercase tracking-wider text-base-content/50 mb-2">
-              vs Previous Attempt (#{{ previous.attempt }})
-            </p>
-            {% set diff = score - previous.score %}
-            <div class="flex flex-wrap gap-3">
-              <div class="badge {{ 'badge-success' if diff > 0 else ('badge-error' if diff < 0 else 'badge-ghost') }} badge-lg gap-1">
-                Score: {{ previous.score }} → {{ score }}
-                {% if diff > 0 %}(+{{ diff }} ↑){% elif diff < 0 %}({{ diff }} ↓){% else %}(=){% endif %}
-              </div>
-              {% for sec in ['A', 'B', 'C'] %}
-              {% set prev_sec = previous.sections.get(sec, {'correct': 0, 'total': 0}) %}
-              {% set curr_sec = sections[sec] %}
-              {% set sdiff = curr_sec.correct - prev_sec.correct %}
-              <div class="badge badge-outline badge-sm gap-1">
-                {{ sec }}: {{ prev_sec.correct }}→{{ curr_sec.correct }}
-                {% if sdiff > 0 %}<span class="text-success">+{{ sdiff }}</span>{% elif sdiff < 0 %}<span class="text-error">{{ sdiff }}</span>{% endif %}
-              </div>
-              {% endfor %}
-            </div>
-          </div>
+        <div style="margin-top:10px;">
+          {% if passed %}
+          <span style="background:var(--correct-bg);color:var(--correct);padding:5px 18px;border-radius:var(--radius-pill);font-size:14px;font-weight:700;">PASS ✓</span>
+          {% else %}
+          <span style="background:var(--wrong-bg);color:var(--wrong);padding:5px 18px;border-radius:var(--radius-pill);font-size:14px;font-weight:700;">FAIL ✗</span>
           {% endif %}
         </div>
+      </div>
+
+      <!-- Stats -->
+      <div style="flex:1;min-width:250px;">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+          <div class="gc" style="text-align:center;padding:14px 8px;">
+            <div style="font-size:26px;font-weight:900;color:var(--correct);">{{ correct }}</div>
+            <div style="font-size:11px;color:var(--text-muted);">Correct</div>
+          </div>
+          <div class="gc" style="text-align:center;padding:14px 8px;">
+            <div style="font-size:26px;font-weight:900;color:var(--wrong);">{{ total - correct }}</div>
+            <div style="font-size:11px;color:var(--text-muted);">Wrong/Skip</div>
+          </div>
+          <div class="gc" style="text-align:center;padding:14px 8px;">
+            <div style="font-size:26px;font-weight:900;">{{ answered }}</div>
+            <div style="font-size:11px;color:var(--text-muted);">Attempted</div>
+          </div>
+        </div>
+
+        <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">
+          <strong style="color:var(--text);">Attempt #{{ attempt_num }}</strong> —
+          {% if passed %}You scored {{ score }}/100 — above the passing mark of 40.{% else %}You scored {{ score }}/100. Need 40 to pass.{% endif %}
+        </p>
+
+        <!-- Comparison -->
+        {% if previous %}
+        <div class="gc" style="padding:12px 14px;margin-top:12px;">
+          <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-dim);margin:0 0 8px;">vs Attempt #{{ previous.attempt }}</p>
+          {% set diff = score - previous.score %}
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="padding:4px 12px;border-radius:var(--radius-pill);font-size:12px;font-weight:700;
+              {{ 'background:var(--correct-bg);color:var(--correct);' if diff > 0 else ('background:var(--wrong-bg);color:var(--wrong);' if diff < 0 else 'background:var(--glass);color:var(--text-muted);') }}">
+              Score: {{ previous.score }}→{{ score }} {% if diff > 0 %}(+{{ diff }}↑){% elif diff < 0 %}({{ diff }}↓){% else %}(=){% endif %}
+            </span>
+            {% for sec in ['A','B','C'] %}
+            {% set ps = previous.sections.get(sec, {'correct':0,'total':0}) %}
+            {% set cs = sections[sec] %}
+            {% set sd = cs.correct - ps.correct %}
+            <span style="padding:3px 10px;border-radius:var(--radius-pill);font-size:11px;background:var(--glass);color:var(--text-muted);">
+              {{ sec }}: {{ ps.correct }}→{{ cs.correct }}{% if sd > 0 %} <span style="color:var(--correct);">+{{ sd }}</span>{% elif sd < 0 %} <span style="color:var(--wrong);">{{ sd }}</span>{% endif %}
+            </span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
       </div>
     </div>
   </div>
 
-  <!-- Section + Week breakdown -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <!-- Section + Week -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;" class="stack-mobile">
     <!-- Sections -->
-    <div class="card bg-base-100 shadow-sm border border-base-300">
-      <div class="card-body p-5">
-        <h3 class="font-bold text-sm mb-3">Section Breakdown</h3>
-        <div class="overflow-x-auto">
-          <table class="table table-sm">
-            <thead>
-              <tr><th>Section</th><th>Correct</th><th>Total</th><th>Score</th></tr>
-            </thead>
-            <tbody>
-              {% for sec, data in sections.items() %}
-              <tr>
-                <td><span class="badge badge-sm sec-{{ sec }}">{{ sec }}</span></td>
-                <td>{{ data.correct }}</td>
-                <td>{{ data.total }}</td>
-                <td>
-                  {% if data.total > 0 %}
-                  {% set pct = (data.correct / data.total * 100) | round(0) | int %}
-                  <div class="flex items-center gap-2">
-                    <progress class="progress {{ 'progress-success' if pct >= 50 else 'progress-error' }} w-16 h-2" value="{{ pct }}" max="100"></progress>
-                    <span class="text-xs">{{ pct }}%</span>
-                  </div>
-                  {% endif %}
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+    <div class="gc" style="padding:18px;">
+      <h3 style="font-size:13px;font-weight:700;margin:0 0 12px;">Section Breakdown</h3>
+      {% for sec, data in sections.items() %}
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span class="sec-{{ sec }}" style="padding:2px 10px;border-radius:6px;font-size:11px;font-weight:700;min-width:28px;text-align:center;">{{ sec }}</span>
+        <span style="font-size:13px;font-weight:600;min-width:40px;">{{ data.correct }}/{{ data.total }}</span>
+        {% if data.total > 0 %}
+        {% set pct = (data.correct / data.total * 100) | round(0) | int %}
+        <div style="flex:1;height:6px;border-radius:3px;background:var(--glass);overflow:hidden;">
+          <div style="height:100%;border-radius:3px;width:{{ pct }}%;background:{{ 'var(--correct)' if pct >= 50 else 'var(--wrong)' }};"></div>
         </div>
+        <span style="font-size:11px;color:var(--text-muted);min-width:30px;text-align:right;">{{ pct }}%</span>
+        {% endif %}
       </div>
+      {% endfor %}
     </div>
-
-    <!-- Week-wise -->
-    <div class="card bg-base-100 shadow-sm border border-base-300">
-      <div class="card-body p-5">
-        <h3 class="font-bold text-sm mb-3">Week-wise Performance</h3>
-        <div class="flex flex-wrap gap-2">
-          {% for week in range(1, 13) %}
-          {% set s = week_stats.get(week, {'correct': 0, 'total': 0}) %}
-          {% if s.total > 0 %}
-          {% set pct = (s.correct / s.total * 100) | round(0) | int %}
-          <div class="badge {{ 'badge-success' if pct >= 50 else 'badge-error' }} badge-outline gap-1 py-3">
-            <span class="font-bold">W{{ week }}</span> {{ s.correct }}/{{ s.total }}
-          </div>
-          {% endif %}
-          {% endfor %}
-        </div>
+    <!-- Weeks -->
+    <div class="gc" style="padding:18px;">
+      <h3 style="font-size:13px;font-weight:700;margin:0 0 12px;">Week Performance</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        {% for week in range(1, 13) %}
+        {% set s = week_stats.get(week, {'correct':0,'total':0}) %}
+        {% if s.total > 0 %}
+        {% set pct = (s.correct / s.total * 100) | round(0) | int %}
+        <span style="padding:6px 12px;border-radius:10px;font-size:12px;font-weight:700;
+          {{ 'background:var(--correct-bg);color:var(--correct);border:1px solid rgba(0,255,133,0.2);' if pct >= 50 else 'background:var(--wrong-bg);color:var(--wrong);border:1px solid rgba(255,71,87,0.2);' }}">
+          W{{ week }} {{ s.correct }}/{{ s.total }}
+        </span>
+        {% endif %}
+        {% endfor %}
       </div>
     </div>
   </div>
 
   <!-- Weak topics -->
   {% if weak_weeks %}
-  <div class="card bg-base-100 shadow-sm border border-base-300">
-    <div class="card-body p-5">
-      <h3 class="font-bold text-sm mb-3">Focus Areas (below 50%)</h3>
-      {% set topic_map = {
-        1: "Scratch: Loops & Variables", 2: "Nested Loops & Pattern Printing",
-        3: "Python Lists", 4: "Magic Squares & Birthday Paradox",
-        5: "Dictionaries, Binary Search & Sorting", 6: "Recursion & Substitution Ciphers",
-        7: "Turtle Graphics, PIL & CSV", 8: "Tuples, Strings & Matplotlib",
-        9: "Graphs, Stylometry & Strings", 10: "Josephus Problem, NumPy & Matrices",
-        11: "Selenium, Datetime & Calendar", 12: "PageRank, Collatz & Directed Graphs"
-      } %}
-      <div class="space-y-2">
-        {% for w in weak_weeks %}
-        <div class="alert alert-warning py-2 text-sm">
-          <span class="font-bold">Week {{ w }}</span> — {{ topic_map.get(w, "Topic") }}
-        </div>
-        {% endfor %}
-      </div>
+  <div class="gc" style="padding:18px;margin-bottom:20px;">
+    <h3 style="font-size:13px;font-weight:700;margin:0 0 10px;">Focus Areas (below 50%)</h3>
+    {% set topic_map = {1:"Scratch",2:"Nested Loops",3:"Lists",4:"Magic Squares",5:"Dictionaries & Sorting",6:"Recursion & Ciphers",7:"Turtle & PIL",8:"Tuples & NLP",9:"Graphs & Strings",10:"NumPy & FLAMES",11:"Selenium & Calendar",12:"PageRank & Collatz"} %}
+    {% for w in weak_weeks %}
+    <div style="padding:8px 14px;border-radius:10px;background:rgba(255,221,0,0.08);border:1px solid rgba(255,221,0,0.2);margin-bottom:6px;font-size:13px;">
+      <strong style="color:var(--gold);">Week {{ w }}</strong> — <span style="color:var(--text-muted);">{{ topic_map.get(w, "") }}</span>
     </div>
+    {% endfor %}
   </div>
   {% endif %}
 
-  <!-- Question-by-question review -->
-  <div class="card bg-base-100 shadow-sm border border-base-300">
-    <div class="card-body p-5">
-      <div class="flex justify-between items-center mb-4">
-        <h3 class="font-bold text-sm">Question-by-Question Review</h3>
-        <button class="btn btn-ghost btn-xs" onclick="document.getElementById('review-list').classList.toggle('hidden')">
-          Show / Hide
-        </button>
-      </div>
-      <div id="review-list" class="space-y-4">
-        {% for r in review %}
-        <div class="border-l-4 {{ 'border-success' if r.is_correct else ('border-error' if r.chosen is not none else 'border-warning') }} bg-base-200 rounded-lg p-4">
-          <!-- Header -->
-          <div class="flex flex-wrap items-center gap-2 mb-2">
-            <span class="font-extrabold text-sm">Q{{ r.num }}</span>
-            <span class="badge badge-sm sec-{{ r.section }}">{{ r.section }}</span>
-            <span class="text-xs text-base-content/50">Week {{ r.week }} · {{ r.topic }}</span>
-            <span class="ml-auto badge badge-sm {{ 'badge-success' if r.is_correct else ('badge-error' if r.chosen is not none else 'badge-warning') }}">
-              {% if r.is_correct %}Correct{% elif r.chosen is not none %}Wrong{% else %}Skipped{% endif %}
-            </span>
-          </div>
-          <!-- Question -->
-          <p class="text-sm font-semibold leading-relaxed mb-3 whitespace-pre-wrap">{{ r.question }}</p>
-          <!-- Options -->
-          {% set labels = ['A', 'B', 'C', 'D'] %}
-          <div class="space-y-1.5 mb-3">
-            {% for opt in r.options %}
-            <div class="flex items-start gap-2 rounded-lg px-3 py-2 text-sm
-              {{ 'bg-success/15 border border-success/30 font-semibold' if loop.index0 == r.correct else '' }}
-              {{ 'bg-error/15 border border-error/30' if loop.index0 == r.chosen and not r.is_correct else '' }}
-              {{ 'bg-base-300/50' if loop.index0 != r.correct and (r.chosen is none or loop.index0 != r.chosen) else '' }}">
-              <span class="font-bold text-xs min-w-[18px]">{{ labels[loop.index0] }}</span>
-              <span class="flex-1">{{ opt }}</span>
-              {% if loop.index0 == r.correct %}<span class="font-bold text-success">✓</span>{% endif %}
-              {% if loop.index0 == r.chosen and not r.is_correct %}<span class="font-bold text-error">✗</span>{% endif %}
-            </div>
-            {% endfor %}
-          </div>
-          <!-- Explanation -->
-          {% if r.explanation %}
-          <div class="bg-base-100 rounded-lg p-3 border-l-3 border-info text-xs text-base-content/70 leading-relaxed">
-            <span class="font-bold text-base-content">Explanation:</span> {{ r.explanation }}
-          </div>
-          {% endif %}
+  <!-- Q-by-Q Review -->
+  <div class="gc" style="padding:18px;margin-bottom:20px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <h3 style="font-size:13px;font-weight:700;margin:0;">Question-by-Question Review</h3>
+      <button class="btn-ghost" style="padding:4px 12px;font-size:11px;" onclick="document.getElementById('review-list').classList.toggle('hidden')">Show / Hide</button>
+    </div>
+    <div id="review-list">
+      {% for r in review %}
+      <div style="border-left:4px solid {{ 'var(--correct)' if r.is_correct else ('var(--wrong)' if r.chosen is not none else 'var(--gold)') }};background:var(--glass);border-radius:0 var(--radius) var(--radius) 0;padding:16px;margin-bottom:12px;">
+        <!-- Header -->
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:10px;">
+          <span style="font-weight:900;font-size:13px;">Q{{ r.num }}</span>
+          <span class="sec-{{ r.section }}" style="padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;">{{ r.section }}</span>
+          <span style="font-size:11px;color:var(--text-dim);">W{{ r.week }} · {{ r.topic }}</span>
+          <span style="margin-left:auto;padding:2px 10px;border-radius:var(--radius-pill);font-size:10px;font-weight:700;
+            {{ 'background:var(--correct-bg);color:var(--correct);' if r.is_correct else ('background:var(--wrong-bg);color:var(--wrong);' if r.chosen is not none else 'background:rgba(255,221,0,0.12);color:var(--gold);') }}">
+            {% if r.is_correct %}Correct{% elif r.chosen is not none %}Wrong{% else %}Skipped{% endif %}
+          </span>
+        </div>
+        <!-- Question -->
+        <p style="font-size:14px;font-weight:600;line-height:1.6;margin:0 0 12px;white-space:pre-wrap;">{{ r.question }}</p>
+        <!-- Options -->
+        {% set labels = ['A','B','C','D'] %}
+        {% for opt in r.options %}
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 12px;border-radius:8px;margin-bottom:4px;font-size:13px;line-height:1.5;
+          {{ 'background:var(--correct-bg);border:1px solid rgba(0,255,133,0.25);font-weight:600;' if loop.index0 == r.correct else '' }}
+          {{ 'background:var(--wrong-bg);border:1px solid rgba(255,71,87,0.25);' if loop.index0 == r.chosen and not r.is_correct else '' }}
+          {{ 'background:rgba(255,255,255,0.03);' if loop.index0 != r.correct and (r.chosen is none or loop.index0 != r.chosen) else '' }}">
+          <span style="font-weight:700;font-size:11px;min-width:18px;">{{ labels[loop.index0] }}</span>
+          <span style="flex:1;">{{ opt }}</span>
+          {% if loop.index0 == r.correct %}<span style="font-weight:800;color:var(--correct);">✓</span>{% endif %}
+          {% if loop.index0 == r.chosen and not r.is_correct %}<span style="font-weight:800;color:var(--wrong);">✗</span>{% endif %}
         </div>
         {% endfor %}
+        <!-- Explanation -->
+        {% if r.explanation %}
+        <div style="margin-top:10px;padding:10px 14px;border-radius:8px;background:rgba(0,116,255,0.08);border-left:3px solid var(--blue);font-size:12px;color:var(--text-muted);line-height:1.6;">
+          <strong style="color:var(--text);">Explanation:</strong> {{ r.explanation }}
+        </div>
+        {% endif %}
       </div>
+      {% endfor %}
     </div>
   </div>
 
   <!-- Actions -->
-  <div class="flex gap-3 flex-wrap">
-    <a href="/" class="btn btn-primary">Try Another Test</a>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;">
+    <a href="/" class="btn-neon" style="padding:12px 28px;">Try Another Test</a>
     {% if attempt_num >= 2 %}
-    <a href="/history/{{ test_id }}" class="btn btn-ghost">View All Attempts</a>
+    <a href="/history/{{ test_id }}" class="btn-ghost" style="padding:12px 28px;">View All Attempts</a>
     {% endif %}
   </div>
 

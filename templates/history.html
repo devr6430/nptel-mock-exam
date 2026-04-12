@@ -1,152 +1,135 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="nord">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Attempt History — Mock Test {{ test_id }}</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet">
+<title>History — Mock Test {{ test_id }}</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="bg-base-200 min-h-screen">
+<body>
 
-<div class="navbar bg-base-100 shadow-md border-b-2 border-primary sticky top-0 z-50">
-  <div class="navbar-start gap-2">
-    <span class="badge badge-primary font-bold">NPTEL</span>
-    <span class="font-bold text-sm">Mock Test {{ test_id }} — History</span>
+<nav class="gc" style="position:sticky;top:0;z-index:50;border-radius:0;border-top:0;border-left:0;border-right:0;border-bottom:2px solid rgba(0,255,133,0.3);padding:12px 16px;">
+  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span style="background:var(--neon);color:#0B0F1A;font-weight:900;font-size:10px;padding:4px 10px;border-radius:6px;">NPTEL</span>
+      <span style="font-weight:700;font-size:14px;">Test {{ test_id }} — History</span>
+    </div>
+    <a href="/" class="btn-ghost" style="padding:6px 14px;font-size:12px;">← All Tests</a>
   </div>
-  <div class="navbar-end">
-    <a href="/" class="btn btn-ghost btn-sm">← All Tests</a>
+</nav>
+
+<main style="max-width:900px;margin:0 auto;padding:20px 16px;">
+
+{% if attempts|length == 0 %}
+<div class="gc" style="padding:40px;text-align:center;color:var(--text-muted);">No attempts yet.</div>
+{% else %}
+
+  <!-- Score bars -->
+  <div class="gc" style="padding:20px;margin-bottom:16px;">
+    <h3 style="font-size:13px;font-weight:700;margin:0 0 16px;">Score Progression</h3>
+    <div style="display:flex;align-items:flex-end;gap:12px;height:140px;border-bottom:2px dashed rgba(255,71,87,0.3);padding-bottom:2px;">
+      {% for a in attempts %}
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;min-width:32px;">
+        <span style="font-size:12px;font-weight:900;margin-bottom:4px;">{{ a.score }}</span>
+        <div style="width:100%;max-width:44px;height:{{ a.score }}%;border-radius:8px 8px 0 0;
+          background:{{ 'linear-gradient(180deg,var(--correct),#16a34a)' if a.passed else 'linear-gradient(180deg,var(--wrong),#dc2626)' }};min-height:4px;"></div>
+        <span style="font-size:10px;color:var(--text-dim);margin-top:4px;font-weight:600;">#{{ a.attempt }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <p style="font-size:10px;color:var(--wrong);text-align:right;margin:4px 0 0;opacity:0.6;">Pass: 40</p>
   </div>
-</div>
 
-<main class="max-w-4xl mx-auto px-4 py-6 space-y-6">
-
-  {% if attempts|length == 0 %}
-  <div class="card bg-base-100 shadow-sm border border-base-300">
-    <div class="card-body text-center text-base-content/50 py-10">No attempts yet.</div>
-  </div>
-  {% else %}
-
-  <!-- Score progression -->
-  <div class="card bg-base-100 shadow-sm border border-base-300">
-    <div class="card-body p-5">
-      <h3 class="font-bold text-sm mb-4">Score Progression</h3>
-      <div class="flex items-end gap-3 h-40 border-b-2 border-dashed border-error/30 relative">
-        {% for a in attempts %}
-        <div class="flex-1 flex flex-col items-center relative min-w-[36px]">
-          <span class="text-xs font-extrabold absolute -top-5">{{ a.score }}</span>
-          <div class="w-full max-w-[48px] rounded-t-lg {{ 'bg-success' if a.passed else 'bg-error' }}"
-               style="height: {{ a.score }}%"></div>
-          <span class="text-[11px] text-base-content/50 font-semibold mt-1">#{{ a.attempt }}</span>
-        </div>
+  <!-- Table -->
+  <div class="gc" style="padding:20px;margin-bottom:16px;overflow-x:auto;">
+    <h3 style="font-size:13px;font-weight:700;margin:0 0 14px;">Comparison</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--glass-border);">
+          <th style="text-align:left;padding:8px;font-size:11px;color:var(--text-dim);text-transform:uppercase;">Metric</th>
+          {% for a in attempts %}
+          <th style="text-align:center;padding:8px;">
+            <div style="font-weight:700;">#{{ a.attempt }}</div>
+            <div style="font-size:10px;color:var(--text-dim);font-weight:400;">{{ a.date }}</div>
+          </th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--glass-border);">
+          <td style="padding:8px;font-weight:600;">Score</td>
+          {% for a in attempts %}
+          <td style="text-align:center;padding:8px;">
+            <span style="font-weight:800;font-size:15px;color:{{ 'var(--correct)' if a.passed else 'var(--wrong)' }};">{{ a.score }}</span>
+            {% if loop.index > 1 %}
+            {% set d = a.score - attempts[loop.index0-1].score %}
+            {% if d != 0 %}
+            <span style="font-size:10px;font-weight:700;padding:2px 6px;border-radius:var(--radius-pill);
+              {{ 'background:var(--correct-bg);color:var(--correct);' if d > 0 else 'background:var(--wrong-bg);color:var(--wrong);' }}">
+              {{ '+' if d > 0 else '' }}{{ d }}
+            </span>
+            {% endif %}
+            {% endif %}
+          </td>
+          {% endfor %}
+        </tr>
+        <tr style="border-bottom:1px solid var(--glass-border);">
+          <td style="padding:8px;">Correct</td>
+          {% for a in attempts %}<td style="text-align:center;padding:8px;">{{ a.correct }}/{{ a.total }}</td>{% endfor %}
+        </tr>
+        <tr style="border-bottom:1px solid var(--glass-border);">
+          <td style="padding:8px;">Result</td>
+          {% for a in attempts %}
+          <td style="text-align:center;padding:8px;">
+            <span style="padding:3px 10px;border-radius:var(--radius-pill);font-size:11px;font-weight:700;
+              {{ 'background:var(--correct-bg);color:var(--correct);' if a.passed else 'background:var(--wrong-bg);color:var(--wrong);' }}">
+              {{ 'PASS' if a.passed else 'FAIL' }}
+            </span>
+          </td>
+          {% endfor %}
+        </tr>
+        {% for sec in ['A','B','C'] %}
+        <tr style="border-bottom:1px solid var(--glass-border);">
+          <td style="padding:8px;"><span class="sec-{{ sec }}" style="padding:2px 8px;border-radius:6px;font-size:11px;font-weight:700;">{{ sec }}</span></td>
+          {% for a in attempts %}
+          {% set s = a.sections.get(sec, {'correct':0,'total':0}) %}
+          <td style="text-align:center;padding:8px;">{{ s.correct }}/{{ s.total }}</td>
+          {% endfor %}
+        </tr>
         {% endfor %}
-      </div>
-      <p class="text-[10px] text-error/60 text-right mt-1">Pass line: 40</p>
-    </div>
+      </tbody>
+    </table>
   </div>
 
-  <!-- Comparison table -->
-  <div class="card bg-base-100 shadow-sm border border-base-300">
-    <div class="card-body p-5">
-      <h3 class="font-bold text-sm mb-4">Attempt Comparison</h3>
-      <div class="overflow-x-auto">
-        <table class="table table-sm">
-          <thead>
-            <tr>
-              <th>Metric</th>
-              {% for a in attempts %}
-              <th class="text-center">
-                #{{ a.attempt }}<br>
-                <span class="text-[10px] font-normal text-base-content/50">{{ a.date }}</span>
-              </th>
-              {% endfor %}
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="font-bold">Score</td>
-              {% for a in attempts %}
-              <td class="text-center">
-                <span class="font-bold {{ 'text-success' if a.passed else 'text-error' }}">{{ a.score }}/100</span>
-                {% if loop.index > 1 %}
-                {% set prev = attempts[loop.index0 - 1] %}
-                {% set diff = a.score - prev.score %}
-                {% if diff != 0 %}
-                <span class="badge badge-xs {{ 'badge-success' if diff > 0 else 'badge-error' }}">
-                  {{ '+' if diff > 0 else '' }}{{ diff }}
-                </span>
-                {% endif %}
-                {% endif %}
-              </td>
-              {% endfor %}
-            </tr>
-            <tr>
-              <td>Correct</td>
-              {% for a in attempts %}<td class="text-center">{{ a.correct }}/{{ a.total }}</td>{% endfor %}
-            </tr>
-            <tr>
-              <td>Attempted</td>
-              {% for a in attempts %}<td class="text-center">{{ a.answered }}/{{ a.total }}</td>{% endfor %}
-            </tr>
-            <tr>
-              <td>Result</td>
-              {% for a in attempts %}
-              <td class="text-center">
-                <span class="badge badge-sm {{ 'badge-success' if a.passed else 'badge-error' }}">
-                  {{ 'PASS' if a.passed else 'FAIL' }}
-                </span>
-              </td>
-              {% endfor %}
-            </tr>
-            {% for sec in ['A', 'B', 'C'] %}
-            <tr>
-              <td><span class="badge badge-sm sec-{{ sec }}">{{ sec }}</span></td>
-              {% for a in attempts %}
-              {% set s = a.sections.get(sec, {'correct':0, 'total':0}) %}
-              <td class="text-center">{{ s.correct }}/{{ s.total }}</td>
-              {% endfor %}
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <!-- Week improvement -->
   {% if attempts|length >= 2 %}
-  <div class="card bg-base-100 shadow-sm border border-base-300">
-    <div class="card-body p-5">
-      <h3 class="font-bold text-sm mb-3">Week Improvement (First → Latest)</h3>
-      {% set first = attempts[0] %}
-      {% set last = attempts[-1] %}
-      <div class="flex flex-wrap gap-2">
-        {% for week in range(1, 13) %}
-        {% set f = first.week_stats.get(week|string, {'correct':0,'total':0}) %}
-        {% set l = last.week_stats.get(week|string, {'correct':0,'total':0}) %}
-        {% if f.total > 0 or l.total > 0 %}
-        {% set improved = l.correct > f.correct %}
-        {% set declined = l.correct < f.correct %}
-        <div class="badge {{ 'badge-success' if improved else ('badge-error' if declined else 'badge-ghost') }} badge-outline py-3 gap-1">
-          <span class="font-bold">W{{ week }}</span>
-          {{ f.correct }}→{{ l.correct }}
-          {% if improved %}↑{% elif declined %}↓{% endif %}
-        </div>
-        {% endif %}
-        {% endfor %}
-      </div>
+  <div class="gc" style="padding:18px;margin-bottom:20px;">
+    <h3 style="font-size:13px;font-weight:700;margin:0 0 10px;">Week Improvement (First → Latest)</h3>
+    {% set first = attempts[0] %}
+    {% set last = attempts[-1] %}
+    <div style="display:flex;flex-wrap:wrap;gap:6px;">
+      {% for week in range(1, 13) %}
+      {% set f = first.week_stats.get(week|string, {'correct':0,'total':0}) %}
+      {% set l = last.week_stats.get(week|string, {'correct':0,'total':0}) %}
+      {% if f.total > 0 or l.total > 0 %}
+      {% set up = l.correct > f.correct %}
+      {% set dn = l.correct < f.correct %}
+      <span style="padding:6px 12px;border-radius:10px;font-size:12px;font-weight:700;
+        {{ 'background:var(--correct-bg);color:var(--correct);border:1px solid rgba(0,255,133,0.2);' if up else ('background:var(--wrong-bg);color:var(--wrong);border:1px solid rgba(255,71,87,0.2);' if dn else 'background:var(--glass);color:var(--text-muted);border:1px solid var(--glass-border);') }}">
+        W{{ week }} {{ f.correct }}→{{ l.correct }}{% if up %}↑{% elif dn %}↓{% endif %}
+      </span>
+      {% endif %}
+      {% endfor %}
     </div>
   </div>
   {% endif %}
 
-  {% endif %}
+{% endif %}
 
-  <div class="flex gap-3">
+  <div style="display:flex;gap:12px;flex-wrap:wrap;">
     <form method="POST" action="/start/{{ test_id }}">
-      <button type="submit" class="btn btn-primary">Retake Test {{ test_id }}</button>
+      <button type="submit" class="btn-neon" style="padding:12px 28px;">Retake Test {{ test_id }}</button>
     </form>
-    <a href="/" class="btn btn-ghost">← All Tests</a>
+    <a href="/" class="btn-ghost" style="padding:12px 28px;">← All Tests</a>
   </div>
 
 </main>

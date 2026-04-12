@@ -1,62 +1,200 @@
-/* ── NPTEL Mock Exam — DaisyUI Nord Theme Overrides ────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════
+   NPTEL Mock Exam — Football Live Score Dark Theme
+   Deep navy + neon green + electric blue + glassmorphism
+   Ref: Dribbble Football Live Score Mobile App designs
+   ══════════════════════════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-/* Section badges */
-.sec-A { --tw-bg-opacity: 1; background-color: #dbeafe; color: #1e40af; }
-.sec-B { --tw-bg-opacity: 1; background-color: #fef3c7; color: #92400e; }
-.sec-C { --tw-bg-opacity: 1; background-color: #fce7f3; color: #9d174d; }
+:root {
+  --bg:          #0B0F1A;
+  --bg-surface:  #101829;
+  --glass:       rgba(255,255,255,0.06);
+  --glass-hover: rgba(255,255,255,0.10);
+  --glass-border:rgba(255,255,255,0.10);
 
-/* Timer states */
-.timer-warning { color: #f59e0b; }
-.timer-danger  { color: #ef4444; animation: pulse 1s infinite; }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+  --neon:        #00FF85;
+  --neon-dim:    rgba(0,255,133,0.15);
+  --neon-glow:   0 0 20px rgba(0,255,133,0.3);
+  --blue:        #0074FF;
+  --blue-dim:    rgba(0,116,255,0.15);
+  --purple:      #6A00FF;
+  --pink:        #FF2D95;
+  --gold:        #FFDD00;
+  --red:         #FF4757;
+  --red-dim:     rgba(255,71,87,0.15);
 
-/* Exam option buttons */
-.option-btn {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 14px 16px;
-  border: 2px solid oklch(var(--b3));
-  border-radius: var(--rounded-btn, 0.5rem);
-  background: oklch(var(--b1));
+  --correct:     #00FF85;
+  --correct-bg:  rgba(0,255,133,0.12);
+  --wrong:       #FF4757;
+  --wrong-bg:    rgba(255,71,87,0.12);
+
+  --text:        #F4F4F9;
+  --text-muted:  rgba(244,244,249,0.55);
+  --text-dim:    rgba(244,244,249,0.30);
+
+  --radius:      14px;
+  --radius-lg:   20px;
+  --radius-pill:  50px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Ambient glow blobs */
+body::before, body::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.12;
+  z-index: -1;
+  pointer-events: none;
+}
+body::before { width: 500px; height: 500px; background: var(--neon); top: -150px; right: -150px; }
+body::after  { width: 400px; height: 400px; background: var(--blue); bottom: -100px; left: -100px; }
+
+/* ── Glass card ────────────────────────────────────────────────────────── */
+.gc {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+}
+
+/* ── Neon button ───────────────────────────────────────────────────────── */
+.btn-neon {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 10px 24px;
+  background: var(--neon);
+  color: #0B0F1A;
+  font-weight: 700;
+  font-size: 13px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.25s;
+  text-decoration: none;
+  box-shadow: var(--neon-glow);
+}
+.btn-neon:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0,255,133,0.45); }
+.btn-neon:active { transform: scale(0.97); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 10px 24px;
+  background: var(--glass);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 13px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
   cursor: pointer;
   transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-ghost:hover { background: var(--glass-hover); color: var(--neon); }
+
+/* ── Section badges ────────────────────────────────────────────────────── */
+.sec-A { background: var(--neon-dim); color: var(--neon); }
+.sec-B { background: rgba(255,221,0,0.15); color: var(--gold); }
+.sec-C { background: rgba(255,45,149,0.15); color: var(--pink); }
+
+/* ── Timer ─────────────────────────────────────────────────────────────── */
+.timer-warning { color: var(--gold) !important; }
+.timer-danger  { color: var(--red) !important; animation: pulse 1s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* ── Option buttons ────────────────────────────────────────────────────── */
+.option-btn {
+  width: 100%;
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 15px 18px;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--glass-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.25s;
   text-align: left;
   font-size: 14px;
-  line-height: 1.5;
-  color: oklch(var(--bc));
+  line-height: 1.55;
+  color: var(--text);
 }
 .option-btn:hover:not(:disabled) {
-  border-color: oklch(var(--p));
-  background: oklch(var(--p) / 0.06);
+  border-color: var(--neon);
+  background: var(--neon-dim);
+  transform: translateX(4px);
+  box-shadow: var(--neon-glow);
 }
-.option-btn:disabled { cursor: not-allowed; opacity: 0.85; }
+.option-btn:disabled { cursor: not-allowed; opacity: 0.8; }
 .option-btn.correct {
-  border-color: oklch(var(--su));
-  background: oklch(var(--su) / 0.12);
+  border-color: var(--correct);
+  background: var(--correct-bg);
+  box-shadow: 0 0 20px rgba(0,255,133,0.2);
 }
 .option-btn.wrong {
-  border-color: oklch(var(--er));
-  background: oklch(var(--er) / 0.12);
+  border-color: var(--wrong);
+  background: var(--wrong-bg);
+  box-shadow: 0 0 20px rgba(255,71,87,0.2);
 }
 .option-label {
-  font-weight: 700;
-  font-size: 12px;
-  min-width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: oklch(var(--b3));
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-weight: 700; font-size: 12px;
+  min-width: 28px; height: 28px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  transition: all 0.2s;
+  transition: all 0.25s;
 }
-.option-btn.correct .option-label { background: oklch(var(--su)); color: oklch(var(--suc)); }
-.option-btn.wrong .option-label   { background: oklch(var(--er)); color: oklch(var(--erc)); }
+.option-btn.correct .option-label { background: var(--correct); color: #0B0F1A; }
+.option-btn.wrong .option-label   { background: var(--wrong); color: #fff; }
 
-/* Nav panel dots */
-.nav-dot.current  { background: oklch(var(--p)); color: oklch(var(--pc)); }
-.nav-dot.answered { background: oklch(var(--su)); color: oklch(var(--suc)); }
-.nav-dot.wrong-ans { background: oklch(var(--er)); color: oklch(var(--erc)); }
+/* ── Nav dots ──────────────────────────────────────────────────────────── */
+.nav-dot {
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: var(--text-muted) !important;
+  border-radius: 8px !important;
+}
+.nav-dot:hover     { background: var(--neon-dim) !important; color: var(--neon) !important; }
+.nav-dot.current   { background: var(--blue) !important; color: #fff !important; border-color: var(--blue) !important; }
+.nav-dot.answered  { background: var(--correct) !important; color: #0B0F1A !important; border-color: var(--correct) !important; }
+.nav-dot.wrong-ans { background: var(--wrong) !important; color: #fff !important; border-color: var(--wrong) !important; }
+
+/* ── Score ring ────────────────────────────────────────────────────────── */
+.score-ring {
+  width: 150px; height: 150px;
+  border-radius: 50%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  position: relative;
+  background: conic-gradient(var(--neon) calc(var(--pct) * 1%), var(--glass) 0);
+  padding: 6px;
+}
+.score-ring.fail { background: conic-gradient(var(--wrong) calc(var(--pct) * 1%), var(--glass) 0); }
+.score-ring-inner {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: var(--bg);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+
+/* ── Responsive helpers ────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .hide-mobile { display: none !important; }
+  .stack-mobile { flex-direction: column !important; }
+}
+@media (min-width: 641px) {
+  .hide-desktop { display: none !important; }
+}
