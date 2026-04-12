@@ -108,7 +108,7 @@ const SECTION_COLORS = { A: "sec-A", B: "sec-B", C: "sec-C" };
 function renderQuestion(data) {
   // Meta tags
   qSectionTag.textContent = "Section " + data.section;
-  qSectionTag.className = "badge badge-sm font-bold " + (SECTION_COLORS[data.section] || "");
+  qSectionTag.className = "badge " + (SECTION_COLORS[data.section] || "");
   qWeekTag.textContent = "Week " + data.week;
   qTopicTag.textContent = data.topic;
 
@@ -180,10 +180,10 @@ async function submitAnswer(chosen, options) {
 function showFeedback(result) {
   feedbackBox.classList.remove("hidden");
   if (result.isCorrect) {
-    feedbackBox.className = "alert alert-success mt-4";
+    feedbackBox.className = "feedback feedback-correct";
     feedbackText.textContent = "✓ Correct!";
   } else {
-    feedbackBox.className = "alert alert-error mt-4";
+    feedbackBox.className = "feedback feedback-wrong";
     feedbackText.textContent = "✗ Incorrect";
   }
   explanationText.textContent = result.explanation || "";

@@ -8,79 +8,65 @@
 </head>
 <body>
 
-<!-- Nav -->
-<nav class="gc" style="position:sticky;top:0;z-index:50;border-radius:0;border-top:0;border-left:0;border-right:0;border-bottom:2px solid rgba(0,255,133,0.3);padding:12px 16px;">
-  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
+<div class="navbar">
+  <div class="navbar-inner">
     <div style="display:flex;align-items:center;gap:10px;">
-      <span style="background:var(--neon);color:#0B0F1A;font-weight:900;font-size:10px;padding:4px 10px;border-radius:6px;letter-spacing:1px;">NPTEL</span>
+      <span style="background:var(--green);color:white;font-weight:700;font-size:10px;padding:4px 10px;border-radius:6px;letter-spacing:1px;">NPTEL</span>
       <span style="font-weight:700;font-size:14px;">Mock Test {{ test_id }} — Results</span>
     </div>
-    <a href="/" class="btn-ghost" style="padding:6px 14px;font-size:12px;">← All Tests</a>
+    <a href="/" class="btn btn-outline btn-sm">← All Tests</a>
   </div>
-</nav>
+</div>
 
-<main style="max-width:900px;margin:0 auto;padding:20px 16px;">
+<div class="container">
 
-  <!-- Score Hero -->
-  <div class="gc" style="padding:28px;margin-bottom:20px;">
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:24px;justify-content:center;" class="stack-mobile">
-
-      <!-- Score ring -->
+  <!-- Score -->
+  <div class="card" style="padding:28px;margin-bottom:18px;">
+    <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:center;" class="stack-mobile">
       <div style="text-align:center;">
-        <div class="score-ring {{ 'fail' if not passed else '' }}" style="--pct:{{ score }};margin:0 auto;">
-          <div class="score-ring-inner">
-            <span style="font-size:36px;font-weight:900;color:{{ 'var(--correct)' if passed else 'var(--wrong)' }};">{{ score }}</span>
-            <span style="font-size:13px;color:var(--text-muted);">/100</span>
-          </div>
+        <div class="score-circle {{ 'pass' if passed else 'fail' }}">
+          <span style="font-size:36px;font-weight:800;color:{{ 'var(--green)' if passed else 'var(--red)' }};">{{ score }}</span>
+          <span style="font-size:13px;color:var(--text-3);">/100</span>
         </div>
         <div style="margin-top:10px;">
-          {% if passed %}
-          <span style="background:var(--correct-bg);color:var(--correct);padding:5px 18px;border-radius:var(--radius-pill);font-size:14px;font-weight:700;">PASS ✓</span>
-          {% else %}
-          <span style="background:var(--wrong-bg);color:var(--wrong);padding:5px 18px;border-radius:var(--radius-pill);font-size:14px;font-weight:700;">FAIL ✗</span>
-          {% endif %}
+          <span class="badge {{ 'badge-green' if passed else 'badge-red' }}" style="font-size:14px;padding:4px 16px;">{{ 'PASS' if passed else 'FAIL' }}</span>
         </div>
       </div>
 
-      <!-- Stats -->
-      <div style="flex:1;min-width:250px;">
+      <div style="flex:1;min-width:240px;">
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
-          <div class="gc" style="text-align:center;padding:14px 8px;">
-            <div style="font-size:26px;font-weight:900;color:var(--correct);">{{ correct }}</div>
-            <div style="font-size:11px;color:var(--text-muted);">Correct</div>
+          <div class="card" style="text-align:center;padding:14px 8px;">
+            <div style="font-size:24px;font-weight:800;color:var(--green);">{{ correct }}</div>
+            <div style="font-size:11px;color:var(--text-3);">Correct</div>
           </div>
-          <div class="gc" style="text-align:center;padding:14px 8px;">
-            <div style="font-size:26px;font-weight:900;color:var(--wrong);">{{ total - correct }}</div>
-            <div style="font-size:11px;color:var(--text-muted);">Wrong/Skip</div>
+          <div class="card" style="text-align:center;padding:14px 8px;">
+            <div style="font-size:24px;font-weight:800;color:var(--red);">{{ total - correct }}</div>
+            <div style="font-size:11px;color:var(--text-3);">Wrong/Skip</div>
           </div>
-          <div class="gc" style="text-align:center;padding:14px 8px;">
-            <div style="font-size:26px;font-weight:900;">{{ answered }}</div>
-            <div style="font-size:11px;color:var(--text-muted);">Attempted</div>
+          <div class="card" style="text-align:center;padding:14px 8px;">
+            <div style="font-size:24px;font-weight:800;">{{ answered }}</div>
+            <div style="font-size:11px;color:var(--text-3);">Attempted</div>
           </div>
         </div>
 
-        <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">
-          <strong style="color:var(--text);">Attempt #{{ attempt_num }}</strong> —
-          {% if passed %}You scored {{ score }}/100 — above the passing mark of 40.{% else %}You scored {{ score }}/100. Need 40 to pass.{% endif %}
+        <p style="font-size:13px;color:var(--text-2);margin-top:12px;">
+          <strong>Attempt #{{ attempt_num }}</strong> —
+          {% if passed %}Scored {{ score }}/100, above the passing mark of 40.{% else %}Scored {{ score }}/100. Need 40 to pass.{% endif %}
         </p>
 
-        <!-- Comparison -->
         {% if previous %}
-        <div class="gc" style="padding:12px 14px;margin-top:12px;">
-          <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-dim);margin:0 0 8px;">vs Attempt #{{ previous.attempt }}</p>
+        <div class="card" style="padding:12px 14px;margin-top:10px;background:var(--bg);">
+          <p style="font-size:11px;font-weight:700;color:var(--text-3);margin-bottom:6px;">VS ATTEMPT #{{ previous.attempt }}</p>
           {% set diff = score - previous.score %}
-          <div style="display:flex;flex-wrap:wrap;gap:8px;">
-            <span style="padding:4px 12px;border-radius:var(--radius-pill);font-size:12px;font-weight:700;
-              {{ 'background:var(--correct-bg);color:var(--correct);' if diff > 0 else ('background:var(--wrong-bg);color:var(--wrong);' if diff < 0 else 'background:var(--glass);color:var(--text-muted);') }}">
-              Score: {{ previous.score }}→{{ score }} {% if diff > 0 %}(+{{ diff }}↑){% elif diff < 0 %}({{ diff }}↓){% else %}(=){% endif %}
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span class="badge {{ 'badge-green' if diff > 0 else ('badge-red' if diff < 0 else 'badge-gray') }}">
+              Score: {{ previous.score }}→{{ score }} {% if diff > 0 %}(+{{ diff }}){% elif diff < 0 %}({{ diff }}){% endif %}
             </span>
             {% for sec in ['A','B','C'] %}
             {% set ps = previous.sections.get(sec, {'correct':0,'total':0}) %}
             {% set cs = sections[sec] %}
             {% set sd = cs.correct - ps.correct %}
-            <span style="padding:3px 10px;border-radius:var(--radius-pill);font-size:11px;background:var(--glass);color:var(--text-muted);">
-              {{ sec }}: {{ ps.correct }}→{{ cs.correct }}{% if sd > 0 %} <span style="color:var(--correct);">+{{ sd }}</span>{% elif sd < 0 %} <span style="color:var(--wrong);">{{ sd }}</span>{% endif %}
-            </span>
+            <span class="badge badge-gray">{{ sec }}: {{ ps.correct }}→{{ cs.correct }}{% if sd > 0 %} <b style="color:var(--green)">+{{ sd }}</b>{% elif sd < 0 %} <b style="color:var(--red)">{{ sd }}</b>{% endif %}</span>
             {% endfor %}
           </div>
         </div>
@@ -89,109 +75,89 @@
     </div>
   </div>
 
-  <!-- Section + Week -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;" class="stack-mobile">
-    <!-- Sections -->
-    <div class="gc" style="padding:18px;">
-      <h3 style="font-size:13px;font-weight:700;margin:0 0 12px;">Section Breakdown</h3>
+  <!-- Sections + Weeks -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;" class="stack-mobile">
+    <div class="card" style="padding:18px;">
+      <h3 style="font-size:14px;font-weight:700;margin-bottom:12px;">Sections</h3>
       {% for sec, data in sections.items() %}
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-        <span class="sec-{{ sec }}" style="padding:2px 10px;border-radius:6px;font-size:11px;font-weight:700;min-width:28px;text-align:center;">{{ sec }}</span>
-        <span style="font-size:13px;font-weight:600;min-width:40px;">{{ data.correct }}/{{ data.total }}</span>
+        <span class="badge sec-{{ sec }}" style="min-width:26px;justify-content:center;">{{ sec }}</span>
+        <span style="font-size:13px;font-weight:600;min-width:38px;">{{ data.correct }}/{{ data.total }}</span>
         {% if data.total > 0 %}
         {% set pct = (data.correct / data.total * 100) | round(0) | int %}
-        <div style="flex:1;height:6px;border-radius:3px;background:var(--glass);overflow:hidden;">
-          <div style="height:100%;border-radius:3px;width:{{ pct }}%;background:{{ 'var(--correct)' if pct >= 50 else 'var(--wrong)' }};"></div>
-        </div>
-        <span style="font-size:11px;color:var(--text-muted);min-width:30px;text-align:right;">{{ pct }}%</span>
+        <div class="bar-track"><div class="bar-fill {{ 'bar-green' if pct >= 50 else 'bar-red' }}" style="width:{{ pct }}%"></div></div>
+        <span style="font-size:11px;color:var(--text-3);min-width:28px;text-align:right;">{{ pct }}%</span>
         {% endif %}
       </div>
       {% endfor %}
     </div>
-    <!-- Weeks -->
-    <div class="gc" style="padding:18px;">
-      <h3 style="font-size:13px;font-weight:700;margin:0 0 12px;">Week Performance</h3>
+
+    <div class="card" style="padding:18px;">
+      <h3 style="font-size:14px;font-weight:700;margin-bottom:12px;">Weeks</h3>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
         {% for week in range(1, 13) %}
         {% set s = week_stats.get(week, {'correct':0,'total':0}) %}
         {% if s.total > 0 %}
         {% set pct = (s.correct / s.total * 100) | round(0) | int %}
-        <span style="padding:6px 12px;border-radius:10px;font-size:12px;font-weight:700;
-          {{ 'background:var(--correct-bg);color:var(--correct);border:1px solid rgba(0,255,133,0.2);' if pct >= 50 else 'background:var(--wrong-bg);color:var(--wrong);border:1px solid rgba(255,71,87,0.2);' }}">
-          W{{ week }} {{ s.correct }}/{{ s.total }}
-        </span>
+        <span class="badge {{ 'badge-green' if pct >= 50 else 'badge-red' }}" style="padding:5px 10px;">W{{ week }} {{ s.correct }}/{{ s.total }}</span>
         {% endif %}
         {% endfor %}
       </div>
     </div>
   </div>
 
-  <!-- Weak topics -->
   {% if weak_weeks %}
-  <div class="gc" style="padding:18px;margin-bottom:20px;">
-    <h3 style="font-size:13px;font-weight:700;margin:0 0 10px;">Focus Areas (below 50%)</h3>
-    {% set topic_map = {1:"Scratch",2:"Nested Loops",3:"Lists",4:"Magic Squares",5:"Dictionaries & Sorting",6:"Recursion & Ciphers",7:"Turtle & PIL",8:"Tuples & NLP",9:"Graphs & Strings",10:"NumPy & FLAMES",11:"Selenium & Calendar",12:"PageRank & Collatz"} %}
+  <div class="card" style="padding:18px;margin-bottom:18px;">
+    <h3 style="font-size:14px;font-weight:700;margin-bottom:10px;">Focus Areas</h3>
+    {% set topics = {1:"Scratch",2:"Nested Loops",3:"Lists",4:"Magic Squares",5:"Dictionaries & Sorting",6:"Recursion & Ciphers",7:"Turtle & PIL",8:"Tuples & NLP",9:"Graphs & Strings",10:"NumPy",11:"Selenium & Calendar",12:"PageRank & Collatz"} %}
     {% for w in weak_weeks %}
-    <div style="padding:8px 14px;border-radius:10px;background:rgba(255,221,0,0.08);border:1px solid rgba(255,221,0,0.2);margin-bottom:6px;font-size:13px;">
-      <strong style="color:var(--gold);">Week {{ w }}</strong> — <span style="color:var(--text-muted);">{{ topic_map.get(w, "") }}</span>
-    </div>
+    <div class="badge badge-orange" style="margin:0 4px 6px 0;padding:6px 12px;">Week {{ w }} — {{ topics.get(w, "") }}</div>
     {% endfor %}
   </div>
   {% endif %}
 
-  <!-- Q-by-Q Review -->
-  <div class="gc" style="padding:18px;margin-bottom:20px;">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-      <h3 style="font-size:13px;font-weight:700;margin:0;">Question-by-Question Review</h3>
-      <button class="btn-ghost" style="padding:4px 12px;font-size:11px;" onclick="document.getElementById('review-list').classList.toggle('hidden')">Show / Hide</button>
+  <!-- Review -->
+  <div class="card" style="padding:18px;margin-bottom:18px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <h3 style="font-size:14px;font-weight:700;margin:0;">Question Review</h3>
+      <button class="btn btn-outline btn-sm" onclick="document.getElementById('review-list').classList.toggle('hidden')">Show / Hide</button>
     </div>
-    <div id="review-list">
+    <div id="review-list" style="display:flex;flex-direction:column;gap:12px;">
       {% for r in review %}
-      <div style="border-left:4px solid {{ 'var(--correct)' if r.is_correct else ('var(--wrong)' if r.chosen is not none else 'var(--gold)') }};background:var(--glass);border-radius:0 var(--radius) var(--radius) 0;padding:16px;margin-bottom:12px;">
-        <!-- Header -->
-        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:10px;">
-          <span style="font-weight:900;font-size:13px;">Q{{ r.num }}</span>
-          <span class="sec-{{ r.section }}" style="padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;">{{ r.section }}</span>
-          <span style="font-size:11px;color:var(--text-dim);">W{{ r.week }} · {{ r.topic }}</span>
-          <span style="margin-left:auto;padding:2px 10px;border-radius:var(--radius-pill);font-size:10px;font-weight:700;
-            {{ 'background:var(--correct-bg);color:var(--correct);' if r.is_correct else ('background:var(--wrong-bg);color:var(--wrong);' if r.chosen is not none else 'background:rgba(255,221,0,0.12);color:var(--gold);') }}">
+      <div class="review-item {{ 'review-correct' if r.is_correct else ('review-wrong' if r.chosen is not none else 'review-skip') }}">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:8px;">
+          <strong style="font-size:13px;">Q{{ r.num }}</strong>
+          <span class="badge sec-{{ r.section }}" style="font-size:10px;">{{ r.section }}</span>
+          <span style="font-size:11px;color:var(--text-3);">W{{ r.week }} · {{ r.topic }}</span>
+          <span style="margin-left:auto;" class="badge {{ 'badge-green' if r.is_correct else ('badge-red' if r.chosen is not none else 'badge-orange') }}">
             {% if r.is_correct %}Correct{% elif r.chosen is not none %}Wrong{% else %}Skipped{% endif %}
           </span>
         </div>
-        <!-- Question -->
-        <p style="font-size:14px;font-weight:600;line-height:1.6;margin:0 0 12px;white-space:pre-wrap;">{{ r.question }}</p>
-        <!-- Options -->
+        <p style="font-size:14px;font-weight:600;line-height:1.6;margin-bottom:10px;white-space:pre-wrap;">{{ r.question }}</p>
         {% set labels = ['A','B','C','D'] %}
-        {% for opt in r.options %}
-        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 12px;border-radius:8px;margin-bottom:4px;font-size:13px;line-height:1.5;
-          {{ 'background:var(--correct-bg);border:1px solid rgba(0,255,133,0.25);font-weight:600;' if loop.index0 == r.correct else '' }}
-          {{ 'background:var(--wrong-bg);border:1px solid rgba(255,71,87,0.25);' if loop.index0 == r.chosen and not r.is_correct else '' }}
-          {{ 'background:rgba(255,255,255,0.03);' if loop.index0 != r.correct and (r.chosen is none or loop.index0 != r.chosen) else '' }}">
-          <span style="font-weight:700;font-size:11px;min-width:18px;">{{ labels[loop.index0] }}</span>
-          <span style="flex:1;">{{ opt }}</span>
-          {% if loop.index0 == r.correct %}<span style="font-weight:800;color:var(--correct);">✓</span>{% endif %}
-          {% if loop.index0 == r.chosen and not r.is_correct %}<span style="font-weight:800;color:var(--wrong);">✗</span>{% endif %}
+        <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:8px;">
+          {% for opt in r.options %}
+          <div class="review-opt {{ 'review-opt-correct' if loop.index0 == r.correct else '' }} {{ 'review-opt-wrong' if loop.index0 == r.chosen and not r.is_correct else '' }}">
+            <span style="font-weight:700;font-size:12px;min-width:16px;">{{ labels[loop.index0] }}</span>
+            <span style="flex:1;">{{ opt }}</span>
+            {% if loop.index0 == r.correct %}<b style="color:var(--green);">✓</b>{% endif %}
+            {% if loop.index0 == r.chosen and not r.is_correct %}<b style="color:var(--red);">✗</b>{% endif %}
+          </div>
+          {% endfor %}
         </div>
-        {% endfor %}
-        <!-- Explanation -->
         {% if r.explanation %}
-        <div style="margin-top:10px;padding:10px 14px;border-radius:8px;background:rgba(0,116,255,0.08);border-left:3px solid var(--blue);font-size:12px;color:var(--text-muted);line-height:1.6;">
-          <strong style="color:var(--text);">Explanation:</strong> {{ r.explanation }}
-        </div>
+        <div class="explanation-box"><strong>Explanation:</strong> {{ r.explanation }}</div>
         {% endif %}
       </div>
       {% endfor %}
     </div>
   </div>
 
-  <!-- Actions -->
-  <div style="display:flex;gap:12px;flex-wrap:wrap;">
-    <a href="/" class="btn-neon" style="padding:12px 28px;">Try Another Test</a>
-    {% if attempt_num >= 2 %}
-    <a href="/history/{{ test_id }}" class="btn-ghost" style="padding:12px 28px;">View All Attempts</a>
-    {% endif %}
+  <div style="display:flex;gap:10px;flex-wrap:wrap;">
+    <a href="/" class="btn btn-green">Try Another Test</a>
+    {% if attempt_num >= 2 %}<a href="/history/{{ test_id }}" class="btn btn-outline">All Attempts</a>{% endif %}
   </div>
 
-</main>
+</div>
 </body>
 </html>

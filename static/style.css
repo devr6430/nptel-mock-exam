@@ -1,200 +1,264 @@
-/* ══════════════════════════════════════════════════════════════════════════
-   NPTEL Mock Exam — Football Live Score Dark Theme
-   Deep navy + neon green + electric blue + glassmorphism
-   Ref: Dribbble Football Live Score Mobile App designs
-   ══════════════════════════════════════════════════════════════════════════ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg:          #0B0F1A;
-  --bg-surface:  #101829;
-  --glass:       rgba(255,255,255,0.06);
-  --glass-hover: rgba(255,255,255,0.10);
-  --glass-border:rgba(255,255,255,0.10);
-
-  --neon:        #00FF85;
-  --neon-dim:    rgba(0,255,133,0.15);
-  --neon-glow:   0 0 20px rgba(0,255,133,0.3);
-  --blue:        #0074FF;
-  --blue-dim:    rgba(0,116,255,0.15);
-  --purple:      #6A00FF;
-  --pink:        #FF2D95;
-  --gold:        #FFDD00;
-  --red:         #FF4757;
-  --red-dim:     rgba(255,71,87,0.15);
-
-  --correct:     #00FF85;
-  --correct-bg:  rgba(0,255,133,0.12);
-  --wrong:       #FF4757;
-  --wrong-bg:    rgba(255,71,87,0.12);
-
-  --text:        #F4F4F9;
-  --text-muted:  rgba(244,244,249,0.55);
-  --text-dim:    rgba(244,244,249,0.30);
-
-  --radius:      14px;
-  --radius-lg:   20px;
-  --radius-pill:  50px;
+  --white:    #FFFFFF;
+  --bg:       #F8F9FA;
+  --text:     #1A1A1A;
+  --text-2:   #4B5563;
+  --text-3:   #9CA3AF;
+  --border:   #E5E7EB;
+  --green:    #059669;
+  --green-light: #ECFDF5;
+  --blue:     #2563EB;
+  --blue-light: #EFF6FF;
+  --orange:   #EA580C;
+  --orange-light: #FFF7ED;
+  --red:      #DC2626;
+  --red-light: #FEF2F2;
+  --radius:   10px;
 }
 
-*, *::before, *::after { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
 body {
-  margin: 0;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
   font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
 }
 
-/* Ambient glow blobs */
-body::before, body::after {
-  content: '';
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.12;
-  z-index: -1;
-  pointer-events: none;
-}
-body::before { width: 500px; height: 500px; background: var(--neon); top: -150px; right: -150px; }
-body::after  { width: 400px; height: 400px; background: var(--blue); bottom: -100px; left: -100px; }
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-/* ── Glass card ────────────────────────────────────────────────────────── */
-.gc {
-  background: var(--glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-}
-
-/* ── Neon button ───────────────────────────────────────────────────────── */
-.btn-neon {
-  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  padding: 10px 24px;
-  background: var(--neon);
-  color: #0B0F1A;
-  font-weight: 700;
-  font-size: 13px;
-  border: none;
+/* ── Card ──────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  cursor: pointer;
-  transition: all 0.25s;
-  text-decoration: none;
-  box-shadow: var(--neon-glow);
 }
-.btn-neon:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0,255,133,0.45); }
-.btn-neon:active { transform: scale(0.97); }
 
-.btn-ghost {
+/* ── Buttons ───────────────────────────────────────────────────────────── */
+.btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  padding: 10px 24px;
-  background: var(--glass);
-  color: var(--text);
+  padding: 9px 20px;
+  font-size: 14px;
   font-weight: 600;
-  font-size: 13px;
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius);
+  border-radius: 8px;
+  border: none;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: opacity 0.15s;
   text-decoration: none;
+  line-height: 1.4;
 }
-.btn-ghost:hover { background: var(--glass-hover); color: var(--neon); }
+.btn:hover { opacity: 0.88; }
+.btn-green  { background: var(--green); color: white; }
+.btn-blue   { background: var(--blue); color: white; }
+.btn-orange { background: var(--orange); color: white; }
+.btn-outline {
+  background: var(--white);
+  color: var(--text-2);
+  border: 1px solid var(--border);
+}
+.btn-outline:hover { background: var(--bg); }
+.btn-sm { padding: 7px 14px; font-size: 13px; }
+.btn-full { width: 100%; }
 
-/* ── Section badges ────────────────────────────────────────────────────── */
-.sec-A { background: var(--neon-dim); color: var(--neon); }
-.sec-B { background: rgba(255,221,0,0.15); color: var(--gold); }
-.sec-C { background: rgba(255,45,149,0.15); color: var(--pink); }
+/* ── Badge ─────────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.badge-green { background: var(--green-light); color: var(--green); }
+.badge-blue  { background: var(--blue-light); color: var(--blue); }
+.badge-orange { background: var(--orange-light); color: var(--orange); }
+.badge-red   { background: var(--red-light); color: var(--red); }
+.badge-gray  { background: var(--bg); color: var(--text-3); }
 
-/* ── Timer ─────────────────────────────────────────────────────────────── */
-.timer-warning { color: var(--gold) !important; }
-.timer-danger  { color: var(--red) !important; animation: pulse 1s infinite; }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.sec-A { background: var(--blue-light); color: var(--blue); }
+.sec-B { background: var(--orange-light); color: var(--orange); }
+.sec-C { background: var(--green-light); color: var(--green); }
 
-/* ── Option buttons ────────────────────────────────────────────────────── */
+/* ── Navbar ─────────────────────────────────────────────────────────────── */
+.navbar {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+}
+.navbar-inner {
+  max-width: 1000px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+.container { max-width: 1000px; margin: 0 auto; padding: 20px 16px; }
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 14px;
+}
+
+/* ── Test Cards ─────────────────────────────────────────────────────────── */
+.test-card { transition: box-shadow 0.2s; }
+.test-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.test-card-head {
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.test-card-body { padding: 12px 16px 16px; }
+
+/* ── Exam Page ─────────────────────────────────────────────────────────── */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.progress-track {
+  height: 4px; border-radius: 2px;
+  background: var(--border); overflow: hidden;
+}
+.progress-fill {
+  height: 100%; border-radius: 2px;
+  background: var(--green);
+  transition: width 0.4s;
+}
+.timer { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 16px; }
+.timer-warning { color: var(--orange); }
+.timer-danger { color: var(--red); animation: blink 1s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+/* ── Options ────────────────────────────────────────────────────────────── */
 .option-btn {
   width: 100%;
-  display: flex; align-items: flex-start; gap: 14px;
-  padding: 15px 18px;
-  background: var(--glass);
-  backdrop-filter: blur(10px);
-  border: 2px solid var(--glass-border);
-  border-radius: var(--radius);
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: border-color 0.15s, background 0.15s;
   text-align: left;
   font-size: 14px;
   line-height: 1.55;
   color: var(--text);
 }
 .option-btn:hover:not(:disabled) {
-  border-color: var(--neon);
-  background: var(--neon-dim);
-  transform: translateX(4px);
-  box-shadow: var(--neon-glow);
+  border-color: var(--green);
+  background: var(--green-light);
 }
-.option-btn:disabled { cursor: not-allowed; opacity: 0.8; }
+.option-btn:disabled { cursor: default; }
 .option-btn.correct {
-  border-color: var(--correct);
-  background: var(--correct-bg);
-  box-shadow: 0 0 20px rgba(0,255,133,0.2);
+  border-color: var(--green);
+  background: var(--green-light);
 }
 .option-btn.wrong {
-  border-color: var(--wrong);
-  background: var(--wrong-bg);
-  box-shadow: 0 0 20px rgba(255,71,87,0.2);
+  border-color: var(--red);
+  background: var(--red-light);
 }
 .option-label {
-  font-weight: 700; font-size: 12px;
-  min-width: 28px; height: 28px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.08);
+  font-weight: 600; font-size: 13px;
+  min-width: 26px; height: 26px;
+  border-radius: 6px;
+  background: var(--bg);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  transition: all 0.25s;
+  color: var(--text-2);
+  transition: all 0.15s;
 }
-.option-btn.correct .option-label { background: var(--correct); color: #0B0F1A; }
-.option-btn.wrong .option-label   { background: var(--wrong); color: #fff; }
+.option-btn.correct .option-label { background: var(--green); color: white; }
+.option-btn.wrong .option-label { background: var(--red); color: white; }
+
+/* ── Feedback ──────────────────────────────────────────────────────────── */
+.feedback {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid;
+  margin-top: 14px;
+}
+.feedback-correct { background: var(--green-light); border-color: var(--green); }
+.feedback-wrong { background: var(--red-light); border-color: var(--red); }
 
 /* ── Nav dots ──────────────────────────────────────────────────────────── */
 .nav-dot {
-  background: var(--glass) !important;
-  border: 1px solid var(--glass-border) !important;
-  color: var(--text-muted) !important;
-  border-radius: 8px !important;
+  width: 100%; aspect-ratio: 1;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  font-size: 11px; font-weight: 600;
+  color: var(--text-3);
+  cursor: pointer;
+  padding: 0; line-height: 1;
+  transition: all 0.15s;
 }
-.nav-dot:hover     { background: var(--neon-dim) !important; color: var(--neon) !important; }
-.nav-dot.current   { background: var(--blue) !important; color: #fff !important; border-color: var(--blue) !important; }
-.nav-dot.answered  { background: var(--correct) !important; color: #0B0F1A !important; border-color: var(--correct) !important; }
-.nav-dot.wrong-ans { background: var(--wrong) !important; color: #fff !important; border-color: var(--wrong) !important; }
+.nav-dot:hover { border-color: var(--green); color: var(--green); }
+.nav-dot.current { background: var(--blue); color: white; border-color: var(--blue); }
+.nav-dot.answered { background: var(--green); color: white; border-color: var(--green); }
+.nav-dot.wrong-ans { background: var(--red); color: white; border-color: var(--red); }
 
-/* ── Score ring ────────────────────────────────────────────────────────── */
-.score-ring {
-  width: 150px; height: 150px;
+/* ── Result Score ──────────────────────────────────────────────────────── */
+.score-circle {
+  width: 140px; height: 140px;
   border-radius: 50%;
+  border: 5px solid var(--border);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
-  position: relative;
-  background: conic-gradient(var(--neon) calc(var(--pct) * 1%), var(--glass) 0);
-  padding: 6px;
+  margin: 0 auto;
 }
-.score-ring.fail { background: conic-gradient(var(--wrong) calc(var(--pct) * 1%), var(--glass) 0); }
-.score-ring-inner {
-  width: 100%; height: 100%;
-  border-radius: 50%;
+.score-circle.pass { border-color: var(--green); }
+.score-circle.fail { border-color: var(--red); }
+
+/* ── Bar ───────────────────────────────────────────────────────────────── */
+.bar-track { height: 6px; border-radius: 3px; background: var(--border); overflow: hidden; flex: 1; }
+.bar-fill { height: 100%; border-radius: 3px; }
+.bar-green { background: var(--green); }
+.bar-red { background: var(--red); }
+
+/* ── Review ─────────────────────────────────────────────────────────────── */
+.review-item {
+  border-left: 3px solid var(--border);
+  padding: 16px;
+  background: var(--white);
+  border-radius: 0 8px 8px 0;
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.review-correct { border-left-color: var(--green); }
+.review-wrong { border-left-color: var(--red); }
+.review-skip { border-left-color: var(--orange); }
+
+.review-opt {
+  display: flex; align-items: flex-start; gap: 8px;
+  padding: 7px 12px; border-radius: 6px;
+  font-size: 13px; line-height: 1.5;
   background: var(--bg);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
+}
+.review-opt-correct { background: var(--green-light); font-weight: 600; }
+.review-opt-wrong { background: var(--red-light); }
+
+.explanation-box {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: var(--blue-light);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 6px 6px 0;
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.6;
 }
 
-/* ── Responsive helpers ────────────────────────────────────────────────── */
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+.hidden { display: none !important; }
 @media (max-width: 640px) {
   .hide-mobile { display: none !important; }
   .stack-mobile { flex-direction: column !important; }
-}
-@media (min-width: 641px) {
-  .hide-desktop { display: none !important; }
 }
