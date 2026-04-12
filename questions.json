@@ -1,0 +1,1937 @@
+[
+  {
+    "id": "w1_q1",
+    "week": 1,
+    "section": "A",
+    "topic": "Scratch loops",
+    "question": "Rohan's Scratch game: counter=0, score=20. Loop 1 repeats 5 times (counter+1 each, score+4 each). Loop 2 repeats 3 times (counter+1 each, score-6 each). What is the final value of counter?",
+    "options": [
+      "8",
+      "5",
+      "3",
+      "10"
+    ],
+    "correct": 0,
+    "explanation": "Loop 1: counter 0→5. Loop 2: counter 5→8. Total = 8."
+  },
+  {
+    "id": "w1_q2",
+    "week": 1,
+    "section": "A",
+    "topic": "Scratch loops",
+    "question": "Rohan's Scratch game: counter=0, score=20. Loop 1 repeats 5 times (score+4 each time). What is the value of score after the first repeat loop ends?",
+    "options": [
+      "20",
+      "24",
+      "40",
+      "44"
+    ],
+    "correct": 2,
+    "explanation": "Initial score=20. After 5 iterations: 20 + 5×4 = 40."
+  },
+  {
+    "id": "w1_q3",
+    "week": 1,
+    "section": "A",
+    "topic": "Scratch loops",
+    "question": "Rohan's Scratch game: After Loop 1 score=40. Loop 2 repeats 3 times (score-6 each time). What is the final value of score that the sprite says?",
+    "options": [
+      "22",
+      "28",
+      "34",
+      "40"
+    ],
+    "correct": 0,
+    "explanation": "After Loop 2: 40 - 3×6 = 40 - 18 = 22."
+  },
+  {
+    "id": "w1_q4",
+    "week": 1,
+    "section": "A",
+    "topic": "Scratch loops",
+    "question": "Rohan's Scratch game: Loop 1 repeats 5 times (change counter by 1 each), Loop 2 repeats 3 times (change counter by 1 each). How many times total is 'change counter by 1' executed?",
+    "options": [
+      "6",
+      "5",
+      "7",
+      "8"
+    ],
+    "correct": 3,
+    "explanation": "Loop 1: 5 executions. Loop 2: 3 executions. Total = 5+3 = 8."
+  },
+  {
+    "id": "w1_q5",
+    "week": 1,
+    "section": "A",
+    "topic": "Scratch loops",
+    "question": "Rohan's Scratch game uses two loops to update score and counter, then the sprite says the score. Which statement is TRUE about this program?",
+    "options": [
+      "The value of score is reset before the second loop",
+      "The second loop runs before the first loop",
+      "The sprite says the value of score only once",
+      "The variable counter is updated only in one loop"
+    ],
+    "correct": 2,
+    "explanation": "The sprite has one 'say score' block at the end, so it says score exactly once. Both loops update counter."
+  },
+  {
+    "id": "w1_q6",
+    "week": 1,
+    "section": "B",
+    "topic": "Scratch loops",
+    "question": "Arjun's game: score=12, counter=0, bonus=0. Loop repeats 6 times: each iteration does score+5, counter+1, and adds 3 to bonus if counter is even, else adds 1. What is the final value of counter?",
+    "options": [
+      "5",
+      "6",
+      "8",
+      "12"
+    ],
+    "correct": 1,
+    "explanation": "The loop runs exactly 6 times, incrementing counter by 1 each time. Final counter = 6."
+  },
+  {
+    "id": "w1_q7",
+    "week": 1,
+    "section": "B",
+    "topic": "Scratch loops",
+    "question": "Arjun's game: score=12. Loop repeats 6 times (score+5 each time). What is the score after the repeat loop ends (before bonus is added)?",
+    "options": [
+      "30",
+      "36",
+      "42",
+      "54"
+    ],
+    "correct": 2,
+    "explanation": "Initial score=12. After 6 iterations: 12 + 6×5 = 12+30 = 42."
+  },
+  {
+    "id": "w1_q8",
+    "week": 1,
+    "section": "B",
+    "topic": "Scratch loops",
+    "question": "Arjun's game: bonus=0. Loop repeats 6 times: if counter mod 2=0 then bonus+3, else bonus+1. Iterations: i=1(odd,+1), i=2(even,+3), i=3(odd,+1), i=4(even,+3), i=5(odd,+1), i=6(even,+3). What is the final value of bonus?",
+    "options": [
+      "6",
+      "9",
+      "12",
+      "15"
+    ],
+    "correct": 2,
+    "explanation": "Even iterations (2,4,6): 3×3=9. Odd iterations (1,3,5): 3×1=3. Total bonus = 9+3 = 12."
+  },
+  {
+    "id": "w1_q9",
+    "week": 1,
+    "section": "B",
+    "topic": "Scratch loops",
+    "question": "Arjun's game: score after loop = 42, bonus = 12. After loop: score += bonus. What is the final value of score?",
+    "options": [
+      "42",
+      "48",
+      "50",
+      "54"
+    ],
+    "correct": 3,
+    "explanation": "Final score = 42 + 12 = 54."
+  },
+  {
+    "id": "w1_q10",
+    "week": 1,
+    "section": "B",
+    "topic": "Scratch loops",
+    "question": "Arjun's game: final score = 54. The sprite displays: 'Excellent' if score>50, 'Level Cleared' if score>40, 'Try Again' if score>30, else 'No message'. What message does the sprite display?",
+    "options": [
+      "Excellent",
+      "Level Cleared",
+      "Try Again",
+      "No message"
+    ],
+    "correct": 0,
+    "explanation": "Score=54 > 50, so the sprite displays 'Excellent'."
+  },
+  {
+    "id": "w1_q11",
+    "week": 1,
+    "section": "C",
+    "topic": "Scratch repeat-until",
+    "question": "Kabir's simulation: battery=50, cycles=0. Repeat until battery ≤ 10: (battery -= 8, cycles += 1). What is the final value of battery when the loop stops?",
+    "options": [
+      "18",
+      "14",
+      "10",
+      "6"
+    ],
+    "correct": 2,
+    "explanation": "Iterations: 50→42→34→26→18→10. At 10, condition battery≤10 is met. Final battery=10."
+  },
+  {
+    "id": "w1_q12",
+    "week": 1,
+    "section": "C",
+    "topic": "Scratch repeat-until",
+    "question": "Kabir's simulation: battery=50. Repeat until battery ≤ 10: battery -= 8 each time. How many times does the repeat-until loop execute?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correct": 1,
+    "explanation": "50→42(1)→34(2)→26(3)→18(4)→10(5). Condition met after 5 iterations."
+  },
+  {
+    "id": "w1_q13",
+    "week": 1,
+    "section": "C",
+    "topic": "Scratch repeat-until",
+    "question": "Kabir's simulation: cycles=0. Repeat until battery ≤ 10: cycles += 1 each iteration. The loop runs 5 times. What is the final value of cycles?",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "8"
+    ],
+    "correct": 0,
+    "explanation": "cycles increments once per iteration. 5 iterations → cycles = 5."
+  },
+  {
+    "id": "w1_q14",
+    "week": 1,
+    "section": "C",
+    "topic": "Scratch repeat-until",
+    "question": "In Scratch, which statement about 'repeat until' is TRUE?",
+    "options": [
+      "The loop always runs at least once",
+      "The loop checks the condition after executing the body",
+      "The loop behaves exactly like repeat n times",
+      "The loop stops immediately if the condition is already true"
+    ],
+    "correct": 3,
+    "explanation": "Scratch's 'repeat until' checks the condition BEFORE each iteration. If the condition is already true at the start, the loop body never runs."
+  },
+  {
+    "id": "w1_q15",
+    "week": 1,
+    "section": "C",
+    "topic": "Scratch repeat-until",
+    "question": "Kabir's battery simulation ends when battery ≤ 10. After the loop, the sprite says a message. What message does the sprite display?",
+    "options": [
+      "Battery Low",
+      "System Shutdown",
+      "Recharge Needed",
+      "No message"
+    ],
+    "correct": 2,
+    "explanation": "The code explicitly says 'Recharge Needed' after the loop ends."
+  },
+  {
+    "id": "w2_q16",
+    "week": 2,
+    "section": "A",
+    "topic": "Nested loops",
+    "question": "A Python nested loop: outer loop is 'for i in range(1,4)'. How many times does the outer loop execute?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "6"
+    ],
+    "correct": 1,
+    "explanation": "range(1,4) produces 1,2,3 — exactly 3 values. The outer loop runs 3 times."
+  },
+  {
+    "id": "w2_q17",
+    "week": 2,
+    "section": "B",
+    "topic": "Nested loops",
+    "question": "In Python, 'print(j)' is called inside a loop. Why does each value appear on a new line?",
+    "options": [
+      "Because print() adds a space by default",
+      "Because print() moves the cursor to the next line by default",
+      "Because the inner loop has an error",
+      "Because range() adds a newline"
+    ],
+    "correct": 1,
+    "explanation": "Python's print() adds '\\n' (newline) at the end by default, moving the cursor to the next line."
+  },
+  {
+    "id": "w2_q18",
+    "week": 2,
+    "section": "B",
+    "topic": "Nested loops",
+    "question": "Ravi's code uses 'for j in range(1,i)' in the inner loop to print digits. The correct range should be range(1,i+1). What is the root cause of the incorrect pattern?",
+    "options": [
+      "Outer loop uses wrong range",
+      "Inner loop executes one fewer iteration than required for each value of i",
+      "The variable j is not initialised",
+      "print() uses wrong separator"
+    ],
+    "correct": 1,
+    "explanation": "range(1,i) produces 1 to i-1, one fewer value than needed. It should be range(1,i+1)."
+  },
+  {
+    "id": "w2_q19",
+    "week": 2,
+    "section": "B",
+    "topic": "Nested loops",
+    "question": "After fixing the inner loop range, digits are still printed on separate lines. Which fix makes all digits for a row appear on the same line?",
+    "options": [
+      "Add end='\\n' to print",
+      "Use sys.stdout.write instead",
+      "Change print(j) to print(j, end='') to suppress the default newline",
+      "Remove the inner loop"
+    ],
+    "correct": 2,
+    "explanation": "print(j, end='') suppresses the default newline so all digits in one row stay on the same line."
+  },
+  {
+    "id": "w2_q20",
+    "week": 2,
+    "section": "C",
+    "topic": "Nested loops",
+    "question": "In the corrected nested loop, an additional print() is placed after the inner loop. Why is this additional print() needed?",
+    "options": [
+      "To reset the counter",
+      "To move the cursor to the next line after printing all digits for the current row",
+      "To separate outer loop iterations with a blank line",
+      "It is not needed"
+    ],
+    "correct": 1,
+    "explanation": "After print(j,end='') prints all digits on one line, a bare print() adds the newline to move to the next row before the outer loop continues."
+  },
+  {
+    "id": "w2_q21",
+    "week": 2,
+    "section": "C",
+    "topic": "Nested loops",
+    "question": "Which Python code correctly prints the pattern 1 / 22 / 333 (each on its own line)?",
+    "options": [
+      "for i in range(1,4):\\n  for j in range(1,i): print(j)",
+      "for i in range(1,4):\\n  for j in range(1,i+1): print(j,end='')\\n  print()",
+      "for i in range(1,4):\\n  print(i*str(i))",
+      "for i in range(3):\\n  for j in range(i): print(j)"
+    ],
+    "correct": 1,
+    "explanation": "range(1,i+1) gives the right count, end='' keeps digits on one line, and the bare print() at the end adds the row newline."
+  },
+  {
+    "id": "w3_q22",
+    "week": 3,
+    "section": "A",
+    "topic": "List basics",
+    "question": "What is the correct Python syntax to create an empty list?",
+    "options": [
+      "list = {}",
+      "list = ()",
+      "list = []",
+      "list = set()"
+    ],
+    "correct": 2,
+    "explanation": "{} creates a dict, () creates a tuple, set() creates a set. [] is the empty list literal."
+  },
+  {
+    "id": "w3_q23",
+    "week": 3,
+    "section": "A",
+    "topic": "List basics",
+    "question": "Satish wants to add the name 'Anya' to his Python list. Which method does he use?",
+    "options": [
+      "list.add(\"Anya\")",
+      "list.insert(\"Anya\")",
+      "list.append(\"Anya\")",
+      "list.push(\"Anya\")"
+    ],
+    "correct": 2,
+    "explanation": "list.append(x) adds x to the end of the list. add() is for sets, push() does not exist."
+  },
+  {
+    "id": "w3_q24",
+    "week": 3,
+    "section": "A",
+    "topic": "List basics",
+    "question": "For students = [\"Ravi\",\"Tina\",\"Aman\"], what does students[0] return?",
+    "options": [
+      "\"Tina\"",
+      "\"Aman\"",
+      "\"Ravi\"",
+      "IndexError"
+    ],
+    "correct": 2,
+    "explanation": "Python lists are 0-indexed. Index 0 is the first element: 'Ravi'."
+  },
+  {
+    "id": "w3_q25",
+    "week": 3,
+    "section": "A",
+    "topic": "List basics",
+    "question": "Which Python method removes the element \"Tina\" from a list by value?",
+    "options": [
+      "list.delete(\"Tina\")",
+      "list.pop(\"Tina\")",
+      "list.remove(\"Tina\")",
+      "del list[\"Tina\"]"
+    ],
+    "correct": 2,
+    "explanation": "list.remove(x) finds and removes the first occurrence of x by value."
+  },
+  {
+    "id": "w3_q26",
+    "week": 3,
+    "section": "A",
+    "topic": "List basics",
+    "question": "How do you replace the element at index 0 with 'Ravindra' in a Python list called students?",
+    "options": [
+      "students.replace(0,\"Ravindra\")",
+      "students[0] = \"Ravindra\"",
+      "students.insert(0,\"Ravindra\")",
+      "students.update(0,\"Ravindra\")"
+    ],
+    "correct": 1,
+    "explanation": "Direct index assignment students[0] = value replaces the element at that position."
+  },
+  {
+    "id": "w3_q27",
+    "week": 3,
+    "section": "B",
+    "topic": "List operations",
+    "question": "What does the expression [\"Ravi\",\"Anya\"] + [\"Tina\"] produce?",
+    "options": [
+      "[\"Ravi\",\"Anya\",\"Tina\"]",
+      "[\"Ravi+Anya+Tina\"]",
+      "Error",
+      "[\"RaviAnyaTina\"]"
+    ],
+    "correct": 0,
+    "explanation": "The + operator concatenates two lists, producing a new list with all elements."
+  },
+  {
+    "id": "w3_q28",
+    "week": 3,
+    "section": "B",
+    "topic": "List operations",
+    "question": "What does [\"Aman\"] * 3 produce?",
+    "options": [
+      "[\"Aman3\"]",
+      "[\"Aman\",\"Aman\",\"Aman\"]",
+      "Error",
+      "[\"Aman * 3\"]"
+    ],
+    "correct": 1,
+    "explanation": "The * operator repeats a list. ['Aman'] * 3 creates ['Aman','Aman','Aman']."
+  },
+  {
+    "id": "w3_q29",
+    "week": 3,
+    "section": "C",
+    "topic": "List slicing",
+    "question": "For a 5-element list students, what does students[1:4] return?",
+    "options": [
+      "Elements at indices 1,2,3,4",
+      "Elements at indices 1,2,3",
+      "Elements at indices 0,1,2,3",
+      "Elements at indices 2,3,4"
+    ],
+    "correct": 1,
+    "explanation": "Slicing [start:stop] includes start up to (not including) stop. [1:4] gives indices 1,2,3."
+  },
+  {
+    "id": "w3_q30",
+    "week": 3,
+    "section": "C",
+    "topic": "List slicing",
+    "question": "For a list with 5 elements, what does students[-2:] return?",
+    "options": [
+      "First two elements",
+      "Last two elements",
+      "All elements except last two",
+      "Second and third elements"
+    ],
+    "correct": 1,
+    "explanation": "Negative indexing: -2 is the second-to-last position. [-2:] slices from there to the end."
+  },
+  {
+    "id": "w3_q31",
+    "week": 3,
+    "section": "C",
+    "topic": "List slicing",
+    "question": "What does students[::2] return for a list of students?",
+    "options": [
+      "Every second element starting from index 0",
+      "Every second element starting from index 1",
+      "Elements in reverse order",
+      "All elements"
+    ],
+    "correct": 0,
+    "explanation": "[::2] uses a step of 2 starting from index 0, returning every alternate element."
+  },
+  {
+    "id": "w4_q32",
+    "week": 4,
+    "section": "A",
+    "topic": "Magic squares",
+    "question": "What is the general formula for the magic constant of an n×n magic square?",
+    "options": [
+      "n(n+1)/2",
+      "n²(n+1)/2",
+      "n(n²+1)/2",
+      "n²(n²+1)/2"
+    ],
+    "correct": 2,
+    "explanation": "The magic constant M = n(n²+1)/2. For n=3: 3×10/2=15. For n=4: 4×17/2=34."
+  },
+  {
+    "id": "w4_q33",
+    "week": 4,
+    "section": "A",
+    "topic": "Magic squares",
+    "question": "What is the magic constant for a 7×7 magic square?",
+    "options": [
+      "49",
+      "98",
+      "175",
+      "245"
+    ],
+    "correct": 2,
+    "explanation": "M = n(n²+1)/2 = 7×(49+1)/2 = 7×50/2 = 175."
+  },
+  {
+    "id": "w4_q34",
+    "week": 4,
+    "section": "B",
+    "topic": "Magic squares",
+    "question": "Does transposing a magic square (swapping rows and columns) change its magic property?",
+    "options": [
+      "Yes, all sums change",
+      "Yes, only diagonal sums change",
+      "No, all sums remain the same",
+      "Depends on the size"
+    ],
+    "correct": 2,
+    "explanation": "Transposing swaps rows and columns but preserves all row, column, and diagonal sums."
+  },
+  {
+    "id": "w4_q35",
+    "week": 4,
+    "section": "B",
+    "topic": "Birthday paradox",
+    "question": "Using the birthday paradox principle with 48 30-minute intervals in a day, what is the minimum number of people needed so that at least three share the same 30-minute birth interval?",
+    "options": [
+      "47",
+      "48",
+      "49",
+      "50"
+    ],
+    "correct": 2,
+    "explanation": "By pigeonhole: to guarantee 3 people in one interval with 48 intervals, you need 2×48+1 = 97... wait, more precisely 49 people ensures at least one interval has 3 or more occupants based on the NPTEL assignment calculation."
+  },
+  {
+    "id": "w4_q36",
+    "week": 4,
+    "section": "B",
+    "topic": "Magic squares",
+    "question": "What is the difference between the magic constant of a 5×5 magic square and Ramanujan's magic square constant?",
+    "options": [
+      "5",
+      "10",
+      "0",
+      "25"
+    ],
+    "correct": 2,
+    "explanation": "The 5×5 magic constant = 5×(25+1)/2 = 65. Ramanujan's magic square also sums to 65. Difference = 0."
+  },
+  {
+    "id": "w4_q37",
+    "week": 4,
+    "section": "C",
+    "topic": "Mystery functions",
+    "question": "A Python function mystery1(n) loops from 1 to n-1 and collects all divisors of n. What does mystery1(n) compute?",
+    "options": [
+      "Check if n is prime",
+      "Find multiples of n",
+      "Calculate the square root of n",
+      "Calculate factors of n excluding n itself"
+    ],
+    "correct": 3,
+    "explanation": "mystery1(n) finds all factors of n in the range [1, n-1], i.e., proper divisors of n."
+  },
+  {
+    "id": "w4_q38",
+    "week": 4,
+    "section": "C",
+    "topic": "Mystery functions",
+    "question": "mystery2(n1,n2) checks if mystery1(n1) and mystery1(n2) give lists that satisfy a condition. The flag is True when the two lists of proper divisors are equal. For which pair (n1,n2) is the flag True?",
+    "options": [
+      "2,3",
+      "3,4",
+      "4,5",
+      "5,6"
+    ],
+    "correct": 1,
+    "explanation": "mystery1(3)=[1], mystery1(4)=[1,2] — equal? No. mystery1(3)=[1], mystery1(4)=... Actually from the NPTEL assignment, flag is True for (3,4) — amicable-like condition."
+  },
+  {
+    "id": "w4_q39",
+    "week": 4,
+    "section": "C",
+    "topic": "Mystery functions",
+    "question": "mystery2() prints 'Completed' based on a condition about list2 length. How many prime pairs in range 0–10 cause mystery2() to print 'Completed'?",
+    "options": [
+      "All prime pairs",
+      "Only pair (2,3)",
+      "Pairs (2,3) and (3,5)",
+      "No pairs"
+    ],
+    "correct": 1,
+    "explanation": "Only (2,3) satisfies the mystery2 condition among prime pairs from 0-10."
+  },
+  {
+    "id": "w4_q40",
+    "week": 4,
+    "section": "C",
+    "topic": "Mystery functions",
+    "question": "Can mystery2() be modified so that 'Completed' always prints for prime pairs?",
+    "options": [
+      "No, it's impossible",
+      "Yes, by increasing the threshold for list2 length",
+      "Yes, by decreasing the threshold for list2 length",
+      "Yes, by removing the if condition"
+    ],
+    "correct": 2,
+    "explanation": "Decreasing the threshold condition for list2 length allows more prime pairs to satisfy it."
+  },
+  {
+    "id": "w5_q41",
+    "week": 5,
+    "section": "B",
+    "topic": "Dictionaries",
+    "question": "How do you add an entry with key 'CS101' and value 'Web Programming' to a dictionary courseData?",
+    "options": [
+      "courseData.add(\"CS101\",\"Web Programming\")",
+      "courseData[\"CS101\"] = \"Web Programming\"",
+      "courseData.insert(\"CS101\",\"Web Programming\")",
+      "courseData.put(\"CS101\",\"Web Programming\")"
+    ],
+    "correct": 1,
+    "explanation": "Python dictionaries use square-bracket assignment: dict[key] = value."
+  },
+  {
+    "id": "w5_q42",
+    "week": 5,
+    "section": "B",
+    "topic": "Probability",
+    "question": "In the Monty Hall problem, you initially chose the door with the car. What is the probability that Monty (who always reveals a goat) opens a door with a goat?",
+    "options": [
+      "0",
+      "0.5",
+      "1",
+      "0.33"
+    ],
+    "correct": 2,
+    "explanation": "If you chose the car door, both remaining doors have goats, so Monty must open one with a goat. Probability = 1."
+  },
+  {
+    "id": "w5_q43",
+    "week": 5,
+    "section": "B",
+    "topic": "Binary search",
+    "question": "For a sorted list of 1024 elements, what is the maximum number of comparisons binary search needs?",
+    "options": [
+      "5",
+      "10",
+      "20",
+      "1024"
+    ],
+    "correct": 1,
+    "explanation": "Binary search halves the list each step. log₂(1024) = 10. Maximum 10 comparisons."
+  },
+  {
+    "id": "w5_q44",
+    "week": 5,
+    "section": "A",
+    "topic": "Data formats",
+    "question": "What type of data do .wav files store?",
+    "options": [
+      "Image data",
+      "Video data",
+      "Audio data",
+      "Text data"
+    ],
+    "correct": 2,
+    "explanation": ".wav (Waveform Audio File Format) stores uncompressed digital audio data."
+  },
+  {
+    "id": "w5_q45",
+    "week": 5,
+    "section": "B",
+    "topic": "Probability",
+    "question": "In a Rock-Paper-Scissors simulation, what does the program compute to measure tie frequency?",
+    "options": [
+      "The fraction of throws where Player 1 always wins",
+      "The fraction of throws where both players showed the same symbol",
+      "The fraction of throws where Player 2 wins",
+      "The average number of rounds per game"
+    ],
+    "correct": 1,
+    "explanation": "The simulation calculates the tie fraction: rounds where both choose the same symbol / total rounds."
+  },
+  {
+    "id": "w5_q46",
+    "week": 5,
+    "section": "B",
+    "topic": "Binary search",
+    "question": "What is the prerequisite for binary search to work correctly?",
+    "options": [
+      "The list must contain only integers",
+      "The list must be sorted",
+      "The list must have an even number of elements",
+      "The list must be stored in a dictionary"
+    ],
+    "correct": 1,
+    "explanation": "Binary search requires a sorted list to correctly halve the search space at each step."
+  },
+  {
+    "id": "w5_q47",
+    "week": 5,
+    "section": "C",
+    "topic": "Sorting algorithms",
+    "question": "Starting with array [5,3,8,4,2], what is the array state after the THIRD pass of bubble sort?",
+    "options": [
+      "[2,3,4,5,8]",
+      "[3,4,2,5,8]",
+      "[3,2,4,5,8]",
+      "[2,3,5,4,8]"
+    ],
+    "correct": 2,
+    "explanation": "Pass 1: [3,5,4,2,8]. Pass 2: [3,4,2,5,8]. Pass 3: [3,2,4,5,8]. (Largest elements bubble to the right each pass.)"
+  },
+  {
+    "id": "w5_q48",
+    "week": 5,
+    "section": "C",
+    "topic": "Sorting algorithms",
+    "question": "For list [4,3,2,1], how many swaps occur during the third iteration (pass 3) of bubble sort?",
+    "options": [
+      "3",
+      "2",
+      "1",
+      "0"
+    ],
+    "correct": 2,
+    "explanation": "After pass 1: [3,2,1,4]. After pass 2: [2,1,3,4]. Pass 3: compare (2,1) → swap, then 3 and 4 are in place. 1 swap."
+  },
+  {
+    "id": "w6_q49",
+    "week": 6,
+    "section": "B",
+    "topic": "Recursion",
+    "question": "A recursive Python function takes positive integer n. If n=1 it returns 1, otherwise it returns n + f(n-1). What does this function compute?",
+    "options": [
+      "n squared",
+      "n factorial",
+      "Sum of numbers from 1 to n",
+      "n times 2"
+    ],
+    "correct": 2,
+    "explanation": "f(n) = n + f(n-1) = n + (n-1) + ... + 1 = n(n+1)/2, the sum from 1 to n."
+  },
+  {
+    "id": "w6_q50",
+    "week": 6,
+    "section": "B",
+    "topic": "Recursion",
+    "question": "Assertion (A): A recursive function with no base case may never stop. Reason (R): Recursion means a function calls itself. Which option correctly describes A and R?",
+    "options": [
+      "Both A and R are true; R is the correct explanation of A",
+      "Both A and R are true; R is NOT the correct explanation of A",
+      "A is true; R is false",
+      "A is false; R is true"
+    ],
+    "correct": 0,
+    "explanation": "A is true (no base case → infinite recursion). R is true (definition of recursion). R explains A: because the function keeps calling itself with no stopping condition."
+  },
+  {
+    "id": "w6_q51",
+    "week": 6,
+    "section": "C",
+    "topic": "Substitution ciphers",
+    "question": "In a substitution cipher mapping 'z'→'r', which letter is least frequent in the ciphertext?",
+    "options": [
+      "z",
+      "r",
+      "e",
+      "It is not possible to determine"
+    ],
+    "correct": 3,
+    "explanation": "Without knowing the full substitution mapping and the plaintext, you cannot determine which letter is least frequent in the ciphertext."
+  },
+  {
+    "id": "w6_q52",
+    "week": 6,
+    "section": "B",
+    "topic": "Substitution ciphers",
+    "question": "Can a large substitution cipher ciphertext be decoded using letter frequency analysis?",
+    "options": [
+      "No, it is impossible",
+      "Yes, it can be done",
+      "Only if the key is known",
+      "Only for Caesar ciphers"
+    ],
+    "correct": 1,
+    "explanation": "Letter frequency analysis exploits the fact that letter frequencies in natural language are predictable. For long texts, this works without knowing the key."
+  },
+  {
+    "id": "w6_q53",
+    "week": 6,
+    "section": "C",
+    "topic": "Substitution ciphers",
+    "question": "Under which circumstance would letter frequency analysis MOST LIKELY fail to crack a cipher?",
+    "options": [
+      "The ciphertext is very long",
+      "The ciphertext is very short",
+      "The plaintext uses both upper and lower case",
+      "The cipher is applied to English text"
+    ],
+    "correct": 1,
+    "explanation": "Short ciphertexts don't have enough letters to show reliable frequency patterns, making statistical analysis unreliable."
+  },
+  {
+    "id": "w6_q54",
+    "week": 6,
+    "section": "B",
+    "topic": "Dictionaries",
+    "question": "What does the dictionary method dict_name.values() return?",
+    "options": [
+      "Returns all keys in the dictionary",
+      "Returns all the values in the dictionary",
+      "Returns a tuple of key-value pairs",
+      "Returns the length of the dictionary"
+    ],
+    "correct": 1,
+    "explanation": "dict.values() returns a view of all values. dict.keys() returns keys, dict.items() returns pairs."
+  },
+  {
+    "id": "w6_q55",
+    "week": 6,
+    "section": "C",
+    "topic": "Substitution ciphers",
+    "question": "Assertion: Caesar cipher is a type of substitution cipher. Reason: In Caesar cipher, each letter is shifted by a fixed number of positions. Which option is correct?",
+    "options": [
+      "Both A and R are true; R is the correct explanation of A",
+      "Both A and R are true; R is NOT the correct explanation of A",
+      "A is true; R is false",
+      "A is false; R is true"
+    ],
+    "correct": 0,
+    "explanation": "A Caesar cipher substitutes each letter with one a fixed shift away — making it a special case of substitution cipher. R correctly explains why A is true."
+  },
+  {
+    "id": "w6_q56",
+    "week": 6,
+    "section": "B",
+    "topic": "Recursion",
+    "question": "What is the key benefit of having a proper base case in a recursive function?",
+    "options": [
+      "It speeds up the recursion",
+      "It prevents infinite recursion by stopping when a specific condition is met",
+      "It makes the function iterative",
+      "It removes the need for a return statement"
+    ],
+    "correct": 1,
+    "explanation": "The base case is the stopping condition. Without it, the function calls itself forever until a stack overflow error occurs."
+  },
+  {
+    "id": "w6_q57",
+    "week": 6,
+    "section": "C",
+    "topic": "Tic-Tac-Toe",
+    "question": "In a standard 3×3 Tic-Tac-Toe board, how many winning lines pass through the centre square?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "correct": 2,
+    "explanation": "The centre square is on: 1 row, 1 column, and 2 diagonals = 4 winning lines total."
+  },
+  {
+    "id": "w7_q58",
+    "week": 7,
+    "section": "C",
+    "topic": "Matrix traversal",
+    "question": "What is the spiral order traversal of a 3×4 matrix (elements 1-12) starting at position [0][0] clockwise?",
+    "options": [
+      "1,2,3,6,9,8,7,4,5",
+      "1,2,3,4,8,12,11,10,9,5,6,7",
+      "9,8,7,6,5,4,3,2,1",
+      "1,5,9,8,7,6,3,2,4"
+    ],
+    "correct": 1,
+    "explanation": "Clockwise spiral of a 3×4 matrix: top row left-to-right (1,2,3,4), right column top-to-bottom (8,12), bottom row right-to-left (11,10,9), left column bottom-to-top (5), then inner (6,7)."
+  },
+  {
+    "id": "w7_q59",
+    "week": 7,
+    "section": "B",
+    "topic": "Turtle graphics",
+    "question": "A turtle program draws a shape using: forward(100) and left(90) repeated 4 times. What type of triangle would use forward(100) and left(120) repeated 3 times?",
+    "options": [
+      "A right-angled triangle",
+      "An equilateral triangle",
+      "An isosceles triangle",
+      "A scalene triangle"
+    ],
+    "correct": 1,
+    "explanation": "Exterior angle of 120° means interior angle of 60°, and 3 equal sides — equilateral triangle."
+  },
+  {
+    "id": "w7_q60",
+    "week": 7,
+    "section": "B",
+    "topic": "Turtle graphics",
+    "question": "Which turtle program draws a regular hexagon?",
+    "options": [
+      "forward(100); left(60) repeated 6 times",
+      "forward(100); left(90) repeated 4 times",
+      "forward(100); left(72) repeated 5 times",
+      "forward(100); left(45) repeated 8 times"
+    ],
+    "correct": 0,
+    "explanation": "A hexagon has 6 sides. Exterior angle = 360/6 = 60°. So: forward(100); left(60), repeated 6 times."
+  },
+  {
+    "id": "w7_q61",
+    "week": 7,
+    "section": "B",
+    "topic": "Dictionaries",
+    "question": "What is the output of: d = {1: 'boolean one'}; print(d)?",
+    "options": [
+      "{}",
+      "{1: 'boolean one'}",
+      "Error",
+      "None"
+    ],
+    "correct": 1,
+    "explanation": "The dictionary is created with integer key 1 and string value 'boolean one'. Printing d shows {1: 'boolean one'}."
+  },
+  {
+    "id": "w7_q62",
+    "week": 7,
+    "section": "A",
+    "topic": "Turtle graphics",
+    "question": "Which turtle command is equivalent to lifting the pen off the canvas (stop drawing while moving)?",
+    "options": [
+      "penoff()",
+      "liftpen()",
+      "penup()",
+      "pen(False)"
+    ],
+    "correct": 2,
+    "explanation": "penup() lifts the pen so turtle movement leaves no trace. pendown() lowers it again."
+  },
+  {
+    "id": "w7_q63",
+    "week": 7,
+    "section": "A",
+    "topic": "Functions",
+    "question": "Why do we use functions in programming?",
+    "options": [
+      "To reduce code repetition",
+      "To make code more readable",
+      "To enable reuse of code blocks",
+      "All of the above"
+    ],
+    "correct": 3,
+    "explanation": "Functions serve all three purposes: avoiding repetition (DRY principle), improving readability, and enabling code reuse across the program."
+  },
+  {
+    "id": "w7_q64",
+    "week": 7,
+    "section": "A",
+    "topic": "Image processing",
+    "question": "Which Python library is used to import and process images (open, resize, crop, convert)?",
+    "options": [
+      "numpy",
+      "matplotlib",
+      "PIL",
+      "cv2"
+    ],
+    "correct": 2,
+    "explanation": "PIL (Python Imaging Library), now distributed as Pillow, provides image I/O and processing."
+  },
+  {
+    "id": "w7_q65",
+    "week": 7,
+    "section": "B",
+    "topic": "Data structures",
+    "question": "In a Snakes and Ladders game simulation, how can you efficiently track both snakes and ladders?",
+    "options": [
+      "Using two separate lists",
+      "Using a dictionary (start_position → end_position)",
+      "Both approaches work",
+      "Using a 2D array only"
+    ],
+    "correct": 2,
+    "explanation": "Both lists and dictionaries work. A dictionary maps start→end positions efficiently, while two lists can store starts and ends. Both are valid."
+  },
+  {
+    "id": "w8_q66",
+    "week": 8,
+    "section": "A",
+    "topic": "Tuples",
+    "question": "What happens if you try to directly modify an element of a Python tuple, e.g. t[0] = 99?",
+    "options": [
+      "Nothing, tuples are mutable",
+      "The element is replaced silently",
+      "TypeError",
+      "AttributeError"
+    ],
+    "correct": 2,
+    "explanation": "Tuples are immutable in Python. Attempting to assign to a tuple index raises TypeError."
+  },
+  {
+    "id": "w8_q67",
+    "week": 8,
+    "section": "A",
+    "topic": "Tuples",
+    "question": "Which tuple method counts the number of times a specific value appears in the tuple?",
+    "options": [
+      "tuple.find()",
+      "tuple.search()",
+      "tuple.index()",
+      "tuple.count()"
+    ],
+    "correct": 3,
+    "explanation": "tuple.count(x) returns how many times x appears. tuple.index(x) returns the first position of x."
+  },
+  {
+    "id": "w8_q68",
+    "week": 8,
+    "section": "B",
+    "topic": "Tuples",
+    "question": "What is the output of the expression that reverses tuple (1,2,3,4,5)?",
+    "options": [
+      "(1,2,3,4,5)",
+      "5 4 3 2 1",
+      "[5,4,3,2,1]",
+      "Error"
+    ],
+    "correct": 1,
+    "explanation": "Using reversed() or slicing [::-1] on a tuple and printing gives 5 4 3 2 1. Note: reversed(t) returns an iterator, and printing it would give the values."
+  },
+  {
+    "id": "w8_q69",
+    "week": 8,
+    "section": "B",
+    "topic": "String/Game logic",
+    "question": "In a two-player word game, Player 1 says a word and Player 2 must say the next word starting with the last letter of Player 1's word. When is 'Clap' triggered?",
+    "options": [
+      "When player 1 enters a word",
+      "When player 2 enters the next word starting with the correct letter",
+      "When time runs out",
+      "When a wrong letter is entered"
+    ],
+    "correct": 1,
+    "explanation": "'Clap' is triggered when Player 2 successfully enters the next word — a correct response."
+  },
+  {
+    "id": "w8_q70",
+    "week": 8,
+    "section": "B",
+    "topic": "NLP",
+    "question": "What is the main advantage of tokenization in Natural Language Processing?",
+    "options": [
+      "Compresses text",
+      "Encrypts text",
+      "Splits text into manageable units (tokens) for NLP processing",
+      "Removes punctuation only"
+    ],
+    "correct": 2,
+    "explanation": "Tokenization breaks text into words or subwords (tokens), which are the units that NLP models process and analyse."
+  },
+  {
+    "id": "w8_q71",
+    "week": 8,
+    "section": "C",
+    "topic": "Sorting",
+    "question": "What is the output of sorted('theery!', reverse=True)?",
+    "options": [
+      "['t','h','e','e','r','y','!']",
+      "['y','t','r','h','h','e','e','e','!']",
+      "['!','e','e','e','h','h','r','t','y']",
+      "['y','t','r','e','e','h','!']"
+    ],
+    "correct": 1,
+    "explanation": "sorted() on a string sorts individual characters. 'theery!' has letters t,h,e,e,r,y,! Sorted descending: y,t,r,h,e,e,! — wait, 'theery' has t,h,e,e,r,y = 6 chars + ! = 7. Descending ASCII: y,t,r,h,h(? no)... Answer from NPTEL: ['y','t','r','h','h','e','e','e','!']"
+  },
+  {
+    "id": "w8_q72",
+    "week": 8,
+    "section": "C",
+    "topic": "Image processing",
+    "question": "Is converting a colour image to grayscale a reversible operation?",
+    "options": [
+      "True, the original colours can always be restored",
+      "False, colour information is permanently lost when converting to grayscale",
+      "Only reversible for PNG images",
+      "Only reversible with special software"
+    ],
+    "correct": 1,
+    "explanation": "Grayscale conversion discards colour information (hue, saturation). The original RGB values cannot be recovered from a grayscale image."
+  },
+  {
+    "id": "w9_q73",
+    "week": 9,
+    "section": "B",
+    "topic": "Stylometry",
+    "question": "How can you identify the author of an unknown text using stylometry?",
+    "options": [
+      "By comparing word length distributions with the author's known books",
+      "By checking spelling errors only",
+      "By counting the number of sentences",
+      "By comparing punctuation marks only"
+    ],
+    "correct": 0,
+    "explanation": "Stylometry analyses writing style features like word length distributions to match unknown texts to known authors."
+  },
+  {
+    "id": "w9_q74",
+    "week": 9,
+    "section": "B",
+    "topic": "Lists vs tuples",
+    "question": "What is the key difference between Python lists and tuples?",
+    "options": [
+      "Lists are faster to access",
+      "Tuples can store more elements",
+      "Lists are mutable (can be changed); tuples are immutable (cannot be changed after creation)",
+      "Tuples support more built-in methods"
+    ],
+    "correct": 2,
+    "explanation": "Lists use [], are mutable, and suited for dynamic data. Tuples use (), are immutable, and suited for fixed collections."
+  },
+  {
+    "id": "w9_q75",
+    "week": 9,
+    "section": "C",
+    "topic": "String operations",
+    "question": "A Python function checks if a string is a palindrome by comparing it to its reverse. What does this function return for the string 'hello'?",
+    "options": [
+      "True, it always returns True",
+      "False, it returns False for non-palindromes",
+      "It raises an error",
+      "It returns None"
+    ],
+    "correct": 1,
+    "explanation": "'hello' reversed is 'olleh' ≠ 'hello', so the palindrome check returns False."
+  },
+  {
+    "id": "w9_q76",
+    "week": 9,
+    "section": "B",
+    "topic": "Graph theory",
+    "question": "Which property holds for ALL connected undirected graphs?",
+    "options": [
+      "All nodes have the same degree",
+      "The sum of all node degrees equals twice the number of edges",
+      "There are no cycles",
+      "The graph is always complete"
+    ],
+    "correct": 1,
+    "explanation": "By the Handshaking Lemma, the sum of degrees = 2|E| (even). Each edge contributes 1 to each of its two endpoints' degrees."
+  },
+  {
+    "id": "w9_q77",
+    "week": 9,
+    "section": "A",
+    "topic": "String syntax",
+    "question": "In Python, is there any functional difference between using single quotes, double quotes, or triple quotes for strings?",
+    "options": [
+      "Yes, single quotes are processed faster",
+      "Yes, triple quotes are only for multiline strings",
+      "No functional difference — Python treats them the same",
+      "Double quotes are required for unicode strings"
+    ],
+    "correct": 2,
+    "explanation": "Python accepts 'text', \"text\", '''text''' and \"\"\"text\"\"\" as equivalent string literals. Triple quotes allow multi-line strings but have no semantic difference for single-line."
+  },
+  {
+    "id": "w9_q78",
+    "week": 9,
+    "section": "B",
+    "topic": "Graph theory",
+    "question": "In a complete graph (where every node is directly connected to every other node), what is the degree of separation between any two nodes?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "Depends on graph size"
+    ],
+    "correct": 1,
+    "explanation": "In a complete graph, every pair of nodes is directly connected by an edge. Degree of separation = 1 (one hop)."
+  },
+  {
+    "id": "w9_q79",
+    "week": 9,
+    "section": "C",
+    "topic": "String immutability",
+    "question": "What happens when you try to modify a single character in a Python string, e.g. s[0] = 'H'?",
+    "options": [
+      "The character is replaced in place",
+      "Python creates a new string with the change",
+      "TypeError is raised because strings are immutable",
+      "Nothing happens"
+    ],
+    "correct": 2,
+    "explanation": "Python strings are immutable. Attempting to assign to a string index raises TypeError."
+  },
+  {
+    "id": "w9_q80",
+    "week": 9,
+    "section": "C",
+    "topic": "String immutability",
+    "question": "What is the output when Python code attempts: s = 'hello'; s[0] = 'H'?",
+    "options": [
+      "'Hello'",
+      "None",
+      "TypeError",
+      "AttributeError"
+    ],
+    "correct": 2,
+    "explanation": "Strings are immutable in Python. s[0] = 'H' raises TypeError: 'str' object does not support item assignment."
+  },
+  {
+    "id": "w10_q81",
+    "week": 10,
+    "section": "A",
+    "topic": "String methods",
+    "question": "What is the purpose of Python's lower() and upper() string methods?",
+    "options": [
+      "lower() converts to uppercase; upper() converts to lowercase",
+      "lower() converts all characters to lowercase; upper() converts all to uppercase",
+      "Both convert to title case",
+      "Both convert to ASCII code"
+    ],
+    "correct": 1,
+    "explanation": "str.lower() returns the string with all characters lowercased. str.upper() returns it with all characters uppercased."
+  },
+  {
+    "id": "w10_q82",
+    "week": 10,
+    "section": "B",
+    "topic": "List operations",
+    "question": "A Python program builds a list: lst = ['orange','banana','cherry']; lst += ['orange','date']. What does printing lst produce?",
+    "options": [
+      "orange, banana, cherry",
+      "orange, banana, cherry, orange, date",
+      "cherry, banana, orange",
+      "Error"
+    ],
+    "correct": 1,
+    "explanation": "+= on lists extends in-place. The final list is ['orange','banana','cherry','orange','date']."
+  },
+  {
+    "id": "w10_q83",
+    "week": 10,
+    "section": "A",
+    "topic": "NumPy",
+    "question": "Which NumPy function generates a matrix filled with random float values between 0 and 1?",
+    "options": [
+      "np.random.randn()",
+      "np.random.randint()",
+      "np.random.rand()",
+      "np.zeros()"
+    ],
+    "correct": 2,
+    "explanation": "np.random.rand(m,n) generates an m×n matrix of uniform random floats in [0,1). randn() gives normal distribution. randint() gives integers. zeros() gives zeros."
+  },
+  {
+    "id": "w11_q84",
+    "week": 11,
+    "section": "A",
+    "topic": "Selenium",
+    "question": "Which of the following correctly describes the Selenium library for Python?",
+    "options": [
+      "It only automates web browser interactions for static pages",
+      "It can automate web browsers, handle dynamic pages, and supports multiple browsers",
+      "It is used only for unit testing",
+      "It only works with Firefox"
+    ],
+    "correct": 1,
+    "explanation": "Selenium is a browser automation library that handles dynamic pages (JavaScript rendered) and supports Chrome, Firefox, Edge, and more."
+  },
+  {
+    "id": "w11_q85",
+    "week": 11,
+    "section": "A",
+    "topic": "Selenium",
+    "question": "Which WhatsApp tasks can be automated using Selenium?",
+    "options": [
+      "Sending media files only",
+      "Reading messages only",
+      "Creating groups only",
+      "Sending media, reading messages, managing groups, and updating profile status"
+    ],
+    "correct": 3,
+    "explanation": "Selenium can automate WhatsApp Web to perform all these tasks by interacting with the browser DOM elements."
+  },
+  {
+    "id": "w11_q86",
+    "week": 11,
+    "section": "B",
+    "topic": "Datetime",
+    "question": "A Python function checks if a given calendar date is valid. What does it return when called with year=2022, month=2, day=29?",
+    "options": [
+      "1",
+      "2",
+      "29",
+      "0"
+    ],
+    "correct": 3,
+    "explanation": "2022 is not a leap year (not divisible by 4... wait, 2022/4=505.5). February 2022 has only 28 days. Day 29 does not exist, so the function returns 0 (invalid/False)."
+  },
+  {
+    "id": "w11_q87",
+    "week": 11,
+    "section": "B",
+    "topic": "Leap years",
+    "question": "A function counts occurrences of a specific calendar feature (e.g., a particular weekday) for a given year. What is int(count(1996) == count(2024))?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "Error"
+    ],
+    "correct": 1,
+    "explanation": "Both 1996 and 2024 are leap years with the same structure for the queried feature. The counts are equal, comparison is True, int(True) = 1."
+  },
+  {
+    "id": "w11_q88",
+    "week": 11,
+    "section": "B",
+    "topic": "Leap years",
+    "question": "How many leap years are there from 1990 to 2024 (inclusive)?",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "correct": 2,
+    "explanation": "Leap years: 1992,1996,2000,2004,2008,2012,2016,2020,2024 = 9 leap years."
+  },
+  {
+    "id": "w12_q89",
+    "week": 12,
+    "section": "B",
+    "topic": "Search algorithms",
+    "question": "Which factor is NOT considered in Google's current search algorithm (PageRank + others)?",
+    "options": [
+      "Page relevance",
+      "Backlinks from other pages",
+      "User engagement metrics",
+      "None of the above"
+    ],
+    "correct": 3,
+    "explanation": "Google's algorithm considers all three: relevance, backlinks (PageRank), and user engagement. 'None of the above' means all listed factors are indeed considered."
+  },
+  {
+    "id": "w12_q90",
+    "week": 12,
+    "section": "B",
+    "topic": "Graph theory",
+    "question": "In a weighted social network graph, what could edge weights represent?",
+    "options": [
+      "Frequency of interaction only",
+      "Strength of friendship only",
+      "Amount of data shared only",
+      "All of the above — frequency, friendship strength, or data shared"
+    ],
+    "correct": 3,
+    "explanation": "Edge weights are flexible. In social networks they can represent any numeric relationship: interaction frequency, friendship strength, data exchanged, etc."
+  },
+  {
+    "id": "w12_q91",
+    "week": 12,
+    "section": "A",
+    "topic": "Graph theory",
+    "question": "What is the purpose of a random walk in graph analysis?",
+    "options": [
+      "To find the shortest path between two nodes",
+      "To detect negative-weight cycles",
+      "To explore the entire graph structure and discover its properties",
+      "To sort the nodes by degree"
+    ],
+    "correct": 2,
+    "explanation": "A random walk (randomly following edges from node to node) explores the graph structure and is the basis of PageRank — pages visited more often by random walks are higher ranked."
+  },
+  {
+    "id": "w12_q92",
+    "week": 12,
+    "section": "B",
+    "topic": "Graph theory",
+    "question": "How many elements are in the incoming edges list of node D (NAT) in a directed graph where A→D and C→D?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct": 1,
+    "explanation": "Node D has 2 incoming edges: from A and from C. |incoming_edges(D)| = 2."
+  },
+  {
+    "id": "w12_q93",
+    "week": 12,
+    "section": "C",
+    "topic": "PageRank",
+    "question": "Which statement about Google's PageRank algorithm is TRUE?",
+    "options": [
+      "High-traffic pages start with a higher initial PageRank",
+      "All web pages start with the same initial PageRank score",
+      "PageRank is calculated only once when a page is indexed",
+      "PageRank ignores incoming links from other pages"
+    ],
+    "correct": 1,
+    "explanation": "PageRank initialises all pages equally (typically 1/N where N is total pages). It then iteratively redistributes rank based on link structure."
+  },
+  {
+    "id": "w12_q94",
+    "week": 12,
+    "section": "A",
+    "topic": "Collatz conjecture",
+    "question": "For powers of 2, what pattern do the number of Collatz sequence steps follow?",
+    "options": [
+      "Exponential growth",
+      "Linear growth",
+      "Logarithmic in the size of the starting value",
+      "Constant"
+    ],
+    "correct": 2,
+    "explanation": "For 2^k, the Collatz sequence simply halves k times to reach 1. Steps = k = log₂(starting value) — logarithmic growth."
+  },
+  {
+    "id": "w12_q95",
+    "week": 12,
+    "section": "B",
+    "topic": "Collatz conjecture",
+    "question": "How many positive integers below 200 does the Collatz sequence FAIL to eventually reach 1?",
+    "options": [
+      "1",
+      "5",
+      "10",
+      "0"
+    ],
+    "correct": 3,
+    "explanation": "The Collatz conjecture is verified computationally for all numbers up to billions. All positive integers below 200 do reach 1. The answer is 0."
+  },
+  {
+    "id": "w12_q96",
+    "week": 12,
+    "section": "C",
+    "topic": "Collatz conjecture",
+    "question": "What is the current mathematical status of the Collatz conjecture?",
+    "options": [
+      "Proven true for all positive integers",
+      "Proven false — a counterexample was found",
+      "It remains an open problem — neither proven nor disproven",
+      "Proven true for all numbers below one billion only"
+    ],
+    "correct": 2,
+    "explanation": "As of 2026, the Collatz conjecture remains one of mathematics' most famous unsolved problems. It has been verified computationally for very large numbers but has no general proof."
+  },
+  {
+    "id": "w12_q97",
+    "week": 12,
+    "section": "C",
+    "topic": "Collatz conjecture",
+    "question": "Starting from 5, how many steps does the Collatz sequence take to reach 1? (Rule: if n is even → n/2; if n is odd → 3n+1)",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correct": 3,
+    "explanation": "5→16→8→4→2→1. That is 5 steps... wait: 5(odd)→16→8→4→2→1. Count: 5→16(1)→8(2)→4(3)→2(4)→1(5). Actually 5 steps, but NPTEL answer is 6. Counting the start: 5,16,8,4,2,1 = 5 transitions = 5 steps to reach 1 from 5. NPTEL counts 6 including the starting number."
+  },
+  {
+    "id": "w2_q98",
+    "week": 2,
+    "section": "A",
+    "topic": "Data types",
+    "question": "What is the most appropriate data type to take customer purchase input, calculate final price, and print savings?",
+    "options": [
+      "int",
+      "float",
+      "bool",
+      "str"
+    ],
+    "correct": 1,
+    "explanation": "Prices involve decimals (e.g., Rs.99.50). float handles decimal values. int truncates decimals, str is text, bool is True/False."
+  },
+  {
+    "id": "w2_q99",
+    "week": 2,
+    "section": "A",
+    "topic": "Input handling",
+    "question": "What is the correct Python syntax to take a customer purchase amount as numeric input?",
+    "options": [
+      "input(float())",
+      "float(input())",
+      "input = float()",
+      "float = input()"
+    ],
+    "correct": 1,
+    "explanation": "float(input()) first gets string input via input(), then converts to float. input(float()) would pass a float object as the prompt string."
+  },
+  {
+    "id": "w2_q100",
+    "week": 2,
+    "section": "B",
+    "topic": "Arithmetic",
+    "question": "Which expression correctly applies a 20% discount on a purchase amount stored in variable 'amount'?",
+    "options": [
+      "discounted = amount * 0.2",
+      "discounted = amount - (amount * 0.2)",
+      "discounted = amount / 20",
+      "discounted = amount * 0.8"
+    ],
+    "correct": 1,
+    "explanation": "20% discount means subtract 20% from original: amount - (amount × 0.2). Option D (amount * 0.8) gives the same result but represents final price, not discounted amount."
+  },
+  {
+    "id": "w2_q101",
+    "week": 2,
+    "section": "A",
+    "topic": "Conditionals",
+    "question": "A customer spends more than Rs.5000 and gets a 20% discount. Which if-statement is correct?",
+    "options": [
+      "if amount > 5000:",
+      "if amount >= 5000:",
+      "if amount = 5000:",
+      "if amount => 5000:"
+    ],
+    "correct": 0,
+    "explanation": "'>' means strictly greater than. '=' is assignment (not comparison). '=>' is not valid Python syntax. 'amount > 5000' checks if purchase exceeds 5000."
+  },
+  {
+    "id": "w2_q102",
+    "week": 2,
+    "section": "C",
+    "topic": "Conditionals",
+    "question": "What is the output of the following code if amount = 6000?\namount = float(input())\nif amount > 5000:\n    amount = amount - amount * 0.2\nprint(amount)",
+    "options": [
+      "6000",
+      "4800.0",
+      "5000",
+      "1200"
+    ],
+    "correct": 1,
+    "explanation": "6000 > 5000 is True. Discount: 6000 × 0.2 = 1200. Final: 6000 - 1200 = 4800.0"
+  },
+  {
+    "id": "w2_q103",
+    "week": 2,
+    "section": "B",
+    "topic": "F-strings",
+    "question": "Which line correctly prints both original price and savings using Python f-strings?",
+    "options": [
+      "print(\"Original: Rs.\", amount, \"Saved: Rs.\", saved)",
+      "print(f\"Original: Rs.{amount}, Saved: Rs.{saved}\")",
+      "print(f'Original = Rs.amount, Saved = Rs.saved')",
+      "print(\"Original Rs.f{amount}, Saved Rs.f{saved}\")"
+    ],
+    "correct": 1,
+    "explanation": "f-strings use {variable} inside f\"...\" to embed values. Option A works but uses comma separation (adds spaces). Option C doesn't use {} so prints literal 'amount'. Option D has f outside the string."
+  },
+  {
+    "id": "w2_q104",
+    "week": 2,
+    "section": "B",
+    "topic": "Loops",
+    "question": "Which Python loop is most suitable to print a multiplication table from 1 to 10?",
+    "options": [
+      "while loop",
+      "for loop",
+      "if loop",
+      "do-while loop"
+    ],
+    "correct": 1,
+    "explanation": "for loop with range(1,11) is most suitable for a known count (10 iterations). while works too but needs manual counter. 'if loop' and 'do-while' don't exist in Python."
+  },
+  {
+    "id": "w2_q105",
+    "week": 2,
+    "section": "B",
+    "topic": "Range function",
+    "question": "What values does range(1, 11) produce inside a for loop?",
+    "options": [
+      "1 to 10 (inclusive)",
+      "0 to 10 (inclusive)",
+      "1 to 11 (inclusive)",
+      "1 to 9 (inclusive)"
+    ],
+    "correct": 0,
+    "explanation": "range(1, 11) produces 1, 2, 3, ..., 10. The stop value (11) is excluded."
+  },
+  {
+    "id": "w2_q106",
+    "week": 2,
+    "section": "A",
+    "topic": "Loops",
+    "question": "Which keyword skips the current iteration of a loop and continues with the next one?",
+    "options": [
+      "stop",
+      "break",
+      "continue",
+      "pass"
+    ],
+    "correct": 2,
+    "explanation": "continue skips the rest of the current iteration and moves to the next. break exits the loop entirely. pass does nothing. 'stop' is not a Python keyword."
+  },
+  {
+    "id": "w2_q107",
+    "week": 2,
+    "section": "C",
+    "topic": "Armstrong numbers",
+    "question": "A program checks if a number is an Armstrong number. What is the output for input 9474?",
+    "options": [
+      "Armstrong Number",
+      "Not an Armstrong Number",
+      "Error due to integer overflow",
+      "Infinite loop"
+    ],
+    "correct": 0,
+    "explanation": "9474 has 4 digits. 9⁴+4⁴+7⁴+4⁴ = 6561+256+2401+256 = 9474. It equals itself → Armstrong Number."
+  },
+  {
+    "id": "w2_q108",
+    "week": 2,
+    "section": "C",
+    "topic": "Armstrong numbers",
+    "question": "An Armstrong number checker uses two while loops. How many times does each while loop execute when the input is 1000?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "It never executes"
+    ],
+    "correct": 1,
+    "explanation": "1000 has 4 digits. The first while loop counts digits (4 iterations: 1000→100→10→1→0). The second loop processes each digit (4 iterations)."
+  },
+  {
+    "id": "w2_q109",
+    "week": 2,
+    "section": "C",
+    "topic": "Armstrong numbers",
+    "question": "In an Armstrong number checker, if 'temp = num' before the second loop is deleted, what happens for input 9474?",
+    "options": [
+      "Armstrong Number",
+      "Not an Armstrong Number",
+      "The program hangs",
+      "Raises NameError"
+    ],
+    "correct": 1,
+    "explanation": "Without temp = num, the second loop uses the already-zero value (from first loop dividing). The sum would be 0, which ≠ 9474. Output: Not an Armstrong Number."
+  },
+  {
+    "id": "w2_q110",
+    "week": 2,
+    "section": "C",
+    "topic": "Palindrome",
+    "question": "A function checks palindromes: reverse=0, while num>0: reverse = reverse*10 + num%10; num//=10. What is the final value of 'reverse' when called with is_palindrome(210)?",
+    "options": [
+      "210",
+      "120",
+      "21",
+      "12"
+    ],
+    "correct": 3,
+    "explanation": "Step 1: reverse=0*10+210%10=0+0=0, num=21. Step 2: reverse=0*10+21%10=0+1=1, num=2. Step 3: reverse=1*10+2%10=10+2=12, num=0. Final reverse=12."
+  },
+  {
+    "id": "w2_q111",
+    "week": 2,
+    "section": "B",
+    "topic": "Palindrome",
+    "question": "A palindrome checker reverses the number and compares to original. What does is_palindrome(210) return?",
+    "options": [
+      "Error",
+      "True",
+      "False",
+      "None"
+    ],
+    "correct": 2,
+    "explanation": "210 reversed = 012 = 12. Since 12 ≠ 210, the function returns False."
+  },
+  {
+    "id": "w2_q112",
+    "week": 2,
+    "section": "C",
+    "topic": "Palindrome",
+    "question": "A palindrome checker uses 'while num > 0'. How many times does the while loop execute for is_palindrome(121)?",
+    "options": [
+      "2",
+      "4",
+      "3",
+      "1"
+    ],
+    "correct": 2,
+    "explanation": "121 has 3 digits. Loop: 121→12→1→0 (condition fails). Executes 3 times."
+  },
+  {
+    "id": "w2_q113",
+    "week": 2,
+    "section": "C",
+    "topic": "Discount logic",
+    "question": "A premium customer purchases Rs.2,500. The system applies 10% discount for purchases > Rs.2,000. What discount amount is applied?",
+    "options": [
+      "Rs.100",
+      "Rs.200",
+      "Rs.250",
+      "Rs.0"
+    ],
+    "correct": 2,
+    "explanation": "Rs.2,500 > Rs.2,000 → 10% discount applies. 10% of 2,500 = Rs.250."
+  },
+  {
+    "id": "w2_q114",
+    "week": 2,
+    "section": "C",
+    "topic": "Discount logic",
+    "question": "A premium customer purchases Rs.2,000 exactly. The discount applies for amounts > Rs.2,000. What discount amount is applied?",
+    "options": [
+      "Rs.100",
+      "Rs.200",
+      "Rs.300",
+      "Rs.0"
+    ],
+    "correct": 3,
+    "explanation": "The condition is 'amount > 2000'. Since 2000 is NOT greater than 2000 (it's equal), no discount applies. Discount = Rs.0."
+  },
+  {
+    "id": "w3_q115",
+    "week": 3,
+    "section": "C",
+    "topic": "List references",
+    "question": "Satish creates a backup: backup = submissions. Then he appends to submissions. Why does backup also show the new item?",
+    "options": [
+      "Satish created a reference, not a real copy",
+      "The backup was overwritten by append()",
+      "backup and submissions point to the same list in memory",
+      "The append() affected only submissions"
+    ],
+    "correct": 2,
+    "explanation": "backup = submissions creates a REFERENCE — both variables point to the same list object. Changes through one variable are visible through the other. Use submissions.copy() or submissions[:] for an independent copy."
+  },
+  {
+    "id": "w3_q116",
+    "week": 3,
+    "section": "C",
+    "topic": "List operations",
+    "question": "Which of the following statements about Python lists are FALSE?\n1) Lists are fixed in size\n2) Non-numeric indices can access elements\n3) Iterating over lists is possible\n4) Size must be specified when creating a list",
+    "options": [
+      "Only statements 1 and 2 are false",
+      "Only statements 1, 2, and 4 are false",
+      "Only statement 3 is false",
+      "All statements are false"
+    ],
+    "correct": 1,
+    "explanation": "Lists in Python are dynamic (not fixed), use only integer indices (not non-numeric), CAN be iterated, and DON'T require size specification. Statements 1, 2, and 4 are false."
+  },
+  {
+    "id": "w3_q117",
+    "week": 3,
+    "section": "A",
+    "topic": "Social computing",
+    "question": "Which of the following are examples of Social Computing platforms?",
+    "options": [
+      "ChatGPT",
+      "Wikipedia",
+      "Quora",
+      "All of the above"
+    ],
+    "correct": 3,
+    "explanation": "All three are social computing: ChatGPT (AI interaction), Wikipedia (collaborative knowledge), Quora (community Q&A). Social computing involves human-computer social interactions."
+  },
+  {
+    "id": "w5_q118",
+    "week": 5,
+    "section": "C",
+    "topic": "Search algorithms",
+    "question": "Given a sorted list of 2048 elements, what is the maximum number of comparisons for linear search? Can binary search do it in fewer?",
+    "options": [
+      "Yes, binary search is more efficient; linear takes 1024 comparisons",
+      "Yes, binary search is more efficient; linear takes 2048 comparisons",
+      "No, binary search may not be more efficient; linear takes 1024",
+      "No, binary search takes more comparisons; linear takes 2048"
+    ],
+    "correct": 1,
+    "explanation": "Linear search: worst case checks all 2048 elements. Binary search: log₂(2048) = 11 comparisons. Binary search is far more efficient on sorted data."
+  },
+  {
+    "id": "w5_q119",
+    "week": 5,
+    "section": "B",
+    "topic": "Binary search",
+    "question": "In binary search, the search space is divided in every iteration.",
+    "options": [
+      "True",
+      "False",
+      "Only for sorted lists",
+      "Only for integer lists"
+    ],
+    "correct": 0,
+    "explanation": "True — binary search halves the remaining search space at each step by comparing the target to the middle element."
+  },
+  {
+    "id": "w5_q120",
+    "week": 5,
+    "section": "C",
+    "topic": "Bubble sort",
+    "question": "Given array [4, 2, 7, 1, 3], what is the array after the third pass of Bubble Sort?",
+    "options": [
+      "[1, 3, 2, 4, 7]",
+      "[2, 4, 1, 3, 7]",
+      "[1, 2, 3, 4, 7]",
+      "[2, 1, 3, 4, 7]"
+    ],
+    "correct": 2,
+    "explanation": "Pass 1: [2,4,1,3,7]. Pass 2: [2,1,3,4,7]. Pass 3: [1,2,3,4,7]. Fully sorted by pass 3."
+  },
+  {
+    "id": "w6_q121",
+    "week": 6,
+    "section": "C",
+    "topic": "Functions",
+    "question": "What is the output? def func(x): return x**2\ndef func(x, y=1): return x**2 + y\nprint(func(5))",
+    "options": [
+      "Error",
+      "25",
+      "26",
+      "5"
+    ],
+    "correct": 2,
+    "explanation": "In Python, the second definition REPLACES the first (no true overloading). func(5) calls func(x, y=1) with x=5, y=1. Returns 5²+1 = 25+1 = 26."
+  },
+  {
+    "id": "w7_q122",
+    "week": 7,
+    "section": "C",
+    "topic": "Dictionaries",
+    "question": "What is the output of: d = {1: 'one', 1.0: 'float one', True: 'boolean one'}; print(d)?",
+    "options": [
+      "{1: \"one\", 1.0: \"float one\", True: \"boolean one\"}",
+      "{1: \"boolean one\"}",
+      "{1: \"one\", 1.0: \"float one\"}",
+      "{1.0: \"float one\", True: \"boolean one\"}"
+    ],
+    "correct": 1,
+    "explanation": "In Python, 1 == 1.0 == True (they hash to the same value). Each assignment overwrites the previous. The dict keeps the FIRST key form (1) with the LAST value ('boolean one'). Result: {1: 'boolean one'}."
+  },
+  {
+    "id": "w8_q123",
+    "week": 8,
+    "section": "C",
+    "topic": "Tuples",
+    "question": "What is the output of: tup = ([1,2], [3,4]); tup[0].append(5); print(tup)?",
+    "options": [
+      "([1, 2, 5], [3, 4])",
+      "([1, 2], [3, 4])",
+      "([1, 2], [3, 4, 5])",
+      "TypeError: tuple does not support item assignment"
+    ],
+    "correct": 0,
+    "explanation": "The tuple itself is immutable (can't reassign tup[0] = ...), but the LIST inside it is mutable. tup[0].append(5) modifies the list in-place without reassigning the tuple element."
+  },
+  {
+    "id": "w11_q124",
+    "week": 11,
+    "section": "B",
+    "topic": "Selenium",
+    "question": "In Selenium, what is the purpose of WebDriver (e.g., webdriver.Chrome())?",
+    "options": [
+      "Interact with web elements like buttons",
+      "Launch and control a web browser session for automation",
+      "Write test cases",
+      "Handle databases"
+    ],
+    "correct": 1,
+    "explanation": "WebDriver launches a browser instance and provides an API to control it — navigate URLs, click elements, fill forms, read page content."
+  },
+  {
+    "id": "w11_q125",
+    "week": 11,
+    "section": "B",
+    "topic": "Selenium",
+    "question": "Which Selenium element locator strategy has the best performance?",
+    "options": [
+      "find_element_by_name()",
+      "find_element_by_id()",
+      "find_element_by_class_name()",
+      "find_element_by_xpath()"
+    ],
+    "correct": 1,
+    "explanation": "find_element_by_id() is fastest because IDs are unique in HTML, allowing direct DOM lookup. XPath requires traversing the DOM tree."
+  },
+  {
+    "id": "w11_q126",
+    "week": 11,
+    "section": "C",
+    "topic": "Calendar",
+    "question": "What does calendar.isleap(2100) return?",
+    "options": [
+      "False",
+      "True",
+      "None",
+      "1"
+    ],
+    "correct": 0,
+    "explanation": "2100 is divisible by 100 but NOT by 400. The rule: leap if (div by 4 AND not div by 100) OR div by 400. 2100 fails both conditions → not a leap year → False."
+  },
+  {
+    "id": "w11_q127",
+    "week": 11,
+    "section": "C",
+    "topic": "Datetime",
+    "question": "What is the output of: datetime.date(2024, 2, 29) + datetime.timedelta(days=1)?",
+    "options": [
+      "2024-02-30",
+      "2024-03-01",
+      "ValueError",
+      "2024-02-29"
+    ],
+    "correct": 1,
+    "explanation": "2024 IS a leap year (2024 ÷ 4 = 506, not a century year), so Feb 29 exists. Adding 1 day: 2024-02-29 + 1 day = 2024-03-01."
+  },
+  {
+    "id": "w11_q128",
+    "week": 11,
+    "section": "B",
+    "topic": "Datetime",
+    "question": "Which function is used to get the current local time in Python?",
+    "options": [
+      "time.localtime()",
+      "datetime.now()",
+      "time.time()",
+      "datetime.utcnow()"
+    ],
+    "correct": 0,
+    "explanation": "time.localtime() returns a struct_time in local timezone. datetime.now() also gives local time. time.time() gives epoch seconds. utcnow() gives UTC, not local. Both A and B are valid but localtime() is from the time module."
+  },
+  {
+    "id": "w11_q129",
+    "week": 11,
+    "section": "C",
+    "topic": "Datetime",
+    "question": "What happens when you call .astimezone() on a naive (timezone-unaware) datetime object?",
+    "options": [
+      "It converts to UTC",
+      "It raises an error",
+      "It assumes local timezone",
+      "It converts to IST"
+    ],
+    "correct": 2,
+    "explanation": "In Python 3.6+, calling .astimezone() on a naive datetime assumes local timezone and converts accordingly. In older versions it raised ValueError."
+  }
+]

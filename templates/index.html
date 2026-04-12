@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPTEL Mock Exam — Joy of Computing Using Python</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="index-page">
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="logo-block">
+        <span class="logo-badge">NPTEL</span>
+        <div>
+          <div class="header-title">Joy of Computing Using Python</div>
+          <div class="header-sub">noc26_cs84 &nbsp;|&nbsp; Mock Exam Series &nbsp;|&nbsp; Proctored Exam: Apr 19, 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container py-4">
+
+  <div class="exam-info-strip mb-4">
+    <div class="info-pill"><span class="info-icon">📋</span> 50 Questions &nbsp;|&nbsp; 100 Marks</div>
+    <div class="info-pill"><span class="info-icon">⏱</span> 180 Minutes</div>
+    <div class="info-pill"><span class="info-icon">✅</span> Pass: 40/100</div>
+    <div class="info-pill"><span class="info-icon">🔀</span> Random shuffle from all 12 weeks</div>
+  </div>
+
+  <h2 class="section-heading mb-3">Select a Mock Test</h2>
+
+  <div class="row g-3">
+    {% for i in range(1, 11) %}
+    {% set att = attempts.get(i) %}
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="test-card {{ 'card-attempted' if att else '' }}">
+        <div class="test-card-top">
+          <span class="test-num">Mock Test {{ i }}</span>
+          {% if att %}
+          <span class="test-badge attempt-badge {{ 'passed' if att.last_passed else 'failed' }}">
+            {{ att.last_score }}/100
+          </span>
+          {% else %}
+          <span class="test-badge">10A · 15B · 25C</span>
+          {% endif %}
+        </div>
+        <div class="test-card-body">
+          {% if att %}
+          <div class="attempt-info">
+            <div class="attempt-row">
+              <span class="att-label">Attempts:</span>
+              <span class="att-value">{{ att.count }}</span>
+            </div>
+            <div class="attempt-row">
+              <span class="att-label">Best Score:</span>
+              <span class="att-value att-best">{{ att.best_score }}/100</span>
+            </div>
+            <div class="attempt-row">
+              <span class="att-label">Last:</span>
+              <span class="att-value att-date">{{ att.last_date }}</span>
+            </div>
+          </div>
+          {% else %}
+          <div class="test-stats">
+            <span>50 Questions</span>
+            <span>100 Marks</span>
+            <span>3 hrs</span>
+          </div>
+          <div class="test-weeks">Weeks 1–12 · All Topics</div>
+          {% endif %}
+        </div>
+        <div class="test-card-footer">
+          <form method="POST" action="/start/{{ i }}" style="display:inline; flex:1">
+            <button type="submit" class="btn-start {{ 'btn-retake' if att else '' }}">
+              {{ 'Retake' if att else 'Start Test' }}
+            </button>
+          </form>
+          {% if att and att.count >= 2 %}
+          <a href="/history/{{ i }}" class="btn-history" title="View attempt history">📊</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="instructions-box mt-5">
+    <h5>Exam Instructions</h5>
+    <ul>
+      <li>Each question has 4 options. Click your answer to see immediate feedback.</li>
+      <li>Green = correct, Red = incorrect (correct answer highlighted).</li>
+      <li>Timer counts down from 3 hours. Questions are randomly shuffled from all 12 weeks.</li>
+      <li>Your score appears at the end with a topic-wise breakdown.</li>
+      <li>To access on your phone: connect to the same WiFi and open <strong>http://&lt;laptop-IP&gt;:5000</strong></li>
+    </ul>
+  </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

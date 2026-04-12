@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Results — Mock Test {{ test_id }}</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="result-page">
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="logo-block">
+        <span class="logo-badge">NPTEL</span>
+        <div>
+          <div class="header-title">Mock Test {{ test_id }} — Results</div>
+          <div class="header-sub">Joy of Computing Using Python · noc26_cs84</div>
+        </div>
+      </div>
+      <a href="/" class="btn-home">← All Tests</a>
+    </div>
+  </div>
+</header>
+
+<main class="container py-4">
+
+  <!-- Score circle + pass/fail -->
+  <div class="result-hero row align-items-center g-4 mb-5">
+    <div class="col-12 col-md-4 text-center">
+      <div class="score-circle {{ 'pass' if passed else 'fail' }}">
+        <div class="score-value">{{ score }}</div>
+        <div class="score-label">/ 100</div>
+      </div>
+      <div class="mt-2">
+        {% if passed %}
+        <span class="badge-result pass-badge">PASS ✓</span>
+        {% else %}
+        <span class="badge-result fail-badge">FAIL ✗</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="col-12 col-md-8">
+      <div class="result-stats-grid">
+        <div class="stat-box">
+          <div class="stat-num">{{ correct }}</div>
+          <div class="stat-lbl">Correct</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">{{ total - correct }}</div>
+          <div class="stat-lbl">Wrong / Skipped</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">{{ answered }}</div>
+          <div class="stat-lbl">Attempted</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">{{ score }}%</div>
+          <div class="stat-lbl">Score</div>
+        </div>
+      </div>
+
+      <div class="pass-note mt-3">
+        <strong>Attempt #{{ attempt_num }}</strong> &mdash;
+        {% if passed %}
+        Congratulations! You scored {{ score }}/100 — above the passing mark of 40.
+        {% else %}
+        You scored {{ score }}/100. You need 40 to pass. Keep practising!
+        {% endif %}
+      </div>
+
+      {% if previous %}
+      <div class="comparison-box mt-3">
+        <div class="comparison-title">Compared to Previous Attempt (#{{ previous.attempt }})</div>
+        <div class="comparison-row">
+          {% set diff = score - previous.score %}
+          <span class="cmp-label">Score:</span>
+          <span class="cmp-prev">{{ previous.score }}/100</span>
+          <span class="cmp-arrow">→</span>
+          <span class="cmp-now">{{ score }}/100</span>
+          <span class="cmp-delta {{ 'delta-up' if diff > 0 else ('delta-down' if diff < 0 else 'delta-same') }}">
+            {% if diff > 0 %}+{{ diff }} ↑{% elif diff < 0 %}{{ diff }} ↓{% else %}= No change{% endif %}
+          </span>
+        </div>
+        <div class="comparison-row">
+          {% set cdiff = correct - previous.correct %}
+          <span class="cmp-label">Correct:</span>
+          <span class="cmp-prev">{{ previous.correct }}/{{ previous.total }}</span>
+          <span class="cmp-arrow">→</span>
+          <span class="cmp-now">{{ correct }}/{{ total }}</span>
+          <span class="cmp-delta {{ 'delta-up' if cdiff > 0 else ('delta-down' if cdiff < 0 else 'delta-same') }}">
+            {% if cdiff > 0 %}+{{ cdiff }} ↑{% elif cdiff < 0 %}{{ cdiff }} ↓{% else %}={% endif %}
+          </span>
+        </div>
+        {% for sec in ['A', 'B', 'C'] %}
+        <div class="comparison-row">
+          {% set prev_sec = previous.sections.get(sec, {'correct': 0, 'total': 0}) %}
+          {% set curr_sec = sections[sec] %}
+          {% set sdiff = curr_sec.correct - prev_sec.correct %}
+          <span class="cmp-label">Section {{ sec }}:</span>
+          <span class="cmp-prev">{{ prev_sec.correct }}/{{ prev_sec.total }}</span>
+          <span class="cmp-arrow">→</span>
+          <span class="cmp-now">{{ curr_sec.correct }}/{{ curr_sec.total }}</span>
+          <span class="cmp-delta {{ 'delta-up' if sdiff > 0 else ('delta-down' if sdiff < 0 else 'delta-same') }}">
+            {% if sdiff > 0 %}+{{ sdiff }}{% elif sdiff < 0 %}{{ sdiff }}{% else %}={% endif %}
+          </span>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+  <!-- Section breakdown -->
+  <div class="row g-4 mb-4">
+    <div class="col-12 col-md-6">
+      <div class="result-card">
+        <h5 class="result-card-title">Section Breakdown</h5>
+        <table class="result-table">
+          <thead>
+            <tr><th>Section</th><th>Correct</th><th>Total</th><th>Score</th></tr>
+          </thead>
+          <tbody>
+            {% for sec, data in sections.items() %}
+            <tr>
+              <td><span class="sec-badge sec-{{ sec }}">{{ sec }}</span></td>
+              <td>{{ data.correct }}</td>
+              <td>{{ data.total }}</td>
+              <td>
+                {% if data.total > 0 %}
+                  {% set pct = (data.correct / data.total * 100) | round(0) | int %}
+                  <div class="mini-bar-wrap">
+                    <div class="mini-bar {{ 'good' if pct >= 50 else 'poor' }}" style="width: {{ pct }}%"></div>
+                    <span>{{ pct }}%</span>
+                  </div>
+                {% else %}
+                  —
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="result-card">
+        <h5 class="result-card-title">Week-wise Performance</h5>
+        <div class="week-grid">
+          {% for week in range(1, 13) %}
+            {% set s = week_stats.get(week, {'correct': 0, 'total': 0}) %}
+            {% if s.total > 0 %}
+              {% set pct = (s.correct / s.total * 100) | round(0) | int %}
+              <div class="week-pill {{ 'week-good' if pct >= 50 else 'week-poor' }}">
+                <span class="week-num">W{{ week }}</span>
+                <span class="week-score">{{ s.correct }}/{{ s.total }}</span>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weak topics -->
+  {% if weak_weeks %}
+  <div class="result-card mb-4">
+    <h5 class="result-card-title">Focus Areas (scored below 50%)</h5>
+    <div class="weak-list">
+      {% set topic_map = {
+        1: "Scratch: Loops & Variables",
+        2: "Nested Loops & Pattern Printing",
+        3: "Python Lists",
+        4: "Magic Squares & Birthday Paradox",
+        5: "Dictionaries, Binary Search & Sorting",
+        6: "Recursion & Substitution Ciphers",
+        7: "Turtle Graphics, PIL & CSV",
+        8: "Tuples, Strings & Matplotlib",
+        9: "Graphs, Stylometry & Strings",
+        10: "Josephus Problem, NumPy & Matrices",
+        11: "Selenium, Datetime & Calendar",
+        12: "PageRank, Collatz & Directed Graphs"
+      } %}
+      {% for w in weak_weeks %}
+      <div class="weak-item">
+        <span class="weak-week">Week {{ w }}</span>
+        <span class="weak-topic">{{ topic_map.get(w, "Topic") }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Question-by-question review -->
+  <div class="result-card mb-4">
+    <h5 class="result-card-title">
+      Question-by-Question Review
+      <button class="toggle-review" onclick="document.getElementById('review-list').classList.toggle('collapsed')">
+        Show / Hide
+      </button>
+    </h5>
+    <div id="review-list">
+      {% for r in review %}
+      <div class="review-item {{ 'review-correct' if r.is_correct else ('review-wrong' if r.chosen is not none else 'review-skipped') }}">
+        <div class="review-header">
+          <span class="review-num">Q{{ r.num }}</span>
+          <span class="q-tag q-tag-{{ r.section }}">Section {{ r.section }}</span>
+          <span class="q-week">Week {{ r.week }}</span>
+          <span class="q-topic">{{ r.topic }}</span>
+          <span class="review-badge {{ 'correct-badge' if r.is_correct else ('wrong-badge' if r.chosen is not none else 'skip-badge') }}">
+            {% if r.is_correct %}Correct{% elif r.chosen is not none %}Wrong{% else %}Skipped{% endif %}
+          </span>
+        </div>
+        <div class="review-question">{{ r.question }}</div>
+        <div class="review-options">
+          {% set labels = ['A', 'B', 'C', 'D'] %}
+          {% for opt in r.options %}
+          <div class="review-opt
+            {{ ' opt-correct' if loop.index0 == r.correct else '' }}
+            {{ ' opt-chosen-wrong' if loop.index0 == r.chosen and not r.is_correct else '' }}">
+            <span class="opt-lbl">{{ labels[loop.index0] }}</span>
+            <span>{{ opt }}</span>
+            {% if loop.index0 == r.correct %}<span class="opt-mark correct-mark">✓</span>{% endif %}
+            {% if loop.index0 == r.chosen and not r.is_correct %}<span class="opt-mark wrong-mark">✗</span>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        {% if r.explanation %}
+        <div class="review-explanation">
+          <strong>Explanation:</strong> {{ r.explanation }}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Action buttons -->
+  <div class="result-actions">
+    <a href="/" class="btn-action btn-primary-action">Try Another Test</a>
+    <a href="/start/{{ test_id }}" class="btn-action btn-secondary-action"
+       onclick="return confirm('Retake this test?')" style="display:none">Retake Test {{ test_id }}</a>
+  </div>
+
+</main>
+</body>
+</html>

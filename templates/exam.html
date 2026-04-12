@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mock Test {{ test_id }} — NPTEL Joy of Computing</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="exam-page">
+
+<!-- Fixed top bar -->
+<div class="exam-topbar">
+  <div class="topbar-left">
+    <a href="/" class="topbar-logo">NPTEL Mock</a>
+    <span class="topbar-test">Test {{ test_id }}</span>
+  </div>
+  <div class="topbar-center">
+    <div class="progress-text">Q <span id="q-current">1</span> / {{ total }}</div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progress-bar" style="width:0%"></div>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <div class="timer" id="timer">3:00:00</div>
+  </div>
+</div>
+
+<!-- Main exam area -->
+<div class="exam-container">
+
+  <div class="question-card" id="question-card">
+    <!-- Loading state -->
+    <div class="q-meta" id="q-meta">
+      <span class="q-tag" id="q-section-tag">A</span>
+      <span class="q-week" id="q-week-tag">Week —</span>
+      <span class="q-topic" id="q-topic-tag">—</span>
+    </div>
+
+    <div class="q-text" id="q-text">Loading question…</div>
+
+    <div class="options-grid" id="options-grid">
+      <!-- Options injected by JS -->
+    </div>
+
+    <div class="feedback-box" id="feedback-box" style="display:none">
+      <div class="feedback-text" id="feedback-text"></div>
+      <div class="explanation" id="explanation-text"></div>
+    </div>
+
+    <div class="card-footer-row">
+      <div class="q-number-badge" id="q-number-badge"></div>
+      <button class="btn-next" id="btn-next" style="display:none" onclick="nextQuestion()">
+        Next →
+      </button>
+      <a href="/result" class="btn-finish" id="btn-finish" style="display:none">
+        View Results
+      </a>
+    </div>
+  </div>
+
+  <!-- Question navigator (compact grid) -->
+  <div class="nav-panel" id="nav-panel">
+    <div class="nav-title">Questions</div>
+    <div class="nav-grid" id="nav-grid">
+      {% for i in range(total) %}
+      <button class="nav-dot" id="nav-{{ i }}" onclick="jumpTo({{ i }})">{{ i+1 }}</button>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+
+<script>
+  window.EXAM_TOTAL = {{ total }};
+  window.EXAM_DURATION = {{ duration }};
+  window.TEST_ID = {{ test_id }};
+</script>
+<script src="{{ url_for('static', filename='exam.js') }}"></script>
+</body>
+</html>
