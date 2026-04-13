@@ -150,7 +150,7 @@ def index():
 @app.route("/start/<int:test_id>", methods=["POST"])
 @login_required
 def start(test_id):
-    if test_id < 1 or test_id > 10:
+    if test_id < 1 or test_id > 20:
         return redirect(url_for("index"))
 
     user_id = session["user_id"]
@@ -357,7 +357,7 @@ def result():
 @app.route("/history/<int:test_id>")
 @login_required
 def history(test_id):
-    if test_id < 1 or test_id > 10:
+    if test_id < 1 or test_id > 20:
         return redirect(url_for("index"))
     user_id  = session["user_id"]
     attempts = db.get_attempts_for_test(user_id, test_id)
