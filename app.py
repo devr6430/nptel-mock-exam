@@ -25,6 +25,8 @@ import database as db
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY", "nptel-dev-secret-CHANGE-IN-PROD")
 
+db.init_db()  # runs on import — works with both `python app.py` and gunicorn
+
 # ── Google OAuth ───────────────────────────────────────────────────────────────
 oauth = OAuth(app)
 google = oauth.register(
