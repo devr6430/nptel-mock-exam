@@ -7,12 +7,19 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: "3.12"
-      # Set these manually in the Render dashboard (Dashboard → Environment):
+      # Auto-generated once; never changes between deploys (keeps sessions alive)
       - key: SECRET_KEY
-        generateValue: true          # Render auto-generates a secure random value
+        generateValue: true
+      # Paste these in Render Dashboard → Environment:
       - key: GOOGLE_CLIENT_ID
-        sync: false                  # paste your OAuth Client ID here
+        sync: false
       - key: GOOGLE_CLIENT_SECRET
-        sync: false                  # paste your OAuth Client Secret here
+        sync: false
       - key: GEMINI_API_KEY
-        sync: false                  # paste your Gemini API key here
+        sync: false
+      # Set this to your PostgreSQL connection string (see setup instructions below)
+      # Option A — Render PostgreSQL: link via Render dashboard → Database → Connect
+      # Option B — Supabase (free forever): supabase.com → Project → Settings → Database → URI
+      # Option C — Neon (free forever): neon.tech → Connection Details → Connection string
+      - key: DATABASE_URL
+        sync: false

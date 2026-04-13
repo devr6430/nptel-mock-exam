@@ -1,6 +1,7 @@
 """
-NPTEL Mock Exam — Flask Backend (V5)
-Features: Google OAuth login, per-user SQLite history, cross-device resume, Gemini chat
+NPTEL Mock Exam — Flask Backend (V6)
+V5: Google OAuth login, per-user SQLite history, cross-device resume, Gemini chat
+V6: PostgreSQL for persistent history, smarter question distribution (≤3 repeats)
 Run locally: python app.py
 Deployed:   gunicorn app:app
 """
@@ -66,20 +67,64 @@ def load_questions():
         return json.load(f)
 
 
+# Pre-computed test assignments — built once at startup, same result every restart
+_ALL_TESTS = None
+
+
+def _precompute_all_tests():
+    """
+    Pre-compute all 20 tests so that:
+    - No question appears in the same test twice.
+    - Questions are distributed as evenly as possible across tests.
+    - Section B and C questions repeat at most 3 times total.
+    - Section A questions may repeat up to ~5 times (only 46 questions for 200 slots).
+
+    Algorithm: greedy round-robin — each test gets the least-used questions first,
+    with random shuffling for variety. Fixed seed → same assignment on every restart.
+    """
+    all_q = load_questions()
+    sec_a = [q for q in all_q if q["section"] == "A"]
+    sec_b = [q for q in all_q if q["section"] == "B"]
+    sec_c = [q for q in all_q if q["section"] == "C"]
+
+    rng = random.Random(54321)  # fixed seed — deterministic across restarts
+
+    def assign_section(section_qs, per_test, num_tests):
+        """
+        Assign `per_test` unique questions to each of `num_tests` tests,
+        preferring least-used questions to keep repetitions minimal.
+        """
+        qs = list(section_qs)
+        usage = {id(q): 0 for q in qs}
+        result = []
+        for _ in range(num_tests):
+            rng.shuffle(qs)                       # randomize tiebreaking
+            qs.sort(key=lambda q: usage[id(q)])   # least-used first (stable sort)
+            picks = list(qs[:per_test])
+            for q in picks:
+                usage[id(q)] += 1
+            rng.shuffle(picks)                    # randomize order within the test
+            result.append(picks)
+        return result
+
+    a_slots = assign_section(sec_a, SECTION_A_COUNT, 20)
+    b_slots = assign_section(sec_b, SECTION_B_COUNT, 20)
+    c_slots = assign_section(sec_c, SECTION_C_COUNT, 20)
+
+    tests = []
+    for i in range(20):
+        test_qs = a_slots[i] + b_slots[i] + c_slots[i]
+        rng.shuffle(test_qs)   # mix sections together
+        tests.append(test_qs)
+    return tests
+
+
 def generate_test(test_id: int):
-    """Reproducible 50-question set. Same test_id → same questions always."""
-    all_q  = load_questions()
-    sec_a  = [q for q in all_q if q["section"] == "A"]
-    sec_b  = [q for q in all_q if q["section"] == "B"]
-    sec_c  = [q for q in all_q if q["section"] == "C"]
-    rng    = random.Random(test_id * 7919)
-    test_qs = (
-        rng.sample(sec_a, min(SECTION_A_COUNT, len(sec_a)))
-        + rng.sample(sec_b, min(SECTION_B_COUNT, len(sec_b)))
-        + rng.sample(sec_c, min(SECTION_C_COUNT, len(sec_c)))
-    )
-    rng.shuffle(test_qs)
-    return test_qs
+    """Return the pre-computed 50-question list for test_id (1-indexed)."""
+    global _ALL_TESTS
+    if _ALL_TESTS is None:
+        _ALL_TESTS = _precompute_all_tests()
+    return _ALL_TESTS[test_id - 1]
 
 
 def get_test_questions():

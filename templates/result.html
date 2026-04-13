@@ -61,7 +61,7 @@
 
         {% if previous %}
         <div class="card" style="padding:12px 14px;margin-top:10px;background:var(--bg);">
-          <p style="font-size:11px;font-weight:700;color:var(--text-3);margin-bottom:6px;">VS ATTEMPT #{{ previous.attempt }}</p>
+          <p style="font-size:11px;font-weight:700;color:var(--text-3);margin-bottom:6px;">VS ATTEMPT #{{ previous.attempt_num }}</p>
           {% set diff = score - previous.score %}
           <div style="display:flex;flex-wrap:wrap;gap:6px;">
             <span class="badge {{ 'badge-green' if diff > 0 else ('badge-red' if diff < 0 else 'badge-gray') }}">
