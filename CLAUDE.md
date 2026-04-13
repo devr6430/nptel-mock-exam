@@ -1,6 +1,6 @@
 # NPTEL Mock Exam — Joy of Computing Using Python
 
-> **Course:** noc26_cs84 | **Session:** Jan–Apr 2026 | **Proctored Exam:** April 19, 2026
+> **Course:** noc26_cs84 | **Session:** Jan–Apr 2026 | **Proctored Exam:** April 18, 2026
 > **Live URL:** Deployed on Render.com
 
 ---

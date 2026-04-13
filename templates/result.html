@@ -14,7 +14,12 @@
       <span style="background:var(--green);color:white;font-weight:700;font-size:10px;padding:4px 10px;border-radius:6px;letter-spacing:1px;">NPTEL</span>
       <span style="font-weight:700;font-size:14px;">Mock Test {{ test_id }} — Results</span>
     </div>
-    <a href="/" class="btn btn-outline btn-sm">← All Tests</a>
+    <div style="display:flex;align-items:center;gap:10px;">
+      {% if user_picture %}
+      <img src="{{ user_picture }}" alt="{{ user_name }}" class="user-avatar user-avatar-sm hide-mobile" title="{{ user_name }}">
+      {% endif %}
+      <a href="/" class="btn btn-outline btn-sm">← All Tests</a>
+    </div>
   </div>
 </div>
 
@@ -116,12 +121,20 @@
   </div>
   {% endif %}
 
-  <!-- Review -->
+  <!-- Question Review -->
   <div class="card" style="padding:18px;margin-bottom:18px;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
       <h3 style="font-size:14px;font-weight:700;margin:0;">Question Review</h3>
       <button class="btn btn-outline btn-sm" onclick="document.getElementById('review-list').classList.toggle('hidden')">Show / Hide</button>
     </div>
+
+    {% if gemini_enabled %}
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;padding:10px 14px;background:var(--blue-light);border-radius:8px;">
+      <span style="font-size:18px;">✨</span>
+      <span style="font-size:13px;color:var(--blue);">Click <strong>Ask Gemini</strong> on any question to get a plain-English explanation from Google Gemini.</span>
+    </div>
+    {% endif %}
+
     <div id="review-list" style="display:flex;flex-direction:column;gap:12px;">
       {% for r in review %}
       <div class="review-item {{ 'review-correct' if r.is_correct else ('review-wrong' if r.chosen is not none else 'review-skip') }}">
@@ -133,7 +146,9 @@
             {% if r.is_correct %}Correct{% elif r.chosen is not none %}Wrong{% else %}Skipped{% endif %}
           </span>
         </div>
+
         <p style="font-size:14px;font-weight:600;line-height:1.6;margin-bottom:10px;white-space:pre-wrap;">{{ r.question }}</p>
+
         {% set labels = ['A','B','C','D'] %}
         <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:8px;">
           {% for opt in r.options %}
@@ -145,8 +160,28 @@
           </div>
           {% endfor %}
         </div>
+
         {% if r.explanation %}
         <div class="explanation-box"><strong>Explanation:</strong> {{ r.explanation }}</div>
+        {% endif %}
+
+        {% if gemini_enabled %}
+        <div style="margin-top:10px;">
+          <button
+            class="btn-gemini"
+            onclick="askGemini({{ loop.index0 }}, this)"
+            data-question="{{ r.question | e }}"
+            data-options="{{ r.options | tojson | e }}"
+            data-correct="{{ r.correct }}"
+            data-chosen="{{ r.chosen if r.chosen is not none else 'null' }}"
+            data-is-correct="{{ 'true' if r.is_correct else 'false' }}"
+            data-explanation="{{ r.explanation | e }}"
+            data-week="{{ r.week }}"
+            data-topic="{{ r.topic | e }}">
+            ✨ Ask Gemini
+          </button>
+          <div class="gemini-box hidden" id="gemini-{{ loop.index0 }}"></div>
+        </div>
         {% endif %}
       </div>
       {% endfor %}
@@ -159,5 +194,63 @@
   </div>
 
 </div>
+
+{% if gemini_enabled %}
+<script>
+function escapeHtml(text) {
+  const d = document.createElement("div");
+  d.appendChild(document.createTextNode(text));
+  return d.innerHTML;
+}
+
+async function askGemini(idx, btn) {
+  const q        = btn.dataset.question;
+  const options  = JSON.parse(btn.dataset.options);
+  const correctIdx = parseInt(btn.dataset.correct, 10);
+  const chosenRaw  = btn.dataset.chosen;
+  const userIdx    = chosenRaw === "null" ? null : parseInt(chosenRaw, 10);
+  const isCorrect  = btn.dataset.isCorrect === "true";
+  const explanation = btn.dataset.explanation;
+  const week   = btn.dataset.week;
+  const topic  = btn.dataset.topic;
+
+  btn.disabled = true;
+  btn.textContent = "✨ Asking Gemini…";
+
+  const box = document.getElementById("gemini-" + idx);
+  box.classList.remove("hidden");
+  box.innerHTML = '<div class="gemini-loading">Gemini is thinking…</div>';
+
+  try {
+    const res = await fetch("/api/gemini", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        question: q, options, correct_idx: correctIdx,
+        user_idx: userIdx, is_correct: isCorrect,
+        explanation, week, topic,
+      }),
+    });
+    const data = await res.json();
+    if (data.error) {
+      box.innerHTML = `<div class="gemini-error">${escapeHtml(data.error)}</div>`;
+    } else {
+      const p = document.createElement("div");
+      p.className = "gemini-answer";
+      p.textContent = data.response;
+      box.innerHTML = "";
+      box.appendChild(p);
+    }
+    btn.textContent = "✨ Ask Again";
+    btn.disabled = false;
+  } catch (e) {
+    box.innerHTML = '<div class="gemini-error">Network error. Please try again.</div>';
+    btn.textContent = "✨ Ask Gemini";
+    btn.disabled = false;
+  }
+}
+</script>
+{% endif %}
+
 </body>
 </html>

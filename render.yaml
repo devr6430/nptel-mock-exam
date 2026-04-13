@@ -7,3 +7,12 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: "3.12"
+      # Set these manually in the Render dashboard (Dashboard → Environment):
+      - key: SECRET_KEY
+        generateValue: true          # Render auto-generates a secure random value
+      - key: GOOGLE_CLIENT_ID
+        sync: false                  # paste your OAuth Client ID here
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false                  # paste your OAuth Client Secret here
+      - key: GEMINI_API_KEY
+        sync: false                  # paste your Gemini API key here

@@ -12,16 +12,21 @@
   <div class="navbar-inner">
     <div style="display:flex;align-items:center;gap:10px;">
       <span style="background:var(--green);color:white;font-weight:700;font-size:10px;padding:4px 10px;border-radius:6px;">NPTEL</span>
-      <span style="font-weight:700;font-size:14px;">Test {{ test_id }} — History</span>
+      <span style="font-weight:700;font-size:14px;">Test {{ test_id }} — Attempt History</span>
     </div>
-    <a href="/" class="btn btn-outline btn-sm">← All Tests</a>
+    <div style="display:flex;align-items:center;gap:10px;">
+      {% if user_picture %}
+      <img src="{{ user_picture }}" alt="{{ user_name }}" class="user-avatar user-avatar-sm hide-mobile" title="{{ user_name }}">
+      {% endif %}
+      <a href="/" class="btn btn-outline btn-sm">← All Tests</a>
+    </div>
   </div>
 </div>
 
 <div class="container">
 
 {% if attempts|length == 0 %}
-<div class="card" style="padding:40px;text-align:center;color:var(--text-3);">No attempts yet.</div>
+<div class="card" style="padding:40px;text-align:center;color:var(--text-3);">No attempts yet for this test.</div>
 {% else %}
 
   <div class="card" style="padding:20px;margin-bottom:14px;">
@@ -32,21 +37,21 @@
         <span style="font-size:12px;font-weight:800;margin-bottom:4px;">{{ a.score }}</span>
         <div style="width:100%;max-width:40px;height:{{ a.score }}%;min-height:4px;border-radius:6px 6px 0 0;
           background:{{ 'var(--green)' if a.passed else 'var(--red)' }};"></div>
-        <span style="font-size:10px;color:var(--text-3);margin-top:4px;font-weight:600;">#{{ a.attempt }}</span>
+        <span style="font-size:10px;color:var(--text-3);margin-top:4px;font-weight:600;">#{{ a.attempt_num }}</span>
       </div>
       {% endfor %}
     </div>
-    <p style="font-size:10px;color:var(--red);text-align:right;margin-top:4px;">Pass: 40</p>
+    <p style="font-size:10px;color:var(--red);text-align:right;margin-top:4px;">Pass mark: 40</p>
   </div>
 
   <div class="card" style="padding:20px;margin-bottom:14px;overflow-x:auto;">
-    <h3 style="font-size:14px;font-weight:700;margin-bottom:12px;">Comparison</h3>
+    <h3 style="font-size:14px;font-weight:700;margin-bottom:12px;">Attempt Comparison</h3>
     <table style="width:100%;border-collapse:collapse;font-size:13px;">
       <thead>
         <tr style="border-bottom:2px solid var(--border);">
           <th style="text-align:left;padding:8px;font-size:11px;color:var(--text-3);">Metric</th>
           {% for a in attempts %}
-          <th style="text-align:center;padding:8px;font-weight:700;">#{{ a.attempt }}<br><span style="font-size:10px;color:var(--text-3);font-weight:400;">{{ a.date }}</span></th>
+          <th style="text-align:center;padding:8px;font-weight:700;">#{{ a.attempt_num }}<br><span style="font-size:10px;color:var(--text-3);font-weight:400;">{{ a.date }}</span></th>
           {% endfor %}
         </tr>
       </thead>
@@ -83,7 +88,10 @@
 {% endif %}
 
   <div style="display:flex;gap:10px;flex-wrap:wrap;">
-    <form method="POST" action="/start/{{ test_id }}"><button type="submit" class="btn btn-green">Retake Test {{ test_id }}</button></form>
+    <form method="POST" action="/start/{{ test_id }}">
+      <input type="hidden" name="action" value="new">
+      <button type="submit" class="btn btn-green">Retake Test {{ test_id }}</button>
+    </form>
     <a href="/" class="btn btn-outline">← All Tests</a>
   </div>
 

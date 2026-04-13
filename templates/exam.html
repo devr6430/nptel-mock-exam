@@ -19,8 +19,11 @@
       <div class="progress-fill" id="progress-bar" style="width:0%;"></div>
     </div>
   </div>
-  <div style="min-width:75px;text-align:right;">
+  <div style="display:flex;align-items:center;gap:10px;min-width:75px;justify-content:flex-end;">
     <span class="timer" id="timer">3:00:00</span>
+    {% if user_picture %}
+    <img src="{{ user_picture }}" alt="{{ user_name }}" class="user-avatar user-avatar-sm hide-mobile" title="{{ user_name }}">
+    {% endif %}
   </div>
 </div>
 
@@ -65,9 +68,12 @@
 </style>
 
 <script>
-  window.EXAM_TOTAL = {{ total }};
+  window.EXAM_TOTAL    = {{ total }};
   window.EXAM_DURATION = {{ duration }};
-  window.TEST_ID = {{ test_id }};
+  window.TEST_ID       = {{ test_id }};
+  window.RESUME_INDEX  = {{ resume_index }};
+  window.RESUME_TIME   = {{ resume_time }};
+  window.SAVED_ANSWERS = {{ saved_answers | safe }};
 </script>
 <script src="{{ url_for('static', filename='exam.js') }}"></script>
 </body>
