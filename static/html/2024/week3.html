@@ -1,0 +1,1968 @@
+<div class="gcb-aside gcb-button-box">
+    <script>
+        window.onload = function () {
+            var miliSecondsToDisableSubmit = calculateTimerToDisableSubmit();
+            var days = miliSecondsToDisableSubmit / (24 * 60 * 60 * 1000);
+            if (days >= 0 && days < 14) {
+                setTimeout(function () {
+                    var submit_button = document.getElementById("submitbutton");
+                    if (submit_button) submit_button.disabled = true;
+                    var check_answer_button = document.getElementById("checkAnswerButton");
+                    if (check_answer_button) check_answer_button.disabled = true;
+                    cbShowMsgAutoHide("Due date passed");
+                }, miliSecondsToDisableSubmit);
+            }
+        };
+
+        function calculateTimerToDisableSubmit() {
+            var date_in_mili_sec = "1707935340000.0";
+            var current_mili_seconds = new Date().getTime();
+            var difference_in_miliseconds = date_in_mili_sec - current_mili_seconds;
+            return difference_in_miliseconds;
+        }
+    </script>
+
+    <div class="gcb-assessment-contents">
+        <h1>Week 3 : Assignment 3</h1>
+
+        <script>
+            assessmentXsrfToken = "1776189622/4ckev5BSQDZMlXH4XWK8Kby33D293i9t3YYRgXYGWYE=";
+
+            var assessmentGlobals = {};
+            var enable_negative_marking = JSON.parse("false");
+            assessmentGlobals.isReviewForm = false;
+            assessmentGlobals.grader = "auto";
+        </script>
+
+        <div class="assessment-top-info">
+            <strong>The due date for submitting this assignment has passed.</strong>
+            <div class="gcb-submission-due-date">Due on 2024-02-14, 23:59 IST.</div>
+        </div>
+
+        <h3 class="submission-info">
+            <span class="submission-date">Assignment submitted on 2024-02-07, 22:28 IST</span>
+        </h3>
+
+        <div class="readonly-assessment">
+            <div
+                data-xsrf-token="1776189622/4ckev5BSQDZMlXH4XWK8Kby33D293i9t3YYRgXYGWYE="
+                data-unit-id="396"
+                data-question-batch-id="A396"
+                data-scored="True"
+            >
+                <script>
+                    var questionData = questionData || {};
+                    questionData.xsrfToken = "1776189622/4ckev5BSQDZMlXH4XWK8Kby33D293i9t3YYRgXYGWYE=";
+
+                    questionData.savedAnswers = questionData.savedAnswers || {};
+                    $.extend(
+                        questionData.savedAnswers,
+                        JSON.parse(
+                            '{"version": "1.5", "individualScores": {"Pz1mqrDhN79s": [1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0]}, "containedTypes": {}, "answers": {}, "quids": {}, "rawScore": 0, "totalWeight": 0, "percentScore": 0, "save_draft": null, "is_submitted": false, "Pz1mqrDhN79s": {"is_answered": true, "Pz1mqrDhN79s.0.5557724486565888": {"responses": [false, false, true, false], "is_answered": true}, "Pz1mqrDhN79s.1.5583960898273280": {"responses": [true, true, true, true], "is_answered": true}, "Pz1mqrDhN79s.2.6437343855116288": {"responses": [false, false, false, true], "is_answered": true}, "Pz1mqrDhN79s.3.5075729633509376": {"responses": [true, false, false, false], "is_answered": true}, "Pz1mqrDhN79s.4.6251451160985600": {"responses": [false, true, false, false], "is_answered": true}, "Pz1mqrDhN79s.5.5191366527680512": {"responses": [false, true, false, false], "is_answered": true}, "Pz1mqrDhN79s.6.4791213014646784": {"responses": [false, true, false, false], "is_answered": true}, "Pz1mqrDhN79s.7.4698948460085248": {"responses": [true, true, false, false], "is_answered": true}, "Pz1mqrDhN79s.8.5253076617789440": {"responses": [true, true, true, true], "is_answered": true}, "Pz1mqrDhN79s.9.5890654454939648": {"responses": [false, true, false, false], "is_answered": true}}, "submission_count": 1}',
+                        ),
+                    );
+
+                    if (window.history.replaceState) {
+                        window.history.replaceState(null, null, window.location.href);
+                    }
+                </script>
+                <div class="gcb-assessment-body assessment-readonly">
+                    <div>
+                        <link
+                            href="/modules/assessment_tags/resources/questions.css"
+                            rel="stylesheet"
+                            type="text/css"
+                        />
+                        <script>
+                            questionData["Pz1mqrDhN79s"] = JSON.parse(
+                                window.atob(
+                                    "eyJQejFtcXJEaE43OXMuMC41NTU3NzI0NDg2NTY1ODg4IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDU1NTc3MjQ0ODY1NjU4ODgsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJQejFtcXJEaE43OXMuMS41NTgzOTYwODk4MjczMjgwIjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDU1ODM5NjA4OTgyNzMyODAsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJQejFtcXJEaE43OXMuMi42NDM3MzQzODU1MTE2Mjg4IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDY0MzczNDM4NTUxMTYyODgsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJQejFtcXJEaE43OXMuMy41MDc1NzI5NjMzNTA5Mzc2IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDUwNzU3Mjk2MzM1MDkzNzYsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJQejFtcXJEaE43OXMuNC42MjUxNDUxMTYwOTg1NjAwIjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDYyNTE0NTExNjA5ODU2MDAsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJQejFtcXJEaE43OXMuNS41MTkxMzY2NTI3NjgwNTEyIjogeyJ3ZWlnaHQiOiAwLjAsICJxdWVzdGlvbiI6IDUxOTEzNjY1Mjc2ODA1MTIsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJQejFtcXJEaE43OXMuNi40NzkxMjEzMDE0NjQ2Nzg0IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDQ3OTEyMTMwMTQ2NDY3ODQsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJQejFtcXJEaE43OXMuNy40Njk4OTQ4NDYwMDg1MjQ4IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDQ2OTg5NDg0NjAwODUyNDgsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJQejFtcXJEaE43OXMuOC41MjUzMDc2NjE3Nzg5NDQwIjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDUyNTMwNzY2MTc3ODk0NDAsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJQejFtcXJEaE43OXMuOS41ODkwNjU0NDU0OTM5NjQ4IjogeyJ3ZWlnaHQiOiAwLjAsICJxdWVzdGlvbiI6IDU4OTA2NTQ0NTQ5Mzk2NDgsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX19",
+                                ),
+                            );
+
+                            var assessmentTagMessages = {};
+
+                            assessmentTagMessages.correct = "Correct. ";
+
+                            assessmentTagMessages.incorrect = "Incorrect. ";
+
+                            assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                            assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                            assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                            assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                            assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                            assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                            assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                            assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                            assessmentTagMessages.graceMark = " You have been given grace marks for above question. ";
+                        </script>
+                        <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                        <script src="/modules/assessment_tags/resources/grading.js"></script>
+                        <noscript>
+                            <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                        </noscript>
+
+                        <div class="qt-question-group" id="Pz1mqrDhN79s">
+                            <div class="qt-introduction"></div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["Pz1mqrDhN79s.0.5557724486565888"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNTU1NzcyNDQ4NjU2NTg4OCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMCwgInRleHQiOiAiVGFrZXMgYSBsaXN0IG9mIG51bWJlcnMgYXMgaW5wdXQsIGFwcGVuZHMgZWFjaCBudW1iZXIgdG8gYSBsaXN0LCBhbmQgcHJpbnRzIHRoZSBsaXN0IG9mIG51bWJlcnMiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjAsICJ0ZXh0IjogIlRha2VzIGEgbGlzdCBvZiBlbGVtZW50cyBhcyBpbnB1dCwgYXBwZW5kcyBlYWNoIGVsZW1lbnQgdG8gYSBsaXN0LCBhbmQgcHJpbnRzIHRoZSBsaXN0IG9mIGVsZW1lbnRzIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMS4wLCAidGV4dCI6ICJUYWtlcyB0aGUgY291bnQgb2YgZWxlbWVudHMgZm9sbG93ZWQgYnkgdGhlIHNhbWUgbnVtYmVyIG9mIGVsZW1lbnRzIGFzIGlucHV0LCBhcHBlbmRzIGVhY2ggZWxlbWVudCB0byBhIGxpc3QsIGFuZCBwcmludHMgdGhlIGxpc3Qgb2YgZWxlbWVudHMiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjAsICJ0ZXh0IjogIlRha2VzIHRoZSBjb3VudCBvZiBlbGVtZW50cywgYXBwZW5kcyBlYWNoIGVsZW1lbnQgdG8gYSBsaXN0LCBhbmQgcHJpbnRzIHRoZSBjb3VudCBvZiBlbGVtZW50cyBlbnRlcmVkLlx1MDAzQ2JyXHUwMDNFXHUwMDNDc3BhbiBzdHlsZT1cIndoaXRlLXNwYWNlOnByZVwiXHUwMDNFIiwgImZlZWRiYWNrIjogIiJ9XSwgImRlZmF1bHRGZWVkYmFjayI6ICIiLCAicGVybXV0ZUNob2ljZXMiOiBmYWxzZSwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2UsICJtdWx0aXBsZUNvcnJlY3RBbnN3ZXIiOiBmYWxzZSwgIndlaWdodCI6IDEuMH0=",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="Pz1mqrDhN79s.0.5557724486565888">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        Consider the following code snippet:
+                                        <br />
+                                        <br />
+                                        <img
+                                            alt=""
+                                            class="yui-img"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/img1.png"
+                                            title=""
+                                        />
+                                        <br />
+                                        <br />
+                                        What does the code do?
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="Pz1mqrDhN79s.0.5557724486565888.0"
+                                                name="Pz1mqrDhN79s.0.5557724486565888"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.0.5557724486565888.0">
+                                                Takes a list of numbers as input, appends each number to a list, and
+                                                prints the list of numbers
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="Pz1mqrDhN79s.0.5557724486565888.1"
+                                                name="Pz1mqrDhN79s.0.5557724486565888"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.0.5557724486565888.1">
+                                                Takes a list of elements as input, appends each element to a list, and
+                                                prints the list of elements
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="Pz1mqrDhN79s.0.5557724486565888.2"
+                                                name="Pz1mqrDhN79s.0.5557724486565888"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.0.5557724486565888.2">
+                                                Takes the count of elements followed by the same number of elements as
+                                                input, appends each element to a list, and prints the list of elements
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="Pz1mqrDhN79s.0.5557724486565888.3"
+                                                name="Pz1mqrDhN79s.0.5557724486565888"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.0.5557724486565888.3">
+                                                Takes the count of elements, appends each element to a list, and prints
+                                                the count of elements entered.
+                                                <br />
+                                                <span style="white-space: pre"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="correct">Yes, the answer is correct.</span>
+                                                <br />
+                                                <span class="correct">Score: 1</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.0.5557724486565888.2">
+                                                            Takes the count of elements followed by the same number of
+                                                            elements as input, appends each element to a list, and
+                                                            prints the list of elements
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["Pz1mqrDhN79s.1.5583960898273280"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNTU4Mzk2MDg5ODI3MzI4MCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMjUsICJ0ZXh0IjogIkl0IGlzIGEgZmxleGlibGUgRGF0YSBTdHJ1Y3R1cmUiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjI1LCAidGV4dCI6ICJFbGVtZW50cyBjb3VsZCBiZSBhZGRlZCB0byBhIGxpc3QuIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4yNSwgInRleHQiOiAiRWxlbWVudHMgY291bGQgYmUgc3VidHJhY3RlZCBmcm9tIGEgbGlzdC4iLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjI1LCAidGV4dCI6ICJcdTAwM0NiXHUwMDNFVGhpc19pc19ub3RfTGlzdCA9IFsgXVx1MDAzQy9iXHUwMDNFJm5ic3A7aXMgYW4gZW1wdHkgbGlzdCIsICJmZWVkYmFjayI6ICIifV0sICJkZWZhdWx0RmVlZGJhY2siOiAiIiwgInBlcm11dGVDaG9pY2VzIjogZmFsc2UsICJzaG93QW5zd2VyV2hlbkluY29ycmVjdCI6IGZhbHNlLCAiYWxsT3JOb3RoaW5nR3JhZGluZyI6IGZhbHNlLCAibXVsdGlwbGVDb3JyZWN0QW5zd2VyIjogZmFsc2UsICJ3ZWlnaHQiOiAxLjB9",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="Pz1mqrDhN79s.1.5583960898273280">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        Data Structure is a way by which you can organize/arrange your data. Which of
+                                        the following statements are true about List Data Structure: [MSQ]
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="Pz1mqrDhN79s.1.5583960898273280.0"
+                                                name="Pz1mqrDhN79s.1.5583960898273280"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.1.5583960898273280.0">
+                                                It is a flexible Data Structure
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="Pz1mqrDhN79s.1.5583960898273280.1"
+                                                name="Pz1mqrDhN79s.1.5583960898273280"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.1.5583960898273280.1">
+                                                Elements could be added to a list.
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="Pz1mqrDhN79s.1.5583960898273280.2"
+                                                name="Pz1mqrDhN79s.1.5583960898273280"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.1.5583960898273280.2">
+                                                Elements could be subtracted from a list.
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="Pz1mqrDhN79s.1.5583960898273280.3"
+                                                name="Pz1mqrDhN79s.1.5583960898273280"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.1.5583960898273280.3">
+                                                <b>This_is_not_List = [ ]</b>
+                                                &nbsp;is an empty list
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="correct">Yes, the answer is correct.</span>
+                                                <br />
+                                                <span class="correct">Score: 1</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.1.5583960898273280.0">
+                                                            It is a flexible Data Structure
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.1.5583960898273280.1">
+                                                            Elements could be added to a list.
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.1.5583960898273280.2">
+                                                            Elements could be subtracted from a list.
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.1.5583960898273280.3">
+                                                            <b>This_is_not_List = [ ]</b>
+                                                            &nbsp;is an empty list
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["Pz1mqrDhN79s.2.6437343855116288"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNjQzNzM0Mzg1NTExNjI4OCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMCwgInRleHQiOiAiQW1hciwgQWtiYXIsIEFudGhvbnkiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjAsICJ0ZXh0IjogImFtYXIgaXMgYnJvdGhlciBvZiBhbnRob255IGFuZCBha2JhciIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuMCwgInRleHQiOiAiQW1hciBpcyBicm90aGVyIG9mIEFudGhvbnkgYW5kIEFrYmFyIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMS4wLCAidGV4dCI6ICJBbnRob255IGlzIGJyb3RoZXIgb2YgQWtiYXIgYW5kIEFtYXIiLCAiZmVlZGJhY2siOiAiIn1dLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAic2hvd0Fuc3dlcldoZW5JbmNvcnJlY3QiOiBmYWxzZSwgImFsbE9yTm90aGluZ0dyYWRpbmciOiBmYWxzZSwgIm11bHRpcGxlQ29ycmVjdEFuc3dlciI6IGZhbHNlLCAid2VpZ2h0IjogMS4wfQ==",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="Pz1mqrDhN79s.2.6437343855116288">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        Consider the following code snippet:
+                                        <br />
+                                        <span style="font-family: monospace"><br /></span>
+                                        <img
+                                            alt=""
+                                            class="yui-img selected"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/img2.png"
+                                            style="width: 500px"
+                                            title=""
+                                        />
+                                        <br />
+                                        <br />
+                                        What does the above code print?
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="Pz1mqrDhN79s.2.6437343855116288.0"
+                                                name="Pz1mqrDhN79s.2.6437343855116288"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.2.6437343855116288.0">Amar, Akbar, Anthony</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="Pz1mqrDhN79s.2.6437343855116288.1"
+                                                name="Pz1mqrDhN79s.2.6437343855116288"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.2.6437343855116288.1">
+                                                amar is brother of anthony and akbar
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="Pz1mqrDhN79s.2.6437343855116288.2"
+                                                name="Pz1mqrDhN79s.2.6437343855116288"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.2.6437343855116288.2">
+                                                Amar is brother of Anthony and Akbar
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="Pz1mqrDhN79s.2.6437343855116288.3"
+                                                name="Pz1mqrDhN79s.2.6437343855116288"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.2.6437343855116288.3">
+                                                Anthony is brother of Akbar and Amar
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="correct">Yes, the answer is correct.</span>
+                                                <br />
+                                                <span class="correct">Score: 1</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.2.6437343855116288.3">
+                                                            Anthony is brother of Akbar and Amar
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["Pz1mqrDhN79s.3.5075729633509376"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNTA3NTcyOTYzMzUwOTM3NiwgImNob2ljZXMiOiBbeyJzY29yZSI6IDEuMCwgInRleHQiOiAiVGFrZXMgYSBsaXN0IG9mIG51bWJlcnMsIG11bHRpcGxpZXMgZWFjaCBudW1iZXIgYnkgMiwgYW5kIHByaW50cyB0aGUgdXBkYXRlZCBsaXN0IiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4wLCAidGV4dCI6ICJUYWtlcyBhIGxpc3Qgb2YgbnVtYmVycywgYXBwZW5kcyBlYWNoIG51bWJlciB0byB0aGUgbGlzdCB0d2ljZSwgYW5kIHByaW50cyB0aGUgdXBkYXRlZCBsaXN0IiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4wLCAidGV4dCI6ICJUYWtlcyBhIGxpc3Qgb2YgbnVtYmVycywgcmVtb3ZlcyBldmVuIG51bWJlcnMgZnJvbSB0aGUgbGlzdCwgYW5kIHByaW50cyB0aGUgdXBkYXRlZCBsaXN0IiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4wLCAidGV4dCI6ICJUYWtlcyBhIGxpc3Qgb2YgbnVtYmVycywgZGl2aWRlcyBlYWNoIG51bWJlciBieSAyLCBhbmQgcHJpbnRzIHRoZSB1cGRhdGVkIGxpc3QiLCAiZmVlZGJhY2siOiAiIn1dLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAic2hvd0Fuc3dlcldoZW5JbmNvcnJlY3QiOiBmYWxzZSwgImFsbE9yTm90aGluZ0dyYWRpbmciOiBmYWxzZSwgIm11bHRpcGxlQ29ycmVjdEFuc3dlciI6IGZhbHNlLCAid2VpZ2h0IjogMS4wfQ==",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="Pz1mqrDhN79s.3.5075729633509376">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        Consider the following code snippet:
+                                        <br />
+                                        <span style="font-family: monospace"><br /></span>
+                                        <img
+                                            alt=""
+                                            class="yui-img selected"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/img3.png"
+                                            style="width: 350px"
+                                            title=""
+                                        />
+                                        <br />
+                                        <br />
+                                        What does the code do?
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="Pz1mqrDhN79s.3.5075729633509376.0"
+                                                name="Pz1mqrDhN79s.3.5075729633509376"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.3.5075729633509376.0">
+                                                Takes a list of numbers, multiplies each number by 2, and prints the
+                                                updated list
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="Pz1mqrDhN79s.3.5075729633509376.1"
+                                                name="Pz1mqrDhN79s.3.5075729633509376"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.3.5075729633509376.1">
+                                                Takes a list of numbers, appends each number to the list twice, and
+                                                prints the updated list
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="Pz1mqrDhN79s.3.5075729633509376.2"
+                                                name="Pz1mqrDhN79s.3.5075729633509376"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.3.5075729633509376.2">
+                                                Takes a list of numbers, removes even numbers from the list, and prints
+                                                the updated list
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="Pz1mqrDhN79s.3.5075729633509376.3"
+                                                name="Pz1mqrDhN79s.3.5075729633509376"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.3.5075729633509376.3">
+                                                Takes a list of numbers, divides each number by 2, and prints the
+                                                updated list
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="correct">Yes, the answer is correct.</span>
+                                                <br />
+                                                <span class="correct">Score: 1</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.3.5075729633509376.0">
+                                                            Takes a list of numbers, multiplies each number by 2, and
+                                                            prints the updated list
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["Pz1mqrDhN79s.4.6251451160985600"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNjI1MTQ1MTE2MDk4NTYwMCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMCwgInRleHQiOiAiXCIxMTExMTExMTExXCIiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjAsICJ0ZXh0IjogIlwiMDAwMDAwMDAwMFwiIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMS4wLCAidGV4dCI6ICJBIHN0cmluZyB3aXRoIHNvbWUgMXMgYW5kIHNvbWUgMHMiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjAsICJ0ZXh0IjogIlRoZSBmdW5jdGlvbiB3aWxsIHJhaXNlIGFuIGVycm9yIiwgImZlZWRiYWNrIjogIiJ9XSwgImRlZmF1bHRGZWVkYmFjayI6ICIiLCAicGVybXV0ZUNob2ljZXMiOiBmYWxzZSwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2UsICJtdWx0aXBsZUNvcnJlY3RBbnN3ZXIiOiBmYWxzZSwgIndlaWdodCI6IDEuMH0=",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="Pz1mqrDhN79s.4.6251451160985600">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        What will be the output of the following Python code?
+                                        <br />
+                                        <span style="font-family: monospace"><br /></span>
+                                        <img
+                                            alt=""
+                                            class="yui-img selected"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/img4.png"
+                                            style="width: 520px"
+                                            title=""
+                                        />
+                                        <br />
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="Pz1mqrDhN79s.4.6251451160985600.0"
+                                                name="Pz1mqrDhN79s.4.6251451160985600"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.4.6251451160985600.0">"1111111111"</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="Pz1mqrDhN79s.4.6251451160985600.1"
+                                                name="Pz1mqrDhN79s.4.6251451160985600"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.4.6251451160985600.1">"0000000000"</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="Pz1mqrDhN79s.4.6251451160985600.2"
+                                                name="Pz1mqrDhN79s.4.6251451160985600"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.4.6251451160985600.2">
+                                                A string with some 1s and some 0s
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="Pz1mqrDhN79s.4.6251451160985600.3"
+                                                name="Pz1mqrDhN79s.4.6251451160985600"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.4.6251451160985600.3">
+                                                The function will raise an error
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="incorrect">No, the answer is incorrect.</span>
+                                                <br />
+                                                <span class="incorrect">Score: 0</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.4.6251451160985600.2">
+                                                            A string with some 1s and some 0s
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["Pz1mqrDhN79s.5.5191366527680512"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNTE5MTM2NjUyNzY4MDUxMiwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMCwgInRleHQiOiAiVGFrZXMgYSBsaXN0IG9mIG51bWJlcnMgYXMgaW5wdXQsIGNvbXB1dGVzIHRoZSBzdW0gb2YgdGhlIG51bWJlcnMsIGFuZCBwcmludHMgdGhlIHN1bSBhbG9uZyB3aXRoIHRoZSBhdmVyYWdlIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMS4wLCAidGV4dCI6ICJUYWtlcyB0aGUgY291bnQgb2YgZWxlbWVudHMsIGNvbXB1dGVzIHRoZSBzdW0gb2YgdGhlIGVsZW1lbnRzLCBhbmQgcHJpbnRzIHRoZSBzdW0gYWxvbmcgd2l0aCB0aGUgYXZlcmFnZSIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuMCwgInRleHQiOiAiVGFrZXMgYSBsaXN0IG9mIG51bWJlcnMgYXMgaW5wdXQsIGNvbXB1dGVzIHRoZSBhdmVyYWdlIG9mIHRoZSBudW1iZXJzLCBhbmQgcHJpbnRzIHRoZSBhdmVyYWdlIGFsb25nIHdpdGggdGhlIHN1bSIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuMCwgInRleHQiOiAiTm9uZSBvZiB0aGUgYWJvdmUiLCAiZmVlZGJhY2siOiAiIn1dLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAic2hvd0Fuc3dlcldoZW5JbmNvcnJlY3QiOiBmYWxzZSwgImFsbE9yTm90aGluZ0dyYWRpbmciOiBmYWxzZSwgIm11bHRpcGxlQ29ycmVjdEFuc3dlciI6IGZhbHNlLCAid2VpZ2h0IjogMC4wfQ==",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="Pz1mqrDhN79s.5.5191366527680512">
+                                    <div class="qt-points">
+                                        <em>0 points</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        Consider the following code snippet:
+                                        <br />
+                                        <span style="font-family: monospace"><br /></span>
+                                        <img
+                                            alt=""
+                                            class="yui-img selected"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/img5.png"
+                                            style="width: 500px"
+                                            title=""
+                                        />
+                                        <br />
+                                        <br />
+                                        What does the code do?
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="Pz1mqrDhN79s.5.5191366527680512.0"
+                                                name="Pz1mqrDhN79s.5.5191366527680512"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.5.5191366527680512.0">
+                                                Takes a list of numbers as input, computes the sum of the numbers, and
+                                                prints the sum along with the average
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="Pz1mqrDhN79s.5.5191366527680512.1"
+                                                name="Pz1mqrDhN79s.5.5191366527680512"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.5.5191366527680512.1">
+                                                Takes the count of elements, computes the sum of the elements, and
+                                                prints the sum along with the average
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="Pz1mqrDhN79s.5.5191366527680512.2"
+                                                name="Pz1mqrDhN79s.5.5191366527680512"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.5.5191366527680512.2">
+                                                Takes a list of numbers as input, computes the average of the numbers,
+                                                and prints the average along with the sum
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="Pz1mqrDhN79s.5.5191366527680512.3"
+                                                name="Pz1mqrDhN79s.5.5191366527680512"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.5.5191366527680512.3">None of the above</label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="correct">Yes, the answer is correct.</span>
+                                                <br />
+                                                <span class="correct">Score: 0</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.5.5191366527680512.1">
+                                                            Takes the count of elements, computes the sum of the
+                                                            elements, and prints the sum along with the average
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["Pz1mqrDhN79s.6.4791213014646784"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNDc5MTIxMzAxNDY0Njc4NCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMCwgInRleHQiOiAiXCJQeXRob25cIiIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDEuMCwgInRleHQiOiAiQSByYW5kb20gcGVybXV0YXRpb24gb2YgdGhlIGxldHRlcnMgaW4gXCJweXRob25cIiIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuMCwgInRleHQiOiAiXCJyYW5kb21cIiIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuMCwgInRleHQiOiAiVGhlIGZ1bmN0aW9uIHdpbGwgcmFpc2UgYW4gZXJyb3IiLCAiZmVlZGJhY2siOiAiIn1dLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAic2hvd0Fuc3dlcldoZW5JbmNvcnJlY3QiOiBmYWxzZSwgImFsbE9yTm90aGluZ0dyYWRpbmciOiBmYWxzZSwgIm11bHRpcGxlQ29ycmVjdEFuc3dlciI6IGZhbHNlLCAid2VpZ2h0IjogMS4wfQ==",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="Pz1mqrDhN79s.6.4791213014646784">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        What will be the output of the following Python code?
+                                        <br />
+                                        <br />
+                                        <img
+                                            alt=""
+                                            class="yui-img selected"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/img6.png"
+                                            style="width: 350px; height: 170px"
+                                            title=""
+                                        />
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="Pz1mqrDhN79s.6.4791213014646784.0"
+                                                name="Pz1mqrDhN79s.6.4791213014646784"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.6.4791213014646784.0">"Python"</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="Pz1mqrDhN79s.6.4791213014646784.1"
+                                                name="Pz1mqrDhN79s.6.4791213014646784"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.6.4791213014646784.1">
+                                                A random permutation of the letters in "python"
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="Pz1mqrDhN79s.6.4791213014646784.2"
+                                                name="Pz1mqrDhN79s.6.4791213014646784"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.6.4791213014646784.2">"random"</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="Pz1mqrDhN79s.6.4791213014646784.3"
+                                                name="Pz1mqrDhN79s.6.4791213014646784"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.6.4791213014646784.3">
+                                                The function will raise an error
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="correct">Yes, the answer is correct.</span>
+                                                <br />
+                                                <span class="correct">Score: 1</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.6.4791213014646784.1">
+                                                            A random permutation of the letters in "python"
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["Pz1mqrDhN79s.7.4698948460085248"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNDY5ODk0ODQ2MDA4NTI0OCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuNSwgInRleHQiOiAiUmV2ZXJzZXMgdGhlIG51bWJlcnMgbGlzdCBhbmQgc3RvcmVzIGl0IGluIG5ld19udW1iZXJzLiIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuNSwgInRleHQiOiAiQ3JlYXRlcyBhbiBlbXB0eSBsaXN0IG5hbWVkIG5ld19udW1iZXJzIGFuZCBhcHBlbmRzIGVsZW1lbnRzIGZyb20gbnVtYmVycyB0byBpdCBpbiByZXZlcnNlIG9yZGVyLiIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IC0xLjAsICJ0ZXh0IjogIlByb2R1Y2VzIGFuIGVycm9yIGR1ZSB0byBhbiBpbnZhbGlkIGZ1bmN0aW9uIHVzZWQgZm9yIGxpc3QgbWFuaXB1bGF0aW9uLiIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IC0xLjAsICJ0ZXh0IjogIkdlbmVyYXRlcyBhIG5ldyBsaXN0IG5ld19udW1iZXJzIHdpdGggZWxlbWVudHMgZnJvbSBudW1iZXJzIGluIHRoZSBzYW1lIG9yZGVyIGFzIG51bWJlcnMuIiwgImZlZWRiYWNrIjogIiJ9XSwgImRlZmF1bHRGZWVkYmFjayI6ICIiLCAicGVybXV0ZUNob2ljZXMiOiBmYWxzZSwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2UsICJtdWx0aXBsZUNvcnJlY3RBbnN3ZXIiOiBmYWxzZSwgIndlaWdodCI6IDEuMH0=",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="Pz1mqrDhN79s.7.4698948460085248">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        Consider the following code snippet:
+                                        <br />
+                                        <br />
+                                        <img
+                                            alt=""
+                                            class="yui-img selected"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/img7.png"
+                                            style="width: 560px; height: 120px"
+                                            title=""
+                                        />
+                                        <br />
+                                        What does the code do? [MSQ]
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="Pz1mqrDhN79s.7.4698948460085248.0"
+                                                name="Pz1mqrDhN79s.7.4698948460085248"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.7.4698948460085248.0">
+                                                Reverses the numbers list and stores it in new_numbers.
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="Pz1mqrDhN79s.7.4698948460085248.1"
+                                                name="Pz1mqrDhN79s.7.4698948460085248"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.7.4698948460085248.1">
+                                                Creates an empty list named new_numbers and appends elements from
+                                                numbers to it in reverse order.
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="Pz1mqrDhN79s.7.4698948460085248.2"
+                                                name="Pz1mqrDhN79s.7.4698948460085248"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.7.4698948460085248.2">
+                                                Produces an error due to an invalid function used for list manipulation.
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="Pz1mqrDhN79s.7.4698948460085248.3"
+                                                name="Pz1mqrDhN79s.7.4698948460085248"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.7.4698948460085248.3">
+                                                Generates a new list new_numbers with elements from numbers in the same
+                                                order as numbers.
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="correct">Yes, the answer is correct.</span>
+                                                <br />
+                                                <span class="correct">Score: 1</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.7.4698948460085248.0">
+                                                            Reverses the numbers list and stores it in new_numbers.
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.7.4698948460085248.1">
+                                                            Creates an empty list named new_numbers and appends elements
+                                                            from numbers to it in reverse order.
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["Pz1mqrDhN79s.8.5253076617789440"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNTI1MzA3NjYxNzc4OTQ0MCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMjUsICJ0ZXh0IjogIldpa2lwZWRpYSIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuMjUsICJ0ZXh0IjogIlN0YWNrIEV4Y2hhbmdlIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4yNSwgInRleHQiOiAiUXVvcmEiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjI1LCAidGV4dCI6ICJGYWNlYm9vayIsICJmZWVkYmFjayI6ICIifV0sICJkZWZhdWx0RmVlZGJhY2siOiAiIiwgInBlcm11dGVDaG9pY2VzIjogZmFsc2UsICJzaG93QW5zd2VyV2hlbkluY29ycmVjdCI6IGZhbHNlLCAiYWxsT3JOb3RoaW5nR3JhZGluZyI6IGZhbHNlLCAibXVsdGlwbGVDb3JyZWN0QW5zd2VyIjogZmFsc2UsICJ3ZWlnaHQiOiAxLjB9",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="Pz1mqrDhN79s.8.5253076617789440">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        Which of the following are the examples of Social Computing/Crowd Computing:
+                                        [MSQ]
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="Pz1mqrDhN79s.8.5253076617789440.0"
+                                                name="Pz1mqrDhN79s.8.5253076617789440"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.8.5253076617789440.0">Wikipedia</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="Pz1mqrDhN79s.8.5253076617789440.1"
+                                                name="Pz1mqrDhN79s.8.5253076617789440"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.8.5253076617789440.1">Stack Exchange</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="Pz1mqrDhN79s.8.5253076617789440.2"
+                                                name="Pz1mqrDhN79s.8.5253076617789440"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.8.5253076617789440.2">Quora</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="Pz1mqrDhN79s.8.5253076617789440.3"
+                                                name="Pz1mqrDhN79s.8.5253076617789440"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.8.5253076617789440.3">Facebook</label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="correct">Yes, the answer is correct.</span>
+                                                <br />
+                                                <span class="correct">Score: 1</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.8.5253076617789440.0">Wikipedia</label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.8.5253076617789440.1">
+                                                            Stack Exchange
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.8.5253076617789440.2">Quora</label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.8.5253076617789440.3">Facebook</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["Pz1mqrDhN79s.9.5890654454939648"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNTg5MDY1NDQ1NDkzOTY0OCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDEuMCwgInRleHQiOiAiUHJpbnRzIG51bWJlcnMgZnJvbSAxIHRvIDIwLCByZXBsYWNpbmcgbXVsdGlwbGVzIG9mIDMgd2l0aCBcIkZpenpcIiwgbXVsdGlwbGVzIG9mIDUgd2l0aCBcIkJ1enpcIiwgYW5kIG11bHRpcGxlcyBvZiBib3RoIDMgYW5kIDUgd2l0aCBcIkZpenpCdXp6XCIuIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4wLCAidGV4dCI6ICJQcmludHMgbnVtYmVycyBmcm9tIDEgdG8gMjAsIHJlcGxhY2luZyBtdWx0aXBsZXMgb2YgMyBhbmQgNSB3aXRoIFwiRml6ekJ1enpcIiwgbXVsdGlwbGVzIG9mIDMgd2l0aCBcIkZpenpcIiwgYW5kIG11bHRpcGxlcyBvZiA1IHdpdGggXCJCdXp6XCIuIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4wLCAidGV4dCI6ICJQcmludHMgbnVtYmVycyBmcm9tIDEgdG8gMjAsIHJlcGxhY2luZyBtdWx0aXBsZXMgb2YgMyB3aXRoIFwiRml6elwiLCBtdWx0aXBsZXMgb2YgNSB3aXRoIFwiQnV6elwiLCBhbmQgbnVtYmVycyBkaXZpc2libGUgYnkgYm90aCAzIGFuZCA1IHdpdGggdGhlaXIgcHJvZHVjdC4iLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjAsICJ0ZXh0IjogIlByaW50cyBudW1iZXJzIGZyb20gMSB0byAyMCwgcmVwbGFjaW5nIG11bHRpcGxlcyBvZiAzIHdpdGggXCJCdXp6XCIsIG11bHRpcGxlcyBvZiA1IHdpdGggXCJGaXp6XCIsIGFuZCBudW1iZXJzIGRpdmlzaWJsZSBieSBib3RoIDMgYW5kIDUgd2l0aCBcIkZpenpCdXp6XCIuIiwgImZlZWRiYWNrIjogIiJ9XSwgImRlZmF1bHRGZWVkYmFjayI6ICIiLCAicGVybXV0ZUNob2ljZXMiOiBmYWxzZSwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2UsICJtdWx0aXBsZUNvcnJlY3RBbnN3ZXIiOiBmYWxzZSwgIndlaWdodCI6IDAuMH0=",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="Pz1mqrDhN79s.9.5890654454939648">
+                                    <div class="qt-points">
+                                        <em>0 points</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        Consider the following code snippet:
+                                        <br />
+                                        <span style="font-family: monospace"><br /></span>
+                                        <img
+                                            alt=""
+                                            class="yui-img selected"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/img8.png"
+                                            style="width: 400px"
+                                            title=""
+                                        />
+                                        <br />
+                                        <br />
+                                        What does the code do?
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="Pz1mqrDhN79s.9.5890654454939648.0"
+                                                name="Pz1mqrDhN79s.9.5890654454939648"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.9.5890654454939648.0">
+                                                Prints numbers from 1 to 20, replacing multiples of 3 with "Fizz",
+                                                multiples of 5 with "Buzz", and multiples of both 3 and 5 with
+                                                "FizzBuzz".
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="Pz1mqrDhN79s.9.5890654454939648.1"
+                                                name="Pz1mqrDhN79s.9.5890654454939648"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.9.5890654454939648.1">
+                                                Prints numbers from 1 to 20, replacing multiples of 3 and 5 with
+                                                "FizzBuzz", multiples of 3 with "Fizz", and multiples of 5 with "Buzz".
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="Pz1mqrDhN79s.9.5890654454939648.2"
+                                                name="Pz1mqrDhN79s.9.5890654454939648"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.9.5890654454939648.2">
+                                                Prints numbers from 1 to 20, replacing multiples of 3 with "Fizz",
+                                                multiples of 5 with "Buzz", and numbers divisible by both 3 and 5 with
+                                                their product.
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="Pz1mqrDhN79s.9.5890654454939648.3"
+                                                name="Pz1mqrDhN79s.9.5890654454939648"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="Pz1mqrDhN79s.9.5890654454939648.3">
+                                                Prints numbers from 1 to 20, replacing multiples of 3 with "Buzz",
+                                                multiples of 5 with "Fizz", and numbers divisible by both 3 and 5 with
+                                                "FizzBuzz".
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="incorrect">No, the answer is incorrect.</span>
+                                                <br />
+                                                <span class="incorrect">Score: 0</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="Pz1mqrDhN79s.9.5890654454939648.0">
+                                                            Prints numbers from 1 to 20, replacing multiples of 3 with
+                                                            "Fizz", multiples of 5 with "Buzz", and multiples of both 3
+                                                            and 5 with "FizzBuzz".
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--&lt;div class=&quot;qt-check-answer&quot;&gt;-->
+                            <!--&lt;button class=&quot;gcb-button qt-check-answer-button&quot;&gt;-->
+                            <!---->
+                            <!-- Check Answer -->
+                            <!--&lt;/button&gt;-->
+                            <!--&lt;/div&gt;-->
+                            <div class="qt-feedback qt-hidden" role="alert"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="qt-assessment-button-bar">
+                    <div class="gcb-submit-only-once"></div>
+
+                    <div class="qt-grade-scored-lesson-calc-score" style="display: none"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="assessmentContents"></div>
+    </div>
+    <div id="assessment-overlay"></div>
+    <div id="assessment-not-all-attempt" class="assessment-pop-up">
+        <p>
+            You have not attempted all the questions.
+            <br />
+            Click 'Cancel' to return to the questions, or click 'Submit' to proceed with the submission.
+        </p>
+        <button id="assessment-not-all-attempt-submit">Submit</button>
+        <button id="assessment-not-all-attempt-cancel">Cancel</button>
+    </div>
+    <div id="assessment-no-attempt" class="assessment-pop-up">
+        <p>Atleast one question is required to be answered to proceed for submission.</p>
+        <button id="assessment-no-attempt-ok">OK</button>
+    </div>
+    <div id="submission-warning" class="assessment-pop-up">
+        <p>Please wait while the assessment is submitted.</p>
+    </div>
+    <style>
+        .assessment-pop-up {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        #assessment-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</div>

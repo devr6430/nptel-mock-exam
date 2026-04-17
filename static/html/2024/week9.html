@@ -1,0 +1,1843 @@
+<div class="gcb-aside gcb-button-box">
+    <script>
+        window.onload = function () {
+            var miliSecondsToDisableSubmit = calculateTimerToDisableSubmit();
+            var days = miliSecondsToDisableSubmit / (24 * 60 * 60 * 1000);
+            if (days >= 0 && days < 14) {
+                setTimeout(function () {
+                    var submit_button = document.getElementById("submitbutton");
+                    if (submit_button) submit_button.disabled = true;
+                    var check_answer_button = document.getElementById("checkAnswerButton");
+                    if (check_answer_button) check_answer_button.disabled = true;
+                    cbShowMsgAutoHide("Due date passed");
+                }, miliSecondsToDisableSubmit);
+            }
+        };
+
+        function calculateTimerToDisableSubmit() {
+            var date_in_mili_sec = "1711564140000.0";
+            var current_mili_seconds = new Date().getTime();
+            var difference_in_miliseconds = date_in_mili_sec - current_mili_seconds;
+            return difference_in_miliseconds;
+        }
+    </script>
+
+    <div class="gcb-assessment-contents">
+        <h1>Week 9: Assignment</h1>
+
+        <script>
+            assessmentXsrfToken = "1776189735/3jGwfaNZT28PAZ4SNw0kkrNPXBQMeoMGBDpfS4aPpvE=";
+
+            var assessmentGlobals = {};
+            var enable_negative_marking = JSON.parse("false");
+            assessmentGlobals.isReviewForm = false;
+            assessmentGlobals.grader = "auto";
+        </script>
+
+        <div class="assessment-top-info">
+            <strong>The due date for submitting this assignment has passed.</strong>
+            <div class="gcb-submission-due-date">Due on 2024-03-27, 23:59 IST.</div>
+
+            <div style="font-weight: bold">As per our records you have not submitted this assignment.</div>
+        </div>
+
+        <div class="readonly-assessment">
+            <div
+                data-xsrf-token="1776189735/3jGwfaNZT28PAZ4SNw0kkrNPXBQMeoMGBDpfS4aPpvE="
+                data-unit-id="438"
+                data-question-batch-id="A438"
+                data-scored="True"
+            >
+                <script>
+                    var questionData = questionData || {};
+                    questionData.xsrfToken = "1776189735/3jGwfaNZT28PAZ4SNw0kkrNPXBQMeoMGBDpfS4aPpvE=";
+
+                    questionData.savedAnswers = questionData.savedAnswers || {};
+                    $.extend(questionData.savedAnswers, JSON.parse("null"));
+
+                    if (window.history.replaceState) {
+                        window.history.replaceState(null, null, window.location.href);
+                    }
+                </script>
+                <div class="gcb-assessment-body assessment-readonly">
+                    <div>
+                        <link
+                            href="/modules/assessment_tags/resources/questions.css"
+                            rel="stylesheet"
+                            type="text/css"
+                        />
+                        <script>
+                            questionData["lqno4LcGFCmX"] = JSON.parse(
+                                window.atob(
+                                    "eyJscW5vNExjR0ZDbVguMC42NDk0Nzc4MTQzODAxMzQ0IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDY0OTQ3NzgxNDM4MDEzNDQsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJscW5vNExjR0ZDbVguMS42NjM4NDI2MDc2NDc5NDg4IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDY2Mzg0MjYwNzY0Nzk0ODgsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJscW5vNExjR0ZDbVguMi40NTkyOTQ0ODE0NzUxNzQ0IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDQ1OTI5NDQ4MTQ3NTE3NDQsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJscW5vNExjR0ZDbVguMy42NTc1ODY4MzM0MzA5Mzc2IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDY1NzU4NjgzMzQzMDkzNzYsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJscW5vNExjR0ZDbVguNC42NjY2MzA5MDcxMjczOTg0IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDY2NjYzMDkwNzEyNzM5ODQsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJscW5vNExjR0ZDbVguNS40NjAwNzEwMTE1NjIyOTEyIjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDQ2MDA3MTAxMTU2MjI5MTIsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJscW5vNExjR0ZDbVguNi40ODM2MzIzNDMxNTQ2ODgwIjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDQ4MzYzMjM0MzE1NDY4ODAsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJscW5vNExjR0ZDbVguNy41ODM1MDI2NjczOTU4OTEyIjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDU4MzUwMjY2NzM5NTg5MTIsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJscW5vNExjR0ZDbVguOC41MzQ1MzI1NTc1ODMxNTUyIjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDUzNDUzMjU1NzU4MzE1NTIsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJscW5vNExjR0ZDbVguOS42MDAwNzU1MDMzNTA1NzkyIjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDYwMDA3NTUwMzM1MDU3OTIsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJscW5vNExjR0ZDbVguMTAuNTc5MDYyNjY0NDIzMDE0NCI6IHsid2VpZ2h0IjogMC4wLCAicXVlc3Rpb24iOiA1NzkwNjI2NjQ0MjMwMTQ0LCAiaWdub3JlX3F1ZXN0aW9uIjogZmFsc2V9fQ==",
+                                ),
+                            );
+
+                            var assessmentTagMessages = {};
+
+                            assessmentTagMessages.correct = "Correct. ";
+
+                            assessmentTagMessages.incorrect = "Incorrect. ";
+
+                            assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                            assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                            assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                            assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                            assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                            assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                            assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                            assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                            assessmentTagMessages.graceMark = " You have been given grace marks for above question. ";
+                        </script>
+                        <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                        <script src="/modules/assessment_tags/resources/grading.js"></script>
+                        <noscript>
+                            <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                        </noscript>
+
+                        <div class="qt-question-group" id="lqno4LcGFCmX">
+                            <div class="qt-introduction"></div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["lqno4LcGFCmX.0.6494778143801344"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNjQ5NDc3ODE0MzgwMTM0NCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMCwgInRleHQiOiAiVGhlIHN0dWR5IG9mIGxhbmd1YWdlIGV2b2x1dGlvbiIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDEuMCwgInRleHQiOiAiVGhlIHN0dWR5IG9mIGxpbmd1aXN0aWMgc3R5bGUgaW4gd3JpdHRlbiB0ZXh0cyIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuMCwgInRleHQiOiAiVGhlIHN0dWR5IG9mIHNwZWVjaCBwYXR0ZXJucyBpbiBwdWJsaWMgc3BlYWtpbmciLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjAsICJ0ZXh0IjogIlRoZSBzdHVkeSBvZiBsYW5ndWFnZSBhY3F1aXNpdGlvbiBpbiBjaGlsZHJlbiIsICJmZWVkYmFjayI6ICIifV0sICJkZWZhdWx0RmVlZGJhY2siOiAiIiwgInBlcm11dGVDaG9pY2VzIjogZmFsc2UsICJzaG93QW5zd2VyV2hlbkluY29ycmVjdCI6IGZhbHNlLCAiYWxsT3JOb3RoaW5nR3JhZGluZyI6IGZhbHNlLCAibXVsdGlwbGVDb3JyZWN0QW5zd2VyIjogZmFsc2UsICJ3ZWlnaHQiOiAxLjB9",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="lqno4LcGFCmX.0.6494778143801344">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">What is stylometry?</div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="lqno4LcGFCmX.0.6494778143801344.0"
+                                                name="lqno4LcGFCmX.0.6494778143801344"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.0.6494778143801344.0">
+                                                The study of language evolution
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="lqno4LcGFCmX.0.6494778143801344.1"
+                                                name="lqno4LcGFCmX.0.6494778143801344"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.0.6494778143801344.1">
+                                                The study of linguistic style in written texts
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="lqno4LcGFCmX.0.6494778143801344.2"
+                                                name="lqno4LcGFCmX.0.6494778143801344"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.0.6494778143801344.2">
+                                                The study of speech patterns in public speaking
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="lqno4LcGFCmX.0.6494778143801344.3"
+                                                name="lqno4LcGFCmX.0.6494778143801344"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.0.6494778143801344.3">
+                                                The study of language acquisition in children
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="incorrect">No, the answer is incorrect.</span>
+                                                <br />
+                                                <span class="incorrect">Score: 0</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.0.6494778143801344.1">
+                                                            The study of linguistic style in written texts
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["lqno4LcGFCmX.1.6638426076479488"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNjYzODQyNjA3NjQ3OTQ4OCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMjUsICJ0ZXh0IjogIlB1bmN0dWF0aW9uIHVzYWdlIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4yNSwgInRleHQiOiAiV29yZCBGcmVxdWVuY3kiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjI1LCAidGV4dCI6ICJVc2FnZSBvZiBTdHlsaXN0aWMgRGV2aWNlcyBsaWtlIE1ldGFwaG9ycywgU2ltaWxlcywgZXRjIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4yNSwgInRleHQiOiAiQXZlcmFnZSBTZW50ZW5jZSBMZW5ndGgiLCAiZmVlZGJhY2siOiAiIn1dLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAic2hvd0Fuc3dlcldoZW5JbmNvcnJlY3QiOiBmYWxzZSwgImFsbE9yTm90aGluZ0dyYWRpbmciOiBmYWxzZSwgIm11bHRpcGxlQ29ycmVjdEFuc3dlciI6IGZhbHNlLCAid2VpZ2h0IjogMS4wfQ==",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="lqno4LcGFCmX.1.6638426076479488">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        What are the different attributes that can be checked in addition to average
+                                        word length to identify the style of a particular author? (MSQ)
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="lqno4LcGFCmX.1.6638426076479488.0"
+                                                name="lqno4LcGFCmX.1.6638426076479488"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.1.6638426076479488.0">Punctuation usage</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="lqno4LcGFCmX.1.6638426076479488.1"
+                                                name="lqno4LcGFCmX.1.6638426076479488"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.1.6638426076479488.1">Word Frequency</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="lqno4LcGFCmX.1.6638426076479488.2"
+                                                name="lqno4LcGFCmX.1.6638426076479488"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.1.6638426076479488.2">
+                                                Usage of Stylistic Devices like Metaphors, Similes, etc
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="lqno4LcGFCmX.1.6638426076479488.3"
+                                                name="lqno4LcGFCmX.1.6638426076479488"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.1.6638426076479488.3">
+                                                Average Sentence Length
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="incorrect">No, the answer is incorrect.</span>
+                                                <br />
+                                                <span class="incorrect">Score: 0</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.1.6638426076479488.0">
+                                                            Punctuation usage
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.1.6638426076479488.1">
+                                                            Word Frequency
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.1.6638426076479488.2">
+                                                            Usage of Stylistic Devices like Metaphors, Similes, etc
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.1.6638426076479488.3">
+                                                            Average Sentence Length
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["lqno4LcGFCmX.2.4592944814751744"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNDU5Mjk0NDgxNDc1MTc0NCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMjUsICJ0ZXh0IjogInkgcmVwcmVzZW50cyB0aGUgc3VtIG9mIGxlbmd0aCBvZiB3b3JkcyBpbiB0ZXh0IiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4yNSwgInRleHQiOiAieiByZXByZXNlbnRzIHRoZSBhdmVyYWdlIHdvcmQgbGVuZ3RoIG9mIHRleHQiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjI1LCAidGV4dCI6ICJ4IHJlcHJlc2VudHMgYSBsaXN0IHdoZXJlIGVhY2ggaW5kZXggb2YgdGhlIGxpc3QgY29ycmVzcG9uZHMgdG8gdGhlIGxlbmd0aCBvZiB0aGVcbmNvcnJlc3BvbmRpbmcgd29yZCBpbiB0ZXh0IiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4yNSwgInRleHQiOiAiVGhlIG91dHB1dCBvZiB0aGUgY29kZSBpczogMzYgNy4yIiwgImZlZWRiYWNrIjogIiJ9XSwgImRlZmF1bHRGZWVkYmFjayI6ICIiLCAicGVybXV0ZUNob2ljZXMiOiBmYWxzZSwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2UsICJtdWx0aXBsZUNvcnJlY3RBbnN3ZXIiOiBmYWxzZSwgIndlaWdodCI6IDEuMH0=",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="lqno4LcGFCmX.2.4592944814751744">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        The following code tries to perform natural language analysis for a small piece
+                                        of text without using the nltk (Natural Language Toolkit) library.
+                                        <br />
+                                        <br />
+                                        <img
+                                            alt=""
+                                            class="yui-img"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/Q3A9.png"
+                                            title=""
+                                        />
+                                        <br />
+                                        <br />
+                                        Select all the correct statements (MSQ)
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="lqno4LcGFCmX.2.4592944814751744.0"
+                                                name="lqno4LcGFCmX.2.4592944814751744"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.2.4592944814751744.0">
+                                                y represents the sum of length of words in text
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="lqno4LcGFCmX.2.4592944814751744.1"
+                                                name="lqno4LcGFCmX.2.4592944814751744"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.2.4592944814751744.1">
+                                                z represents the average word length of text
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="lqno4LcGFCmX.2.4592944814751744.2"
+                                                name="lqno4LcGFCmX.2.4592944814751744"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.2.4592944814751744.2">
+                                                x represents a list where each index of the list corresponds to the
+                                                length of the corresponding word in text
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="lqno4LcGFCmX.2.4592944814751744.3"
+                                                name="lqno4LcGFCmX.2.4592944814751744"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.2.4592944814751744.3">
+                                                The output of the code is: 36 7.2
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="incorrect">No, the answer is incorrect.</span>
+                                                <br />
+                                                <span class="incorrect">Score: 0</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.2.4592944814751744.0">
+                                                            y represents the sum of length of words in text
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.2.4592944814751744.1">
+                                                            z represents the average word length of text
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.2.4592944814751744.2">
+                                                            x represents a list where each index of the list corresponds
+                                                            to the length of the corresponding word in text
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.2.4592944814751744.3">
+                                                            The output of the code is: 36 7.2
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["lqno4LcGFCmX.3.6575868334309376"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNjU3NTg2ODMzNDMwOTM3NiwgImdyYWRlcnMiOiBbeyJzY29yZSI6ICIxLjAiLCAibWF0Y2hlciI6ICJudW1lcmljIiwgInJlc3BvbnNlIjogIjUiLCAicmFuZ2VfZnJvbSI6ICIiLCAicmFuZ2VfdG8iOiAiIiwgIm51bWVyaWNfYW5zd2VyIjogIjUiLCAiZmVlZGJhY2siOiAiIn1dLCAiaGludCI6ICIiLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJ3ZWlnaHQiOiAxLjB9",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-nm-question qt-embedded" id="lqno4LcGFCmX.3.6575868334309376">
+                                    <div class="qt-question" id="nm_question_lqno4LcGFCmX.3.6575868334309376">
+                                        The following code tries to calculate average sentence length of a given block
+                                        of text in the form of a file, assuming that the sentences always end with full
+                                        stops and that there are no ellipsis(…) in the block of text. But the code might
+                                        contain errors. Identify the line number corresponding to the error. In the
+                                        absence of an error input your answer as -1(NAT)
+                                        <br />
+                                        <br />
+                                        <img
+                                            alt=""
+                                            class="yui-img"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/Screenshot 2024-03-18 at 3.18.24 PM.png"
+                                            title=""
+                                        />
+                                        <br />
+                                    </div>
+                                    <div class="qt-response">
+                                        <input
+                                            aria-label="Enter your answer"
+                                            step="any"
+                                            type="number"
+                                            disabled="disabled"
+                                        />
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="incorrect">No, the answer is incorrect.</span>
+                                                <br />
+                                                <span class="incorrect">Score: 0</span>
+                                            </h3>
+                                            <div>
+                                                <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                                <div class="faculty-answer">(Type: Numeric) 5</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="qt-points">
+                                    <em>1 point</em>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["lqno4LcGFCmX.4.6666309071273984"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNjY2NjMwOTA3MTI3Mzk4NCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDEuMCwgInRleHQiOiAiQSBncmFwaCBoYXZpbmcgNSBub2RlcyB3aGljaCBhcmUgaW50ZWdlcnMgZnJvbSAxIHRvIDUgYW5kIDEwIGVkZ2VzIGluIHRvdGFsIGlzIGNyZWF0ZWRcbmFuZCB0aGUgZWRnZXMgYW5kIG5vZGVzIG9mIHRoZSBncmFwaCBhcmUgcHJpbnRlZCIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuMCwgInRleHQiOiAiQSBncmFwaCBoYXZpbmcgNiBub2RlcyB3aGljaCBhcmUgaW50ZWdlcnMgZnJvbSAxIHRvIDYgYW5kIDEwIGVkZ2VzIGluIHRvdGFsIGlzIGNyZWF0ZWRcbmFuZCB0aGUgZWRnZXMgYW5kIG5vZGVzIG9mIHRoZSBncmFwaCBhcmUgcHJpbnRlZCIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuMCwgInRleHQiOiAiQSBncmFwaCBoYXZpbmcgNSBub2RlcyB3aGljaCBhcmUgaW50ZWdlcnMgZnJvbSAxIHRvIDUgYW5kIDkgZWRnZXMgaW4gdG90YWwgaXMgY3JlYXRlZFxuYW5kIHRoZSBlZGdlcyBhbmQgbm9kZXMgb2YgdGhlIGdyYXBoIGFyZSBwcmludGVkIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4wLCAidGV4dCI6ICJBIGdyYXBoIGhhdmluZyA2IG5vZGVzIHdoaWNoIGFyZSBpbnRlZ2VycyBmcm9tIDEgdG8gNiBhbmQgOSBlZGdlcyBpbiB0b3RhbCBpcyBjcmVhdGVkXG5hbmQgdGhlIGVkZ2VzIGFuZCBub2RlcyBvZiB0aGUgZ3JhcGggYXJlIHByaW50ZWQiLCAiZmVlZGJhY2siOiAiIn1dLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAic2hvd0Fuc3dlcldoZW5JbmNvcnJlY3QiOiBmYWxzZSwgImFsbE9yTm90aGluZ0dyYWRpbmciOiBmYWxzZSwgIm11bHRpcGxlQ29ycmVjdEFuc3dlciI6IGZhbHNlLCAid2VpZ2h0IjogMS4wfQ==",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="lqno4LcGFCmX.4.6666309071273984">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        What does the following code do?
+                                        <br />
+                                        <br />
+                                        <img
+                                            alt=""
+                                            class="yui-img selected"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/Q4A10.png"
+                                            title=""
+                                        />
+                                        <br />
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="lqno4LcGFCmX.4.6666309071273984.0"
+                                                name="lqno4LcGFCmX.4.6666309071273984"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.4.6666309071273984.0">
+                                                A graph having 5 nodes which are integers from 1 to 5 and 10 edges in
+                                                total is created and the edges and nodes of the graph are printed
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="lqno4LcGFCmX.4.6666309071273984.1"
+                                                name="lqno4LcGFCmX.4.6666309071273984"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.4.6666309071273984.1">
+                                                A graph having 6 nodes which are integers from 1 to 6 and 10 edges in
+                                                total is created and the edges and nodes of the graph are printed
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="lqno4LcGFCmX.4.6666309071273984.2"
+                                                name="lqno4LcGFCmX.4.6666309071273984"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.4.6666309071273984.2">
+                                                A graph having 5 nodes which are integers from 1 to 5 and 9 edges in
+                                                total is created and the edges and nodes of the graph are printed
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="lqno4LcGFCmX.4.6666309071273984.3"
+                                                name="lqno4LcGFCmX.4.6666309071273984"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.4.6666309071273984.3">
+                                                A graph having 6 nodes which are integers from 1 to 6 and 9 edges in
+                                                total is created and the edges and nodes of the graph are printed
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="incorrect">No, the answer is incorrect.</span>
+                                                <br />
+                                                <span class="incorrect">Score: 0</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.4.6666309071273984.0">
+                                                            A graph having 5 nodes which are integers from 1 to 5 and 10
+                                                            edges in total is created and the edges and nodes of the
+                                                            graph are printed
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["lqno4LcGFCmX.5.4600710115622912"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNDYwMDcxMDExNTYyMjkxMiwgImNob2ljZXMiOiBbeyJzY29yZSI6IDEuMCwgInRleHQiOiAiTm9kZSBkZWdyZWUiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjAsICJ0ZXh0IjogIkdyYXBoIGRlbnNpdHkiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjAsICJ0ZXh0IjogIkdyYXBoIGRpYW1ldGVyIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4wLCAidGV4dCI6ICJFZGdlIHdlaWdodCIsICJmZWVkYmFjayI6ICIifV0sICJkZWZhdWx0RmVlZGJhY2siOiAiIiwgInBlcm11dGVDaG9pY2VzIjogZmFsc2UsICJzaG93QW5zd2VyV2hlbkluY29ycmVjdCI6IGZhbHNlLCAiYWxsT3JOb3RoaW5nR3JhZGluZyI6IGZhbHNlLCAibXVsdGlwbGVDb3JyZWN0QW5zd2VyIjogZmFsc2UsICJ3ZWlnaHQiOiAxLjB9",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="lqno4LcGFCmX.5.4600710115622912">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        You are analysing a social network where individuals are represented as nodes,
+                                        and friendships are represented as edges. What would be the most appropriate
+                                        graph property to study to identify influential individuals in the network?
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="lqno4LcGFCmX.5.4600710115622912.0"
+                                                name="lqno4LcGFCmX.5.4600710115622912"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.5.4600710115622912.0">Node degree</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="lqno4LcGFCmX.5.4600710115622912.1"
+                                                name="lqno4LcGFCmX.5.4600710115622912"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.5.4600710115622912.1">Graph density</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="lqno4LcGFCmX.5.4600710115622912.2"
+                                                name="lqno4LcGFCmX.5.4600710115622912"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.5.4600710115622912.2">Graph diameter</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="lqno4LcGFCmX.5.4600710115622912.3"
+                                                name="lqno4LcGFCmX.5.4600710115622912"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.5.4600710115622912.3">Edge weight</label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="incorrect">No, the answer is incorrect.</span>
+                                                <br />
+                                                <span class="incorrect">Score: 0</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.5.4600710115622912.0">
+                                                            Node degree
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["lqno4LcGFCmX.6.4836323431546880"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNDgzNjMyMzQzMTU0Njg4MCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMCwgInRleHQiOiAiMSBkZWdyZWUiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjAsICJ0ZXh0IjogIjMgZGVncmVlcyIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDEuMCwgInRleHQiOiAiNiBkZWdyZWVzIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4wLCAidGV4dCI6ICIxMCBkZWdyZWVzIiwgImZlZWRiYWNrIjogIiJ9XSwgImRlZmF1bHRGZWVkYmFjayI6ICIiLCAicGVybXV0ZUNob2ljZXMiOiBmYWxzZSwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2UsICJtdWx0aXBsZUNvcnJlY3RBbnN3ZXIiOiBmYWxzZSwgIndlaWdodCI6IDEuMH0=",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="lqno4LcGFCmX.6.4836323431546880">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        In the "small world experiment" conducted by Stanley Milgram, participants were
+                                        asked to send a letter to a target person through acquaintances. What was the
+                                        average number of intermediaries required for the letters to reach the target?
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="lqno4LcGFCmX.6.4836323431546880.0"
+                                                name="lqno4LcGFCmX.6.4836323431546880"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.6.4836323431546880.0">1 degree</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="lqno4LcGFCmX.6.4836323431546880.1"
+                                                name="lqno4LcGFCmX.6.4836323431546880"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.6.4836323431546880.1">3 degrees</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="lqno4LcGFCmX.6.4836323431546880.2"
+                                                name="lqno4LcGFCmX.6.4836323431546880"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.6.4836323431546880.2">6 degrees</label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="lqno4LcGFCmX.6.4836323431546880.3"
+                                                name="lqno4LcGFCmX.6.4836323431546880"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.6.4836323431546880.3">10 degrees</label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="incorrect">No, the answer is incorrect.</span>
+                                                <br />
+                                                <span class="incorrect">Score: 0</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.6.4836323431546880.2">6 degrees</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["lqno4LcGFCmX.7.5835026673958912"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNTgzNTAyNjY3Mzk1ODkxMiwgImdyYWRlcnMiOiBbeyJzY29yZSI6ICIxLjAiLCAibWF0Y2hlciI6ICJudW1lcmljIiwgInJlc3BvbnNlIjogIjE0IiwgInJhbmdlX2Zyb20iOiAiIiwgInJhbmdlX3RvIjogIiIsICJudW1lcmljX2Fuc3dlciI6ICIxNCIsICJmZWVkYmFjayI6ICIifV0sICJoaW50IjogIiIsICJkZWZhdWx0RmVlZGJhY2siOiAiIiwgIndlaWdodCI6IDEuMH0=",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-nm-question qt-embedded" id="lqno4LcGFCmX.7.5835026673958912">
+                                    <div class="qt-question" id="nm_question_lqno4LcGFCmX.7.5835026673958912">
+                                        Given a file with edges of the graph, and each line representing an edge in the
+                                        format “node 1 node 2”, the following code attempts to plot a graph based on the
+                                        data given. But the code might contain errors. Identify the line number
+                                        corresponding to the error. In the absence of an error type your answer as -1.
+                                        <br />
+                                        <br />
+                                        <img
+                                            alt=""
+                                            class="yui-img"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/Q7A9.png"
+                                            title=""
+                                        />
+                                        <br />
+                                    </div>
+                                    <div class="qt-response">
+                                        <input
+                                            aria-label="Enter your answer"
+                                            step="any"
+                                            type="number"
+                                            disabled="disabled"
+                                        />
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="incorrect">No, the answer is incorrect.</span>
+                                                <br />
+                                                <span class="incorrect">Score: 0</span>
+                                            </h3>
+                                            <div>
+                                                <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                                <div class="faculty-answer">(Type: Numeric) 14</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="qt-points">
+                                    <em>1 point</em>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["lqno4LcGFCmX.8.5345325575831552"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNTM0NTMyNTU3NTgzMTU1MiwgImdyYWRlcnMiOiBbeyJzY29yZSI6ICIxLjAiLCAibWF0Y2hlciI6ICJudW1lcmljIiwgInJlc3BvbnNlIjogIi0xIiwgInJhbmdlX2Zyb20iOiAiIiwgInJhbmdlX3RvIjogIiIsICJudW1lcmljX2Fuc3dlciI6ICItMSIsICJmZWVkYmFjayI6ICIifV0sICJoaW50IjogIiIsICJkZWZhdWx0RmVlZGJhY2siOiAiIiwgIndlaWdodCI6IDEuMH0=",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-nm-question qt-embedded" id="lqno4LcGFCmX.8.5345325575831552">
+                                    <div class="qt-question" id="nm_question_lqno4LcGFCmX.8.5345325575831552">
+                                        Using the ideas from Area Calculation discussed in the lecture, we are trying to
+                                        estimate the area of a quarter circle embedded in a square. Identify the line
+                                        number corresponding to the error(if any) in the absence of error type your
+                                        answer as -1
+                                        <br />
+                                        <br />
+                                        <img
+                                            alt=""
+                                            class="yui-img"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/Screenshot 2024-03-18 at 3.22.02 PM.png"
+                                            title=""
+                                        />
+                                        <br />
+                                        <br />
+                                        <span style="white-space: pre"></span>
+                                        <img
+                                            alt=""
+                                            class="yui-img"
+                                            src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/Q8A9.png"
+                                            title=""
+                                        />
+                                        <br />
+                                    </div>
+                                    <div class="qt-response">
+                                        <input
+                                            aria-label="Enter your answer"
+                                            step="any"
+                                            type="number"
+                                            disabled="disabled"
+                                        />
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="incorrect">No, the answer is incorrect.</span>
+                                                <br />
+                                                <span class="incorrect">Score: 0</span>
+                                            </h3>
+                                            <div>
+                                                <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                                <div class="faculty-answer">(Type: Numeric) -1</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="qt-points">
+                                    <em>1 point</em>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["lqno4LcGFCmX.9.6000755033505792"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNjAwMDc1NTAzMzUwNTc5MiwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMzMsICJ0ZXh0IjogIlRoZSBtYWluIGFkdmFudGFnZSBvZiB0aGUgbWV0aG9kIGlzIHRoYXQgaXQgY2FuIGhhbmRsZSBhcmVhIGNhbGN1bGF0aW9uIGV2ZW4gZm9yXG5pcnJlZ3VsYXIgc2hhcGVzIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogLTEuMCwgInRleHQiOiAiVGhlIG1haW4gYWR2YW50YWdlIG9mIHRoZSBtZXRob2QgaXMgdGhhdCBpdCBpcyBjb21wdXRhdGlvbmFsbHkgZWZmaWNpZW50IGZvciBhbGxcbnNjZW5hcmlvcyIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuMzMsICJ0ZXh0IjogIkluY3JlYXNpbmcgdGhlIG51bWJlciBvZiByYW5kb20gcG9pbnRzIHJlZHVjZXMgdGhlIGltcGFjdCBvZiByYW5kb20gdmFyaWF0aW9ucyBhbmRcbnByb3ZpZGVzIGEgbW9yZSBzdGFibGUgYW5kIGFjY3VyYXRlIGVzdGltYXRlIG9mIGFyZWEiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjM0LCAidGV4dCI6ICJJbmNyZWFzaW5nIHRoZSBudW1iZXIgb2YgcmFuZG9tIHBvaW50cyBpbXByb3ZlcyBhY2N1cmFjeSBvZiBlc3RpbWF0aW9uIGFzIGl0XG5jb252ZXJnZXMgdGhlIGF2ZXJhZ2UgdmFsdWUgdG8gdGhlIHRydWUgdmFsdWUgYWNjb3JkaW5nIHRvIGxhdyBvZiBsYXJnZSBudW1iZXJzIiwgImZlZWRiYWNrIjogIiJ9XSwgImRlZmF1bHRGZWVkYmFjayI6ICIiLCAicGVybXV0ZUNob2ljZXMiOiBmYWxzZSwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2UsICJtdWx0aXBsZUNvcnJlY3RBbnN3ZXIiOiBmYWxzZSwgIndlaWdodCI6IDEuMH0=",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="lqno4LcGFCmX.9.6000755033505792">
+                                    <div class="qt-points">
+                                        <em>1 point</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        Select the correct statements regarding area calculation using the method
+                                        discussed in the lecture (MSQ)
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="lqno4LcGFCmX.9.6000755033505792.0"
+                                                name="lqno4LcGFCmX.9.6000755033505792"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.9.6000755033505792.0">
+                                                The main advantage of the method is that it can handle area calculation
+                                                even for irregular shapes
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="lqno4LcGFCmX.9.6000755033505792.1"
+                                                name="lqno4LcGFCmX.9.6000755033505792"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.9.6000755033505792.1">
+                                                The main advantage of the method is that it is computationally efficient
+                                                for all scenarios
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="lqno4LcGFCmX.9.6000755033505792.2"
+                                                name="lqno4LcGFCmX.9.6000755033505792"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.9.6000755033505792.2">
+                                                Increasing the number of random points reduces the impact of random
+                                                variations and provides a more stable and accurate estimate of area
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="lqno4LcGFCmX.9.6000755033505792.3"
+                                                name="lqno4LcGFCmX.9.6000755033505792"
+                                                onclick="clearSelection(this)"
+                                                type="checkbox"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.9.6000755033505792.3">
+                                                Increasing the number of random points improves accuracy of estimation
+                                                as it converges the average value to the true value according to law of
+                                                large numbers
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="incorrect">No, the answer is incorrect.</span>
+                                                <br />
+                                                <span class="incorrect">Score: 0</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.9.6000755033505792.0">
+                                                            The main advantage of the method is that it can handle area
+                                                            calculation even for irregular shapes
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.9.6000755033505792.2">
+                                                            Increasing the number of random points reduces the impact of
+                                                            random variations and provides a more stable and accurate
+                                                            estimate of area
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.9.6000755033505792.3">
+                                                            Increasing the number of random points improves accuracy of
+                                                            estimation as it converges the average value to the true
+                                                            value according to law of large numbers
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <link
+                                href="/modules/assessment_tags/resources/questions.css"
+                                rel="stylesheet"
+                                type="text/css"
+                            />
+                            <script>
+                                questionData["lqno4LcGFCmX.10.5790626644230144"] = JSON.parse(
+                                    window.atob(
+                                        "eyJxdWlkIjogNTc5MDYyNjY0NDIzMDE0NCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMCwgInRleHQiOiAiUElMIHN0YW5kcyBmb3IgUHl0aG9uIEltYWdlIExpYnJhcnkiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjAsICJ0ZXh0IjogIlBpbGxvdyBpcyB0aGUgYWN0aXZlIHN1Y2Nlc3NvciBvZiBQSUwiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjAsICJ0ZXh0IjogIkltYWdlLm9wZW4oKSBpcyB1c2VkIHRvIG9wZW4gaW1hZ2VzIGluIFBJTCIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDEuMCwgInRleHQiOiAiQWxsIG9mIHRoZSBhYm92ZSIsICJmZWVkYmFjayI6ICIifV0sICJkZWZhdWx0RmVlZGJhY2siOiAiIiwgInBlcm11dGVDaG9pY2VzIjogZmFsc2UsICJzaG93QW5zd2VyV2hlbkluY29ycmVjdCI6IGZhbHNlLCAiYWxsT3JOb3RoaW5nR3JhZGluZyI6IGZhbHNlLCAibXVsdGlwbGVDb3JyZWN0QW5zd2VyIjogZmFsc2UsICJ3ZWlnaHQiOiAwLjB9",
+                                    ),
+                                );
+
+                                var assessmentTagMessages = {};
+
+                                assessmentTagMessages.correct = "Correct. ";
+
+                                assessmentTagMessages.incorrect = "Incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+                                assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+
+                                assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+
+                                assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+                                assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+
+                                assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+
+                                assessmentTagMessages.feedbackHeading = "Feedback:";
+
+                                assessmentTagMessages.yourScoreIs = " Your score is: ";
+
+                                assessmentTagMessages.graceMark =
+                                    " You have been given grace marks for above question. ";
+                            </script>
+                            <script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+                            <script src="/modules/assessment_tags/resources/grading.js"></script>
+                            <noscript>
+                                <div class="qt-warning">JavaScript should be enabled to grade this question.</div>
+                            </noscript>
+
+                            <script>
+                                //Function to allow user to deselect the assignment question
+                                // @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+                                // deselect it ,if it is already selected.This is a minor issue and will be resolved
+                                function clearSelection(radio) {
+                                    if (radio.getAttribute("data-checked")) {
+                                        radio.checked = false;
+                                        radio.removeAttribute("data-checked");
+                                    } else {
+                                        radio.setAttribute("data-checked", "true");
+                                    }
+                                }
+                            </script>
+                            <style>
+                                @media (max-width: 480px) {
+                                    html,
+                                    #gcb-main-body {
+                                        background: #f9f9f9 !important;
+                                    }
+                                    div.gcb-aside {
+                                        border-color: #cccccc !important;
+                                    }
+                                    div#gcb-main-article div.gcb-aside {
+                                        border-color: #f9f9f9 !important;
+                                    }
+                                }
+                                label {
+                                    margin-bottom: 0px;
+                                    font-weight: normal;
+                                }
+                            </style>
+                            <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+                                <div class="gcb-col-counters gcb-show-question-counter"></div>
+                                <div class="qt-mc-question qt-embedded" id="lqno4LcGFCmX.10.5790626644230144">
+                                    <div class="qt-points">
+                                        <em>0 points</em>
+                                    </div>
+
+                                    <div class="qt-question">
+                                        Select the correct statement regarding the PIL library
+                                    </div>
+                                    <div class="qt-choices">
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="0"
+                                                id="lqno4LcGFCmX.10.5790626644230144.0"
+                                                name="lqno4LcGFCmX.10.5790626644230144"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.10.5790626644230144.0">
+                                                PIL stands for Python Image Library
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="1"
+                                                id="lqno4LcGFCmX.10.5790626644230144.1"
+                                                name="lqno4LcGFCmX.10.5790626644230144"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.10.5790626644230144.1">
+                                                Pillow is the active successor of PIL
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="2"
+                                                id="lqno4LcGFCmX.10.5790626644230144.2"
+                                                name="lqno4LcGFCmX.10.5790626644230144"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.10.5790626644230144.2">
+                                                Image.open() is used to open images in PIL
+                                            </label>
+                                        </div>
+
+                                        <div class="gcb-mcq-choice">
+                                            <input
+                                                data-index="3"
+                                                id="lqno4LcGFCmX.10.5790626644230144.3"
+                                                name="lqno4LcGFCmX.10.5790626644230144"
+                                                onclick="clearSelection(this)"
+                                                type="radio"
+                                                disabled=""
+                                            />
+                                            <label for="lqno4LcGFCmX.10.5790626644230144.3">All of the above</label>
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+
+                                    <div class="qt-feedback" role="alert">
+                                        <div>
+                                            <h3 class="feedback-header">
+                                                <span class="incorrect">No, the answer is incorrect.</span>
+                                                <br />
+                                                <span class="incorrect">Score: 0</span>
+                                            </h3>
+                                            <h3 class="feedback-header faculty-answer">Accepted Answers:</h3>
+                                            <div class="faculty-answer">
+                                                <div>
+                                                    <div>
+                                                        <label for="lqno4LcGFCmX.10.5790626644230144.3">
+                                                            All of the above
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--&lt;div class=&quot;qt-check-answer&quot;&gt;-->
+                            <!--&lt;button class=&quot;gcb-button qt-check-answer-button&quot;&gt;-->
+                            <!---->
+                            <!-- Check Answer -->
+                            <!--&lt;/button&gt;-->
+                            <!--&lt;/div&gt;-->
+                            <div class="qt-feedback qt-hidden" role="alert"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="qt-assessment-button-bar">
+                    <div class="gcb-submit-only-once"></div>
+
+                    <div class="qt-grade-scored-lesson-calc-score" style="display: none"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="assessmentContents"></div>
+    </div>
+    <div id="assessment-overlay"></div>
+    <div id="assessment-not-all-attempt" class="assessment-pop-up">
+        <p>
+            You have not attempted all the questions.
+            <br />
+            Click 'Cancel' to return to the questions, or click 'Submit' to proceed with the submission.
+        </p>
+        <button id="assessment-not-all-attempt-submit">Submit</button>
+        <button id="assessment-not-all-attempt-cancel">Cancel</button>
+    </div>
+    <div id="assessment-no-attempt" class="assessment-pop-up">
+        <p>Atleast one question is required to be answered to proceed for submission.</p>
+        <button id="assessment-no-attempt-ok">OK</button>
+    </div>
+    <div id="submission-warning" class="assessment-pop-up">
+        <p>Please wait while the assessment is submitted.</p>
+    </div>
+    <style>
+        .assessment-pop-up {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        #assessment-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</div>

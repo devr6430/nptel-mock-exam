@@ -17,7 +17,7 @@ load_dotenv()  # loads .env for local dev; ignored on Render (env vars set in da
 
 from flask import (
     Flask, render_template, session, redirect,
-    url_for, request, jsonify,
+    url_for, request, jsonify, Response, abort,
 )
 from authlib.integrations.flask_client import OAuth
 
@@ -177,10 +177,54 @@ def logout():
     return redirect(url_for("login"))
 
 
-# ── Dashboard ──────────────────────────────────────────────────────────────────
+# ── Assignments Viewer (main page) ────────────────────────────────────────────
+HTML_DIR = os.path.join(os.path.dirname(__file__), "static", "html")
+VALID_YEARS = {2024, 2025, 2026}
+
 @app.route("/")
 @login_required
 def index():
+    return render_template(
+        "viewer.html",
+        user_name   = session.get("user_name", ""),
+        user_picture= session.get("user_picture", ""),
+        default_year = 2026,
+        default_week = 1,
+    )
+
+
+@app.route("/assignment/<int:year>/<int:week>")
+@login_required
+def assignment(year, week):
+    if year not in VALID_YEARS or week < 1 or week > 12:
+        abort(404)
+    path = os.path.join(HTML_DIR, str(year), f"week{week}.html")
+    if not os.path.exists(path):
+        abort(404)
+    with open(path, encoding="utf-8") as f:
+        fragment = f.read()
+    # Wrap fragment in a full page; base href fixes all relative asset URLs
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="https://joy-of-computing-quiz.vercel.app/">
+<style>
+  body {{ font-family: Arial, sans-serif; margin: 0; padding: 16px; background: #fff; }}
+</style>
+</head>
+<body>
+{fragment}
+</body>
+</html>"""
+    return Response(html, mimetype="text/html")
+
+
+# ── Mock Exam Dashboard ────────────────────────────────────────────────────────
+@app.route("/mock-exam")
+@login_required
+def mock_exam():
     user_id = session["user_id"]
     attempts_summary = db.get_all_attempts_summary(user_id)
     in_progress      = db.get_all_in_progress(user_id)

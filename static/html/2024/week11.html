@@ -1,0 +1,1170 @@
+<div class="gcb-aside gcb-button-box">
+            
+  
+
+
+<script>
+  window.onload = function(){
+    var miliSecondsToDisableSubmit = calculateTimerToDisableSubmit();
+    var days = miliSecondsToDisableSubmit  / ( 24 * 60 * 60 * 1000);
+    if(days >= 0 && days < 14){
+      setTimeout(function() {
+        var submit_button = document.getElementById("submitbutton");
+        if(submit_button) submit_button .disabled = true;
+        var check_answer_button = document.getElementById("checkAnswerButton");
+        if(check_answer_button) check_answer_button.disabled = true;
+        cbShowMsgAutoHide('Due date passed');
+      }, miliSecondsToDisableSubmit );
+    }
+  }
+
+  function calculateTimerToDisableSubmit(){
+    var date_in_mili_sec = '1712773740000.0';
+    var current_mili_seconds = new Date().getTime();
+    var difference_in_miliseconds = date_in_mili_sec - current_mili_seconds ;
+    return difference_in_miliseconds;
+  }
+</script>
+
+
+<div class="gcb-assessment-contents">
+  <h1>
+    Week 11 : Assignment 11
+    
+
+  </h1>
+
+  
+
+    
+
+    <script>
+      assessmentXsrfToken = '1776189768/m7SSG3JiOaWXIFs42GmCIXevSOayaqcPsbUt8yucZsU=';
+
+      var assessmentGlobals = {};
+      var enable_negative_marking = JSON.parse("false");
+      assessmentGlobals.isReviewForm = false;
+      assessmentGlobals.grader = 'auto';
+      
+    </script>
+
+    <div class="assessment-top-info">
+    
+      
+        
+        <strong>
+          The due date for submitting this assignment has passed.
+        </strong>
+        <div class="gcb-submission-due-date">
+          Due on 2024-04-10, 23:59 IST.
+        </div>
+      
+      
+    
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+      
+        
+        <h3 class="submission-info">
+          <span class="submission-date">
+            
+              Assignment submitted on
+              2024-04-10, 22:07 IST</span>
+        </h3>
+        
+
+      <div class="readonly-assessment">
+        
+          
+<div data-xsrf-token="1776189768/m7SSG3JiOaWXIFs42GmCIXevSOayaqcPsbUt8yucZsU=" data-unit-id="440" data-question-batch-id="A440" data-scored="True">
+  <script>
+    var questionData = questionData || {};
+    questionData.xsrfToken = '1776189768/m7SSG3JiOaWXIFs42GmCIXevSOayaqcPsbUt8yucZsU=';
+    
+      questionData.savedAnswers = questionData.savedAnswers || {};
+      $.extend(questionData.savedAnswers,
+          JSON.parse("{\"version\": \"1.5\", \"individualScores\": {\"crtbbKlnqz0R\": [1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]}, \"containedTypes\": {}, \"answers\": {}, \"quids\": {}, \"rawScore\": 0, \"totalWeight\": 0, \"percentScore\": 0, \"save_draft\": null, \"is_submitted\": false, \"crtbbKlnqz0R\": {\"is_answered\": true, \"crtbbKlnqz0R.0.5872147270991872\": {\"responses\": [false, false, false, true], \"is_answered\": true}, \"crtbbKlnqz0R.1.6033546471276544\": {\"responses\": [true, true, true, true], \"is_answered\": true}, \"crtbbKlnqz0R.2.4711119558541312\": {\"responses\": [false, false, false, true], \"is_answered\": true}, \"crtbbKlnqz0R.3.5006058123165696\": {\"response\": \"0\", \"is_answered\": true}, \"crtbbKlnqz0R.4.5847958015180800\": {\"response\": \"3\", \"is_answered\": true}, \"crtbbKlnqz0R.5.4515813873156096\": {\"response\": \"1\", \"is_answered\": true}, \"crtbbKlnqz0R.6.6276051766870016\": {\"response\": \"12\", \"is_answered\": true}, \"crtbbKlnqz0R.7.4905651317243904\": {\"response\": \"5\", \"is_answered\": true}, \"crtbbKlnqz0R.8.4549264252862464\": {\"response\": \"6\", \"is_answered\": true}, \"crtbbKlnqz0R.9.6601192468119552\": {\"response\": \"23\", \"is_answered\": true}}, \"submission_count\": 1}"));
+    
+    if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+    }
+  </script>
+  <div class="gcb-assessment-body assessment-readonly">
+    <div><link href="/modules/assessment_tags/resources/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['crtbbKlnqz0R'] = JSON.parse(window.atob("eyJjcnRiYktsbnF6MFIuMC41ODcyMTQ3MjcwOTkxODcyIjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDU4NzIxNDcyNzA5OTE4NzIsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJjcnRiYktsbnF6MFIuMS42MDMzNTQ2NDcxMjc2NTQ0IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDYwMzM1NDY0NzEyNzY1NDQsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJjcnRiYktsbnF6MFIuMi40NzExMTE5NTU4NTQxMzEyIjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDQ3MTExMTk1NTg1NDEzMTIsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJjcnRiYktsbnF6MFIuMy41MDA2MDU4MTIzMTY1Njk2IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDUwMDYwNTgxMjMxNjU2OTYsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJjcnRiYktsbnF6MFIuNC41ODQ3OTU4MDE1MTgwODAwIjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDU4NDc5NTgwMTUxODA4MDAsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJjcnRiYktsbnF6MFIuNS40NTE1ODEzODczMTU2MDk2IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDQ1MTU4MTM4NzMxNTYwOTYsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJjcnRiYktsbnF6MFIuNi42Mjc2MDUxNzY2ODcwMDE2IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDYyNzYwNTE3NjY4NzAwMTYsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJjcnRiYktsbnF6MFIuNy40OTA1NjUxMzE3MjQzOTA0IjogeyJ3ZWlnaHQiOiAwLjAsICJxdWVzdGlvbiI6IDQ5MDU2NTEzMTcyNDM5MDQsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJjcnRiYktsbnF6MFIuOC40NTQ5MjY0MjUyODYyNDY0IjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDQ1NDkyNjQyNTI4NjI0NjQsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX0sICJjcnRiYktsbnF6MFIuOS42NjAxMTkyNDY4MTE5NTUyIjogeyJ3ZWlnaHQiOiAxLjAsICJxdWVzdGlvbiI6IDY2MDExOTI0NjgxMTk1NTIsICJpZ25vcmVfcXVlc3Rpb24iOiBmYWxzZX19"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+    
+    assessmentTagMessages.graceMark = " You have been given grace marks for above question. ";
+  </script>
+<script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+<script src="/modules/assessment_tags/resources/grading.js"></script>
+<noscript>
+    <div class="qt-warning">
+        
+         JavaScript should be enabled to grade this question. 
+    </div>
+</noscript>
+
+
+
+
+  <div class="qt-question-group " id="crtbbKlnqz0R">
+   
+      <div class="qt-introduction">
+        
+      </div>
+   
+       
+          <link href="/modules/assessment_tags/resources/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['crtbbKlnqz0R.0.5872147270991872'] = JSON.parse(window.atob("eyJxdWlkIjogNTg3MjE0NzI3MDk5MTg3MiwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMCwgInRleHQiOiAiU2VsZW5pdW0gaXMgcHJpbWFyaWx5IHVzZWQgZm9yIHdlYiBicm93c2VyIGF1dG9tYXRpb24iLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjAsICJ0ZXh0IjogIlRoZSB3ZWIgZHJpdmVyIGluIHNlbGVuaXVtIGFsbG93cyBhIHdheSB0byBpbnRlcmFjdCB3aXRoIHdlYiBicm93c2VycyIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuMCwgInRleHQiOiAiVGhlIEtleXMgQ2xhc3MgcHJvdmlkZXMgYSBzZXQgb2Ygc3BlY2lhbCBrZXlzIHRoYXQgY2FuIGJlIHVzZWQgZm9yIGtleWJvYXJkIGludGVyYWN0aW9uIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMS4wLCAidGV4dCI6ICJBbGwgb2YgdGhlIGFib3ZlIiwgImZlZWRiYWNrIjogIiJ9XSwgImRlZmF1bHRGZWVkYmFjayI6ICIiLCAicGVybXV0ZUNob2ljZXMiOiBmYWxzZSwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2UsICJtdWx0aXBsZUNvcnJlY3RBbnN3ZXIiOiBmYWxzZSwgIndlaWdodCI6IDEuMH0="));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+    
+    assessmentTagMessages.graceMark = " You have been given grace marks for above question. ";
+  </script>
+<script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+<script src="/modules/assessment_tags/resources/grading.js"></script>
+<noscript>
+    <div class="qt-warning">
+        
+         JavaScript should be enabled to grade this question. 
+    </div>
+</noscript>
+
+
+
+
+<script>
+//Function to allow user to deselect the assignment question
+// @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+// deselect it ,if it is already selected.This is a minor issue and will be resolved
+function clearSelection(radio) {
+    if (radio.getAttribute("data-checked")) {
+        radio.checked = false;
+        radio.removeAttribute("data-checked");
+    }
+    else
+    {
+        radio.setAttribute("data-checked", "true");
+    }
+}
+</script>
+<style>
+  @media (max-width: 480px) {
+    html, #gcb-main-body{
+      background: #f9f9f9 !important;
+    }
+    div.gcb-aside{
+      border-color: #cccccc !important;
+    }
+    div#gcb-main-article div.gcb-aside{
+      border-color: #f9f9f9 !important;
+    }
+  }
+  label {
+    margin-bottom: 0px;
+    font-weight: normal;
+  }
+</style>
+  <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+      <div class="gcb-col-counters gcb-show-question-counter"></div>
+      <div class="qt-mc-question qt-embedded" id="crtbbKlnqz0R.0.5872147270991872">
+        <div class="qt-points">
+          <em>
+            
+              
+              1 point
+            
+          </em>
+        </div>
+
+        <div class="qt-question">Select the correct statement regarding selenium library</div>
+        <div class="qt-choices">
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="0" id="crtbbKlnqz0R.0.5872147270991872.0" name="crtbbKlnqz0R.0.5872147270991872" onclick="clearSelection(this)" type="radio" disabled="">
+              <label for="crtbbKlnqz0R.0.5872147270991872.0">
+                Selenium is primarily used for web browser automation
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="1" id="crtbbKlnqz0R.0.5872147270991872.1" name="crtbbKlnqz0R.0.5872147270991872" onclick="clearSelection(this)" type="radio" disabled="">
+              <label for="crtbbKlnqz0R.0.5872147270991872.1">
+                The web driver in selenium allows a way to interact with web browsers
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="2" id="crtbbKlnqz0R.0.5872147270991872.2" name="crtbbKlnqz0R.0.5872147270991872" onclick="clearSelection(this)" type="radio" disabled="">
+              <label for="crtbbKlnqz0R.0.5872147270991872.2">
+                The Keys Class provides a set of special keys that can be used for keyboard interaction
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="3" id="crtbbKlnqz0R.0.5872147270991872.3" name="crtbbKlnqz0R.0.5872147270991872" onclick="clearSelection(this)" type="radio" disabled="">
+              <label for="crtbbKlnqz0R.0.5872147270991872.3">
+                All of the above
+              </label>
+            </div>
+          
+        </div>
+
+        <!--  -->
+
+        <div class="qt-feedback" role="alert"><div><h3 class="feedback-header"><span class="correct"> Yes, the answer is correct. </span><br><span class="correct">Score: 1</span></h3><h3 class="feedback-header faculty-answer">Accepted Answers:</h3><div class="faculty-answer"><div><div><label for="crtbbKlnqz0R.0.5872147270991872.3">
+                All of the above
+              </label></div></div></div></div></div>
+      </div>
+  </div>
+
+       
+          <link href="/modules/assessment_tags/resources/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['crtbbKlnqz0R.1.6033546471276544'] = JSON.parse(window.atob("eyJxdWlkIjogNjAzMzU0NjQ3MTI3NjU0NCwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMjUsICJ0ZXh0IjogIlNlbmRpbmcgTWVkaWEgRmlsZXMiLCAiZmVlZGJhY2siOiAiIn0sIHsic2NvcmUiOiAwLjI1LCAidGV4dCI6ICJSZWFkaW5nIE1lc3NhZ2VzIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4yNSwgInRleHQiOiAiQ3JlYXRpbmcgYW5kIE1hbmFnaW5nIEdyb3VwcyIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuMjUsICJ0ZXh0IjogIlVwZGF0aW5nIFByb2ZpbGUgSW5mb3JtYXRpb24iLCAiZmVlZGJhY2siOiAiIn1dLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAic2hvd0Fuc3dlcldoZW5JbmNvcnJlY3QiOiBmYWxzZSwgImFsbE9yTm90aGluZ0dyYWRpbmciOiBmYWxzZSwgIm11bHRpcGxlQ29ycmVjdEFuc3dlciI6IGZhbHNlLCAid2VpZ2h0IjogMS4wfQ=="));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+    
+    assessmentTagMessages.graceMark = " You have been given grace marks for above question. ";
+  </script>
+<script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+<script src="/modules/assessment_tags/resources/grading.js"></script>
+<noscript>
+    <div class="qt-warning">
+        
+         JavaScript should be enabled to grade this question. 
+    </div>
+</noscript>
+
+
+
+
+<script>
+//Function to allow user to deselect the assignment question
+// @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+// deselect it ,if it is already selected.This is a minor issue and will be resolved
+function clearSelection(radio) {
+    if (radio.getAttribute("data-checked")) {
+        radio.checked = false;
+        radio.removeAttribute("data-checked");
+    }
+    else
+    {
+        radio.setAttribute("data-checked", "true");
+    }
+}
+</script>
+<style>
+  @media (max-width: 480px) {
+    html, #gcb-main-body{
+      background: #f9f9f9 !important;
+    }
+    div.gcb-aside{
+      border-color: #cccccc !important;
+    }
+    div#gcb-main-article div.gcb-aside{
+      border-color: #f9f9f9 !important;
+    }
+  }
+  label {
+    margin-bottom: 0px;
+    font-weight: normal;
+  }
+</style>
+  <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+      <div class="gcb-col-counters gcb-show-question-counter"></div>
+      <div class="qt-mc-question qt-embedded" id="crtbbKlnqz0R.1.6033546471276544">
+        <div class="qt-points">
+          <em>
+            
+              
+              1 point
+            
+          </em>
+        </div>
+
+        <div class="qt-question">Which of the following tasks in WhatsApp can be automated using selenium?</div>
+        <div class="qt-choices">
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="0" id="crtbbKlnqz0R.1.6033546471276544.0" name="crtbbKlnqz0R.1.6033546471276544" onclick="clearSelection(this)" type="checkbox" disabled="">
+              <label for="crtbbKlnqz0R.1.6033546471276544.0">
+                Sending Media Files
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="1" id="crtbbKlnqz0R.1.6033546471276544.1" name="crtbbKlnqz0R.1.6033546471276544" onclick="clearSelection(this)" type="checkbox" disabled="">
+              <label for="crtbbKlnqz0R.1.6033546471276544.1">
+                Reading Messages
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="2" id="crtbbKlnqz0R.1.6033546471276544.2" name="crtbbKlnqz0R.1.6033546471276544" onclick="clearSelection(this)" type="checkbox" disabled="">
+              <label for="crtbbKlnqz0R.1.6033546471276544.2">
+                Creating and Managing Groups
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="3" id="crtbbKlnqz0R.1.6033546471276544.3" name="crtbbKlnqz0R.1.6033546471276544" onclick="clearSelection(this)" type="checkbox" disabled="">
+              <label for="crtbbKlnqz0R.1.6033546471276544.3">
+                Updating Profile Information
+              </label>
+            </div>
+          
+        </div>
+
+        <!--  -->
+
+        <div class="qt-feedback" role="alert"><div><h3 class="feedback-header"><span class="correct"> Yes, the answer is correct. </span><br><span class="correct">Score: 1</span></h3><h3 class="feedback-header faculty-answer">Accepted Answers:</h3><div class="faculty-answer"><div><div><label for="crtbbKlnqz0R.1.6033546471276544.0">
+                Sending Media Files
+              </label></div><div><label for="crtbbKlnqz0R.1.6033546471276544.1">
+                Reading Messages
+              </label></div><div><label for="crtbbKlnqz0R.1.6033546471276544.2">
+                Creating and Managing Groups
+              </label></div><div><label for="crtbbKlnqz0R.1.6033546471276544.3">
+                Updating Profile Information
+              </label></div></div></div></div></div>
+      </div>
+  </div>
+
+       
+          <link href="/modules/assessment_tags/resources/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['crtbbKlnqz0R.2.4711119558541312'] = JSON.parse(window.atob("eyJxdWlkIjogNDcxMTExOTU1ODU0MTMxMiwgImNob2ljZXMiOiBbeyJzY29yZSI6IDAuMCwgInRleHQiOiAiZG9lc19zb21ldGhpbmcgcmV0dXJucyBhIGxpc3Qgb2YgYWxsIHRpbWUgem9uZXMgaW4gQXNpYSIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDAuMCwgInRleHQiOiAidGhlIGFib3ZlIGNvZGUgcHJpbnRzICBhbGwgdGltZSB6b25lcyBpbiBBc2lhIiwgImZlZWRiYWNrIjogIiJ9LCB7InNjb3JlIjogMC4wLCAidGV4dCI6ICJUaGUgb3V0cHV0IG9mIHRoZSBjb2RlIGNhbiBjaGFuZ2UgZGVwZW5kaW5nIG9uIHRoZSB2ZXJzaW9uIG9mIHB5dHogdXNlZCIsICJmZWVkYmFjayI6ICIifSwgeyJzY29yZSI6IDEuMCwgInRleHQiOiAiQWxsIG9mIHRoZSBhYm92ZSIsICJmZWVkYmFjayI6ICIifV0sICJkZWZhdWx0RmVlZGJhY2siOiAiIiwgInBlcm11dGVDaG9pY2VzIjogZmFsc2UsICJzaG93QW5zd2VyV2hlbkluY29ycmVjdCI6IGZhbHNlLCAiYWxsT3JOb3RoaW5nR3JhZGluZyI6IGZhbHNlLCAibXVsdGlwbGVDb3JyZWN0QW5zd2VyIjogZmFsc2UsICJ3ZWlnaHQiOiAxLjB9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+    
+    assessmentTagMessages.graceMark = " You have been given grace marks for above question. ";
+  </script>
+<script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+<script src="/modules/assessment_tags/resources/grading.js"></script>
+<noscript>
+    <div class="qt-warning">
+        
+         JavaScript should be enabled to grade this question. 
+    </div>
+</noscript>
+
+
+
+
+<script>
+//Function to allow user to deselect the assignment question
+// @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+// deselect it ,if it is already selected.This is a minor issue and will be resolved
+function clearSelection(radio) {
+    if (radio.getAttribute("data-checked")) {
+        radio.checked = false;
+        radio.removeAttribute("data-checked");
+    }
+    else
+    {
+        radio.setAttribute("data-checked", "true");
+    }
+}
+</script>
+<style>
+  @media (max-width: 480px) {
+    html, #gcb-main-body{
+      background: #f9f9f9 !important;
+    }
+    div.gcb-aside{
+      border-color: #cccccc !important;
+    }
+    div#gcb-main-article div.gcb-aside{
+      border-color: #f9f9f9 !important;
+    }
+  }
+  label {
+    margin-bottom: 0px;
+    font-weight: normal;
+  }
+</style>
+  <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+      <div class="gcb-col-counters gcb-show-question-counter"></div>
+      <div class="qt-mc-question qt-embedded" id="crtbbKlnqz0R.2.4711119558541312">
+        <div class="qt-points">
+          <em>
+            
+              
+              1 point
+            
+          </em>
+        </div>
+
+        <div class="qt-question">Read the given code and identify the correct statement.<br><br><img alt="" class="yui-img" src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/Screenshot 2024-03-19 151411.png" style="width: 600px;" title=""><br></div>
+        <div class="qt-choices">
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="0" id="crtbbKlnqz0R.2.4711119558541312.0" name="crtbbKlnqz0R.2.4711119558541312" onclick="clearSelection(this)" type="radio" disabled="">
+              <label for="crtbbKlnqz0R.2.4711119558541312.0">
+                does_something returns a list of all time zones in Asia
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="1" id="crtbbKlnqz0R.2.4711119558541312.1" name="crtbbKlnqz0R.2.4711119558541312" onclick="clearSelection(this)" type="radio" disabled="">
+              <label for="crtbbKlnqz0R.2.4711119558541312.1">
+                the above code prints  all time zones in Asia
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="2" id="crtbbKlnqz0R.2.4711119558541312.2" name="crtbbKlnqz0R.2.4711119558541312" onclick="clearSelection(this)" type="radio" disabled="">
+              <label for="crtbbKlnqz0R.2.4711119558541312.2">
+                The output of the code can change depending on the version of pytz used
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="3" id="crtbbKlnqz0R.2.4711119558541312.3" name="crtbbKlnqz0R.2.4711119558541312" onclick="clearSelection(this)" type="radio" disabled="">
+              <label for="crtbbKlnqz0R.2.4711119558541312.3">
+                All of the above
+              </label>
+            </div>
+          
+        </div>
+
+        <!--  -->
+
+        <div class="qt-feedback" role="alert"><div><h3 class="feedback-header"><span class="correct"> Yes, the answer is correct. </span><br><span class="correct">Score: 1</span></h3><h3 class="feedback-header faculty-answer">Accepted Answers:</h3><div class="faculty-answer"><div><div><label for="crtbbKlnqz0R.2.4711119558541312.3">
+                All of the above
+              </label></div></div></div></div></div>
+      </div>
+  </div>
+
+       
+          <link href="/modules/assessment_tags/resources/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['crtbbKlnqz0R.3.5006058123165696'] = JSON.parse(window.atob("eyJxdWlkIjogNTAwNjA1ODEyMzE2NTY5NiwgImdyYWRlcnMiOiBbeyJzY29yZSI6ICIxLjAiLCAibWF0Y2hlciI6ICJjYXNlX2luc2Vuc2l0aXZlIiwgInJlc3BvbnNlIjogIjAiLCAiZmVlZGJhY2siOiAiIn1dLCAiaGludCI6ICIiLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJ3ZWlnaHQiOiAxLjB9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+    
+    assessmentTagMessages.graceMark = " You have been given grace marks for above question. ";
+  </script>
+<script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+<script src="/modules/assessment_tags/resources/grading.js"></script>
+<noscript>
+    <div class="qt-warning">
+        
+         JavaScript should be enabled to grade this question. 
+    </div>
+</noscript>
+
+
+
+
+<div class=" gcb-cols gcb-question-counter-increment gcb-question-row ">
+    <div class=" gcb-col-counters gcb-show-question-counter ">
+    </div>
+    <div class="qt-sa-question qt-embedded
+        " id="crtbbKlnqz0R.3.5006058123165696">
+        <div class="qt-question  " id="sa_question_crtbbKlnqz0R.3.5006058123165696">
+            Read the given code. What is the output of does_something(2022,2,29).(NAT)<br><br><img alt="" class="yui-img selected" src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/Jocq4.PNG" style="width: 450px;" title=""><br>
+        </div>
+        <div class="qt-response">
+            
+                <input aria-label="Enter your answer" type="text" disabled="disabled">
+                
+        </div>
+        
+
+            <!--  -->
+
+            <div class="qt-feedback" role="alert"><div><h3 class="feedback-header"><span class="correct"> Yes, the answer is correct. </span><br><span class="correct">Score: 1</span></h3><div><h3 class="feedback-header faculty-answer">Accepted Answers:</h3><div class="faculty-answer">(Type: String) 0</div></div></div></div>
+    </div>
+    
+        <div class="qt-points">
+                <em>
+                    
+                    
+                    1 point
+                    
+                </em>
+        </div>
+    
+</div>
+
+       
+          <link href="/modules/assessment_tags/resources/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['crtbbKlnqz0R.4.5847958015180800'] = JSON.parse(window.atob("eyJxdWlkIjogNTg0Nzk1ODAxNTE4MDgwMCwgImdyYWRlcnMiOiBbeyJzY29yZSI6ICIxLjAiLCAibWF0Y2hlciI6ICJjYXNlX2luc2Vuc2l0aXZlIiwgInJlc3BvbnNlIjogIjIiLCAiZmVlZGJhY2siOiAiIn1dLCAiaGludCI6ICIiLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJ3ZWlnaHQiOiAxLjB9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+    
+    assessmentTagMessages.graceMark = " You have been given grace marks for above question. ";
+  </script>
+<script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+<script src="/modules/assessment_tags/resources/grading.js"></script>
+<noscript>
+    <div class="qt-warning">
+        
+         JavaScript should be enabled to grade this question. 
+    </div>
+</noscript>
+
+
+
+
+<div class=" gcb-cols gcb-question-counter-increment gcb-question-row ">
+    <div class=" gcb-col-counters gcb-show-question-counter ">
+    </div>
+    <div class="qt-sa-question qt-embedded
+        " id="crtbbKlnqz0R.4.5847958015180800">
+        <div class="qt-question  " id="sa_question_crtbbKlnqz0R.4.5847958015180800">
+            Read the given code.<br><br><img alt="" class="yui-img" src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/Screenshot 2024-03-19 152119.png" style="width: 500px; height: 200px;" title=""><br>Assume the file years.txt contains the following data.<br><img alt="" class="yui-img" src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/Screenshot 2024-03-19 152213.png" title=""><br>What is the output of the code (NAT)
+        </div>
+        <div class="qt-response">
+            
+                <input aria-label="Enter your answer" type="text" disabled="disabled">
+                
+        </div>
+        
+
+            <!--  -->
+
+            <div class="qt-feedback" role="alert"><div><h3 class="feedback-header"><span class="incorrect"> No, the answer is incorrect. </span><br><span class="incorrect">Score: 0</span></h3><div><h3 class="feedback-header faculty-answer">Accepted Answers:</h3><div class="faculty-answer">(Type: String) 2</div></div></div></div>
+    </div>
+    
+        <div class="qt-points">
+                <em>
+                    
+                    
+                    1 point
+                    
+                </em>
+        </div>
+    
+</div>
+
+       
+          <link href="/modules/assessment_tags/resources/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['crtbbKlnqz0R.5.4515813873156096'] = JSON.parse(window.atob("eyJxdWlkIjogNDUxNTgxMzg3MzE1NjA5NiwgImdyYWRlcnMiOiBbeyJzY29yZSI6ICIxLjAiLCAibWF0Y2hlciI6ICJjYXNlX2luc2Vuc2l0aXZlIiwgInJlc3BvbnNlIjogIjEiLCAiZmVlZGJhY2siOiAiIn1dLCAiaGludCI6ICIiLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJ3ZWlnaHQiOiAxLjB9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+    
+    assessmentTagMessages.graceMark = " You have been given grace marks for above question. ";
+  </script>
+<script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+<script src="/modules/assessment_tags/resources/grading.js"></script>
+<noscript>
+    <div class="qt-warning">
+        
+         JavaScript should be enabled to grade this question. 
+    </div>
+</noscript>
+
+
+
+
+<div class=" gcb-cols gcb-question-counter-increment gcb-question-row ">
+    <div class=" gcb-col-counters gcb-show-question-counter ">
+    </div>
+    <div class="qt-sa-question qt-embedded
+        " id="crtbbKlnqz0R.5.4515813873156096">
+        <div class="qt-question  " id="sa_question_crtbbKlnqz0R.5.4515813873156096">
+            Read the given code.<br><br><img alt="" class="yui-img selected" src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/Screenshot 2024-03-19 152551.png" style="height: 180px; width: 500px;" title=""><br><br>
+Enter the value of  int(count_something(1996)==count_something(2024))
+        </div>
+        <div class="qt-response">
+            
+                <input aria-label="Enter your answer" type="text" disabled="disabled">
+                
+        </div>
+        
+
+            <!--  -->
+
+            <div class="qt-feedback" role="alert"><div><h3 class="feedback-header"><span class="correct"> Yes, the answer is correct. </span><br><span class="correct">Score: 1</span></h3><div><h3 class="feedback-header faculty-answer">Accepted Answers:</h3><div class="faculty-answer">(Type: String) 1</div></div></div></div>
+    </div>
+    
+        <div class="qt-points">
+                <em>
+                    
+                    
+                    1 point
+                    
+                </em>
+        </div>
+    
+</div>
+
+       
+          <link href="/modules/assessment_tags/resources/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['crtbbKlnqz0R.6.6276051766870016'] = JSON.parse(window.atob("eyJxdWlkIjogNjI3NjA1MTc2Njg3MDAxNiwgImdyYWRlcnMiOiBbeyJzY29yZSI6ICIxLjAiLCAibWF0Y2hlciI6ICJjYXNlX2luc2Vuc2l0aXZlIiwgInJlc3BvbnNlIjogIjkiLCAiZmVlZGJhY2siOiAiIn1dLCAiaGludCI6ICIiLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJ3ZWlnaHQiOiAxLjB9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+    
+    assessmentTagMessages.graceMark = " You have been given grace marks for above question. ";
+  </script>
+<script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+<script src="/modules/assessment_tags/resources/grading.js"></script>
+<noscript>
+    <div class="qt-warning">
+        
+         JavaScript should be enabled to grade this question. 
+    </div>
+</noscript>
+
+
+
+
+<div class=" gcb-cols gcb-question-counter-increment gcb-question-row ">
+    <div class=" gcb-col-counters gcb-show-question-counter ">
+    </div>
+    <div class="qt-sa-question qt-embedded
+        " id="crtbbKlnqz0R.6.6276051766870016">
+        <div class="qt-question  " id="sa_question_crtbbKlnqz0R.6.6276051766870016">
+            Read the given code.<br><img alt="" class="yui-img selected" src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/Screenshot 2024-03-19 152810.png" style="width: 550px;" title=""><br>Enter the value returned by count_(1990,2024)
+        </div>
+        <div class="qt-response">
+            
+                <input aria-label="Enter your answer" type="text" disabled="disabled">
+                
+        </div>
+        
+
+            <!--  -->
+
+            <div class="qt-feedback" role="alert"><div><h3 class="feedback-header"><span class="incorrect"> No, the answer is incorrect. </span><br><span class="incorrect">Score: 0</span></h3><div><h3 class="feedback-header faculty-answer">Accepted Answers:</h3><div class="faculty-answer">(Type: String) 9</div></div></div></div>
+    </div>
+    
+        <div class="qt-points">
+                <em>
+                    
+                    
+                    1 point
+                    
+                </em>
+        </div>
+    
+</div>
+
+       
+          <link href="/modules/assessment_tags/resources/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['crtbbKlnqz0R.7.4905651317243904'] = JSON.parse(window.atob("eyJxdWlkIjogNDkwNTY1MTMxNzI0MzkwNCwgImdyYWRlcnMiOiBbeyJzY29yZSI6ICIxLjAiLCAibWF0Y2hlciI6ICJjYXNlX2luc2Vuc2l0aXZlIiwgInJlc3BvbnNlIjogIjYiLCAiZmVlZGJhY2siOiAiIn1dLCAiaGludCI6ICIiLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJ3ZWlnaHQiOiAwLjB9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+    
+    assessmentTagMessages.graceMark = " You have been given grace marks for above question. ";
+  </script>
+<script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+<script src="/modules/assessment_tags/resources/grading.js"></script>
+<noscript>
+    <div class="qt-warning">
+        
+         JavaScript should be enabled to grade this question. 
+    </div>
+</noscript>
+
+
+
+
+<div class=" gcb-cols gcb-question-counter-increment gcb-question-row ">
+    <div class=" gcb-col-counters gcb-show-question-counter ">
+    </div>
+    <div class="qt-sa-question qt-embedded
+        " id="crtbbKlnqz0R.7.4905651317243904">
+        <div class="qt-question  " id="sa_question_crtbbKlnqz0R.7.4905651317243904">
+            In addition to the first birthday celebration, Koreans often celebrate "MiSeDol," which marks the completion of the 100th day after a baby's birth. This is considered another significant milestone. Given an input birthdate, the following code tries to calculate the date of "MiSeDol", but the code might contain errors. Identify the line number corresponding to the error. In the absence of an error answer -1.<br><br><img alt="" class="yui-img selected" src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/jocq6.PNG" style="width: 441px; height: 200px;" title=""><br>
+        </div>
+        <div class="qt-response">
+            
+                <input aria-label="Enter your answer" type="text" disabled="disabled">
+                
+        </div>
+        
+
+            <!--  -->
+
+            <div class="qt-feedback" role="alert"><div><h3 class="feedback-header"><span class="incorrect"> No, the answer is incorrect. </span><br><span class="incorrect">Score: 0</span></h3><div><h3 class="feedback-header faculty-answer">Accepted Answers:</h3><div class="faculty-answer">(Type: String) 6</div></div></div></div>
+    </div>
+    
+        <div class="qt-points">
+                <em>
+                    
+                    
+                    0 points
+                    
+                </em>
+        </div>
+    
+</div>
+
+       
+          <link href="/modules/assessment_tags/resources/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['crtbbKlnqz0R.8.4549264252862464'] = JSON.parse(window.atob("eyJxdWlkIjogNDU0OTI2NDI1Mjg2MjQ2NCwgImdyYWRlcnMiOiBbeyJzY29yZSI6ICIxLjAiLCAibWF0Y2hlciI6ICJjYXNlX2luc2Vuc2l0aXZlIiwgInJlc3BvbnNlIjogIjUiLCAiZmVlZGJhY2siOiAiIn1dLCAiaGludCI6ICIiLCAiZGVmYXVsdEZlZWRiYWNrIjogIiIsICJ3ZWlnaHQiOiAxLjB9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+    
+    assessmentTagMessages.graceMark = " You have been given grace marks for above question. ";
+  </script>
+<script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+<script src="/modules/assessment_tags/resources/grading.js"></script>
+<noscript>
+    <div class="qt-warning">
+        
+         JavaScript should be enabled to grade this question. 
+    </div>
+</noscript>
+
+
+
+
+<div class=" gcb-cols gcb-question-counter-increment gcb-question-row ">
+    <div class=" gcb-col-counters gcb-show-question-counter ">
+    </div>
+    <div class="qt-sa-question qt-embedded
+        " id="crtbbKlnqz0R.8.4549264252862464">
+        <div class="qt-question  " id="sa_question_crtbbKlnqz0R.8.4549264252862464">
+            Read the given code.<br>Find the value returned by finds_something (2000,12)<br><br><img alt="" class="yui-img selected" src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/joc9.PNG" style="width: 450px;" title=""><br><br>
+        </div>
+        <div class="qt-response">
+            
+                <input aria-label="Enter your answer" type="text" disabled="disabled">
+                
+        </div>
+        
+
+            <!--  -->
+
+            <div class="qt-feedback" role="alert"><div><h3 class="feedback-header"><span class="incorrect"> No, the answer is incorrect. </span><br><span class="incorrect">Score: 0</span></h3><div><h3 class="feedback-header faculty-answer">Accepted Answers:</h3><div class="faculty-answer">(Type: String) 5</div></div></div></div>
+    </div>
+    
+        <div class="qt-points">
+                <em>
+                    
+                    
+                    1 point
+                    
+                </em>
+        </div>
+    
+</div>
+
+       
+          <link href="/modules/assessment_tags/resources/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['crtbbKlnqz0R.9.6601192468119552'] = JSON.parse(window.atob("eyJxdWlkIjogNjYwMTE5MjQ2ODExOTU1MiwgImdyYWRlcnMiOiBbeyJzY29yZSI6ICIxLjAiLCAibWF0Y2hlciI6ICJjYXNlX2luc2Vuc2l0aXZlIiwgInJlc3BvbnNlIjogIjIzIiwgImZlZWRiYWNrIjogIiJ9XSwgImhpbnQiOiAiIiwgImRlZmF1bHRGZWVkYmFjayI6ICIiLCAid2VpZ2h0IjogMS4wfQ=="));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+    
+    assessmentTagMessages.graceMark = " You have been given grace marks for above question. ";
+  </script>
+<script src="/modules/assessment_tags/resources/grading_lib.js"></script>
+<script src="/modules/assessment_tags/resources/grading.js"></script>
+<noscript>
+    <div class="qt-warning">
+        
+         JavaScript should be enabled to grade this question. 
+    </div>
+</noscript>
+
+
+
+
+<div class=" gcb-cols gcb-question-counter-increment gcb-question-row ">
+    <div class=" gcb-col-counters gcb-show-question-counter ">
+    </div>
+    <div class="qt-sa-question qt-embedded
+        " id="crtbbKlnqz0R.9.6601192468119552">
+        <div class="qt-question  " id="sa_question_crtbbKlnqz0R.9.6601192468119552">
+            Read the following code. What does count_something(2024,1) return ?<br><br><img alt="" class="yui-img selected" src="https://storage.googleapis.com/swayam-node1-production.appspot.com/assets/img/noc24_cs57/joc10.PNG" style="width: 450px;" title=""><br>
+        </div>
+        <div class="qt-response">
+            
+                <input aria-label="Enter your answer" type="text" disabled="disabled">
+                
+        </div>
+        
+
+            <!--  -->
+
+            <div class="qt-feedback" role="alert"><div><h3 class="feedback-header"><span class="correct"> Yes, the answer is correct. </span><br><span class="correct">Score: 1</span></h3><div><h3 class="feedback-header faculty-answer">Accepted Answers:</h3><div class="faculty-answer">(Type: String) 23</div></div></div></div>
+    </div>
+    
+        <div class="qt-points">
+                <em>
+                    
+                    
+                    1 point
+                    
+                </em>
+        </div>
+    
+</div>
+
+       
+    <!--&lt;div class=&quot;qt-check-answer&quot;&gt;-->
+      <!--&lt;button class=&quot;gcb-button qt-check-answer-button&quot;&gt;-->
+        <!---->
+        <!-- Check Answer -->
+      <!--&lt;/button&gt;-->
+    <!--&lt;/div&gt;-->
+   <div class="qt-feedback qt-hidden" role="alert"></div>
+  </div>
+</div>
+  </div>
+  <div class="qt-assessment-button-bar">
+  
+        <div class="gcb-submit-only-once">
+        
+          
+        
+        </div>
+      
+
+        
+            
+             <div class="qt-grade-scored-lesson-calc-score" style="display:none"> </div>
+           
+        
+      
+        
+  
+  </div>
+</div>
+
+        
+      </div>
+    
+
+    
+
+    <div id="assessmentContents"></div>
+
+    
+  
+</div>
+<div id="assessment-overlay"></div>
+<div id="assessment-not-all-attempt" class="assessment-pop-up">
+  <p>You have not attempted all the questions. <br>Click 'Cancel' to return to the questions, or click 'Submit' to proceed with the submission.</p>
+  <button id="assessment-not-all-attempt-submit">Submit</button>
+  <button id="assessment-not-all-attempt-cancel">Cancel</button>
+</div>
+<div id="assessment-no-attempt" class="assessment-pop-up">
+  <p>Atleast one question is required to be answered to proceed for submission.</p>
+  <button id="assessment-no-attempt-ok">OK</button>
+</div>
+<div id="submission-warning" class="assessment-pop-up">
+  <p>Please wait while the assessment is submitted.</p>
+</div>
+<style>
+  .assessment-pop-up {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    z-index: 1000;
+  }
+  #assessment-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+   }
+</style>
+          </div>
