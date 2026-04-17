@@ -216,7 +216,7 @@ def get_all_attempts_summary(user_id):
     """Return {1..20: {count, best_score, last_score, last_passed, last_date} or None}."""
     summary = {}
     with get_db() as conn:
-        for tid in range(1, 21):   # covers all 20 mock tests
+        for tid in range(1, 13):   # covers all 12 mock tests
             rows = _q(conn,
                 "SELECT score, passed, date FROM attempts "
                 "WHERE user_id=%s AND test_id=%s ORDER BY attempt_num",

@@ -39,7 +39,7 @@
   <h2 style="font-size:18px;font-weight:700;margin-bottom:14px;">Select a Mock Test</h2>
 
   <div class="grid-cards">
-    {% for i in range(1, 21) %}
+    {% for i in range(1, num_tests + 1) %}
     {% set att = attempts.get(i) %}
     {% set prog = in_progress.get(i) %}
     <div class="card test-card">

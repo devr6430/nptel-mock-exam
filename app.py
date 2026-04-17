@@ -107,17 +107,19 @@ def _precompute_all_tests():
             result.append(picks)
         return result
 
-    a_slots = assign_section(sec_a, SECTION_A_COUNT, 20)
-    b_slots = assign_section(sec_b, SECTION_B_COUNT, 20)
-    c_slots = assign_section(sec_c, SECTION_C_COUNT, 20)
+    a_slots = assign_section(sec_a, SECTION_A_COUNT, 12)
+    b_slots = assign_section(sec_b, SECTION_B_COUNT, 12)
+    c_slots = assign_section(sec_c, SECTION_C_COUNT, 12)
 
     tests = []
-    for i in range(20):
+    for i in range(12):
         test_qs = a_slots[i] + b_slots[i] + c_slots[i]
         rng.shuffle(test_qs)   # mix sections together
         tests.append(test_qs)
     return tests
 
+
+NUM_TESTS = 12
 
 def generate_test(test_id: int):
     """Return the pre-computed 50-question list for test_id (1-indexed)."""
@@ -232,6 +234,7 @@ def mock_exam():
         "index.html",
         attempts    = attempts_summary,
         in_progress = in_progress,
+        num_tests   = NUM_TESTS,
         user_name   = session.get("user_name", ""),
         user_picture= session.get("user_picture", ""),
     )
@@ -241,7 +244,7 @@ def mock_exam():
 @app.route("/start/<int:test_id>", methods=["POST"])
 @login_required
 def start(test_id):
-    if test_id < 1 or test_id > 20:
+    if test_id < 1 or test_id > NUM_TESTS:
         return redirect(url_for("index"))
 
     user_id = session["user_id"]
@@ -448,7 +451,7 @@ def result():
 @app.route("/history/<int:test_id>")
 @login_required
 def history(test_id):
-    if test_id < 1 or test_id > 20:
+    if test_id < 1 or test_id > NUM_TESTS:
         return redirect(url_for("index"))
     user_id  = session["user_id"]
     attempts = db.get_attempts_for_test(user_id, test_id)
